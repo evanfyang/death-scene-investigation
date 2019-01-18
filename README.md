@@ -1,2 +1,2 @@
-# CS499Team1
-Team 1 CS499 Project
+# CS499Team1 - Team Awesome
+Death Scene Investigation (DSI) Mobile Application
