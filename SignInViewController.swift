@@ -36,7 +36,7 @@ class SignInViewController: UIViewController
         let httpPostString = ["userID": userID, "password": password] as [String: String]
         //need to indicate to the user that an action is being performed here (w/ one of those spin things)
         // Construct request
-        let url = URL(string: "") // Need to know where server handles authentification
+        let url = URL(string: "") // Need to know where server handles authentication
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -56,7 +56,7 @@ class SignInViewController: UIViewController
                 let responseString = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
                 // Unwrap dictionary and attempt to get stuff
                 if let unwrappedResponse = responseString{
-                    // Placeholder, we need to know more about server authentification to know what to put here
+                    // Placeholder, we need to know more about server authentication to know what to put here
                     guard let token = unwrappedResponse["token"] as? String, !token.isEmpty else{return} // Likely invalid username/password
                     // Launch a new thread to switch to the homepage
                     DispatchQueue.main.async
