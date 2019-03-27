@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F7E71F32241A6900064D15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E71F22241A6900064D15F /* AppDelegate.swift */; };
 		0F7E71F52241A6900064D15F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E71F42241A6900064D15F /* ViewController.swift */; };
-		0F7E71F82241A6900064D15F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F7E71F62241A6900064D15F /* Main.storyboard */; };
+		0F7E71F82241A6900064D15F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F7E71F62241A6900064D15F /* Main.storyboard */; settings = {ASSET_TAGS = (textView, ); }; };
 		0F7E71FA2241A6930064D15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7E71F92241A6930064D15F /* Assets.xcassets */; };
 		0F7E71FD2241A6930064D15F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F7E71FB2241A6930064D15F /* LaunchScreen.storyboard */; };
 		0F7E72082241A6940064D15F /* Voice_to_TextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E72072241A6940064D15F /* Voice_to_TextTests.swift */; };
@@ -187,6 +187,10 @@
 		0F7E71E72241A6900064D15F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					microphoneButton,
+					textView,
+				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Danny Allen";
