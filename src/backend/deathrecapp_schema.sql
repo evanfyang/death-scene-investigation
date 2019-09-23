@@ -11,7 +11,6 @@
 --
 -- Table structure for table `DeathSceneInvestigation`
 --
-use deathsceneinvestigation;
 DROP TABLE IF EXISTS `DeathSceneInvestigation`;
 CREATE TABLE `DeathSceneInvestigation` (
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
