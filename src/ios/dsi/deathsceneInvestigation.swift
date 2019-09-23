@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SearchTextField
 
 
 // Create Global Struct
@@ -35,7 +36,7 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
     
 
     @IBOutlet weak var CaseNum: UITextField!
-    @IBOutlet weak var Coroner_Deputy: UITextField!
+    @IBOutlet weak var Coroner_Deputy: SearchTextField!
     @IBOutlet weak var County: UITextField!
     @IBOutlet weak var Date_of_Call: UITextField!
     @IBOutlet weak var Time_of_Call: UITextField!
@@ -77,6 +78,7 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
     
     
     var causes: [String] = [String]()
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -102,6 +104,9 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
         Suspected_Cause.delegate = self
         //Suspected_Cause.dataSource = self
         
+        Coroner_Deputy.filterStrings(["Trent", "Evan", "Eura","Matthew"])
+
+
         causes = ["Natural", "Suicide", "Accidental", "Homicide", "Pending", "Undetermined"]
         
         if allVar.isPending || allVar.isPublished{

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SearchTextField
 
 struct MDSIDocProperties {
     
@@ -16,7 +17,7 @@ struct MDSIDocProperties {
     
     //Death Scene Invesitgation
     var CaseNum: UITextField?
-    var Coroner_Deputy: UITextField?
+    var Coroner_Deputy: SearchTextField?
     var County: UITextField?
     var Date_of_Call: UITextField?
     var Time_of_Call: UITextField?
