@@ -4,17 +4,6 @@
 -- ------------------------------------------------------
 -- Server version	5.7.27-0ubuntu0.18.04.1
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
 --
 -- Table structure for table `CaseHistory`
 --
@@ -23,7 +12,8 @@ DROP TABLE IF EXISTS `CaseHistory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CaseHistory` (
-  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Version` int NOT NULL, 
   `N_NursingHome` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `N_SIDS` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `N_Smoker` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -126,19 +116,18 @@ CREATE TABLE `CaseHistory` (
   `O_CurrDepMood` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `O_CurrMenHelProb` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `O_DiagMenHealthProb` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `O_TreatMenHealth` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `O_TreatMenHealth` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   PRIMARY KEY (`CaseNum`, `Version`), 
+   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `DeathSceneInvestigation`
 --
 
 DROP TABLE IF EXISTS `DeathSceneInvestigation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `DeathSceneInvestigation` (
-  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
   `Coroner_Deputy` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `County` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Date_of_Call` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -146,19 +135,17 @@ CREATE TABLE `DeathSceneInvestigation` (
   `Person_Calling` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Police_Agency` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Time_of_Arrival` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Suspected` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `Suspected` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL, 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `DecedentInformation`
 --
 
 DROP TABLE IF EXISTS `DecedentInformation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `DecedentInformation` (
-  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Version` int NOT NULL, 
   `First_Name` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Last_Name` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Gender` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -191,7 +178,9 @@ CREATE TABLE `DecedentInformation` (
   `Education` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Employment` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Industry` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Current_Occupation` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `Current_Occupation` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   PRIMARY KEY (`CaseNum`, `Version`), 
+   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -203,7 +192,8 @@ DROP TABLE IF EXISTS `IncidentInformation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `IncidentInformation` (
-  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Version` int NOT NULL, 
   `Death_Date` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Death_Time` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Injury_Date` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -237,19 +227,19 @@ CREATE TABLE `IncidentInformation` (
   `Body_Decomp` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Immed_Cause` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Due_to` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Due_to_2` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `Due_to_2` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   PRIMARY KEY (`CaseNum`, `Version`), 
+   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `Investigation`
 --
 
 DROP TABLE IF EXISTS `Investigation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Investigation` (
-  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Version` int NOT NULL, 
   `Evidence_Collected` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Collected_By` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Date` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -348,7 +338,9 @@ CREATE TABLE `Investigation` (
   `Gunshot_Residue` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Dominant_Hand` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Type_of_Amm` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Number_Of_Shells` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `Number_Of_Shells` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   PRIMARY KEY (`CaseNum`, `Version`), 
+   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -357,23 +349,22 @@ CREATE TABLE `Investigation` (
 --
 
 DROP TABLE IF EXISTS `NarrativeComments`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `NarrativeComments` (
-  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Narrative_Comments` varchar(5000) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Version` int NOT NULL, 
+  `Narrative_Comments` varchar(5000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   PRIMARY KEY (`CaseNum`, `Version`), 
+   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `NextofKin`
 --
 
 DROP TABLE IF EXISTS `NextofKin`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `NextofKin` (
-  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Version` int NOT NULL, 
   `Notified_by` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Date_Notified` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Time_Notified` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -383,9 +374,10 @@ CREATE TABLE `NextofKin` (
   `Adress` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `City_1` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `State` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Zip_1` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `Zip_1` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   PRIMARY KEY (`CaseNum`, `Version`), 
+   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `firstTest`
@@ -398,20 +390,16 @@ CREATE TABLE `firstTest` (
   `Narrative_Comments` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `login`
 --
 
 DROP TABLE IF EXISTS `login`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `login` (
   `user` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `secondTest`
@@ -423,15 +411,3 @@ DROP TABLE IF EXISTS `secondTest`;
 CREATE TABLE `secondTest` (
   `Narrative_Comments` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2019-09-17 10:55:27
