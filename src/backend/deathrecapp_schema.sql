@@ -409,4 +409,15 @@ DROP TABLE IF EXISTS `secondTest`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `secondTest` (
   `Narrative_Comments` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+---------------------------------------------------------------------------------------------------------------
+------------------------------------------- RELATIONSHIPS -----------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+DROP TABLE IF EXISTS `contains`;
+CREATE TABLE `contains` (
+  `Narrative_Comments` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
