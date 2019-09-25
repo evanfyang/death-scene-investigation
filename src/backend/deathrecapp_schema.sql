@@ -11,6 +11,14 @@
 --
 -- Table structure for table `DeathSceneInvestigation`
 --
+DROP TABLE IF EXISTS `Investigator`;
+CREATE TABLE `Investigator` (
+  `Username` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `First_Name` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Last_Name` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Password` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 DROP TABLE IF EXISTS `DeathSceneInvestigation`;
 CREATE TABLE `DeathSceneInvestigation` (
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
@@ -491,13 +499,103 @@ CREATE TABLE `secondTest` (
   `Narrative_Comments` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+/*
 ---------------------------------------------------------------------------------------------------------------
 ------------------------------------------- RELATIONSHIPS -----------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------
-DROP TABLE IF EXISTS `contains`;
-CREATE TABLE `contains` (
-  `Narrative_Comments` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
+*/
+
+DROP TABLE IF EXISTS `assigned_to`;
+CREATE TABLE `assigned_to` (
+  `Username` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`Username`, `CaseNum`), 
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS `edits`;
+CREATE TABLE `edits` (
+  `Username` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `CaseSection` varchar(30) NOT NULL, 
+  `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Username`, `CaseNum`, `CaseSection`, `Timestamp`), 
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+/*
+DROP TABLE IF EXISTS `edits_decedent_information`;
+CREATE TABLE `edits_decedent_information` (
+  `Username` varchar(30) NOT NULL, 
+  `CaseNum` varchar(30) NOT NULL,
+  `Version` int NOT NULL, 
+  `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP
+  PRIMARY KEY (`Username`, `CaseNum`, `Version`), 
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  FOREIGN KEY (`CaseNum`) REFERENCES `DecedentInformation`(`CaseNum`)
+  FOREIGN KEY (`Version`) REFERENCES `DecedentInformaion`(`Version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS `edits_next_of_kin`;
+CREATE TABLE `edits_next_of_kin` (
+  `Username` varchar(30) NOT NULL, 
+  `CaseNum` varchar(30) NOT NULL,
+  `Version` int NOT NULL, 
+  `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP
+  PRIMARY KEY (`Username`, `CaseNum`, `Version`), 
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  FOREIGN KEY (`CaseNum`) REFERENCES `DecedentInformation`(`CaseNum`)
+  FOREIGN KEY (`Version`) REFERENCES `DecedentInformaion`(`Version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS `edits_incident_information`;
+CREATE TABLE `edits_decedent_information` (
+  `Username` varchar(30) NOT NULL, 
+  `CaseNum` varchar(30) NOT NULL,
+  `Version` int NOT NULL, 
+  `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP
+  PRIMARY KEY (`Username`, `CaseNum`, `Version`), 
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  FOREIGN KEY (`CaseNum`) REFERENCES `DecedentInformation`(`CaseNum`)
+  FOREIGN KEY (`Version`) REFERENCES `DecedentInformaion`(`Version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS `edits_investigation`;
+CREATE TABLE `edits_decedent_information` (
+  `Username` varchar(30) NOT NULL, 
+  `CaseNum` varchar(30) NOT NULL,
+  `Version` int NOT NULL, 
+  `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP
+  PRIMARY KEY (`Username`, `CaseNum`, `Version`), 
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  FOREIGN KEY (`CaseNum`) REFERENCES `DecedentInformation`(`CaseNum`)
+  FOREIGN KEY (`Version`) REFERENCES `DecedentInformaion`(`Version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS `edits_narrative_comments`;
+CREATE TABLE `edits_decedent_information` (
+  `Username` varchar(30) NOT NULL, 
+  `CaseNum` varchar(30) NOT NULL,
+  `Version` int NOT NULL, 
+  `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP
+  PRIMARY KEY (`Username`, `CaseNum`, `Version`), 
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  FOREIGN KEY (`CaseNum`) REFERENCES `DecedentInformation`(`CaseNum`)
+  FOREIGN KEY (`Version`) REFERENCES `DecedentInformaion`(`Version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS `edits_pills_on_scene`;
+CREATE TABLE `edits_decedent_information` (
+  `Username` varchar(30) NOT NULL, 
+  `CaseNum` varchar(30) NOT NULL,
+  `Version` int NOT NULL, 
+  `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP
+  PRIMARY KEY (`Username`, `CaseNum`, `Version`), 
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  FOREIGN KEY (`CaseNum`) REFERENCES `DecedentInformation`(`CaseNum`)
+  FOREIGN KEY (`Version`) REFERENCES `DecedentInformaion`(`Version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+*/
