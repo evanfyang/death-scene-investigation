@@ -469,8 +469,8 @@ CREATE TABLE `NextofKin` (
 --
 -- Table structure for table `pills_on_scene`
 --
-DROP TABLE IF EXISTS `pills_on_scene`;
-CREATE TABLE `pills_on_scene` (
+DROP TABLE IF EXISTS `PillsOnScene`;
+CREATE TABLE `PillsOnScene` (
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Version` int NOT NULL, 
    `row_num` TINYINT UNSIGNED AUTO_INCREMENT,
