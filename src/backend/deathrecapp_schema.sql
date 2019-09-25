@@ -467,6 +467,28 @@ CREATE TABLE `NextofKin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Table structure for table `pills_on_scene`
+--
+DROP TABLE IF EXISTS `pills_on_scene`;
+CREATE TABLE `pills_on_scene` (
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Version` int NOT NULL, 
+   `row_num` TINYINT UNSIGNED AUTO_INCREMENT,
+   `name_of_drug` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   `date_filled` DATE DEFAULT NULL,
+   `RX_num` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   `name_on_prescrip` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   `dosing` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   `strength` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   `quant_prescrip` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   `quant_remain` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   `pharm_name` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   `pharm_city` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+   PRIMARY KEY (`CaseNum`, `Version`), 
+   INDEX(row_num),
+   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+--
 -- Table structure for table `firstTest`
 --
 
