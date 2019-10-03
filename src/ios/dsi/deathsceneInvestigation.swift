@@ -104,8 +104,7 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
         Suspected_Cause.delegate = self
         //Suspected_Cause.dataSource = self
         
-        Coroner_Deputy.filterStrings(["Trent", "Evan", "Eura","Matthew"])
-
+        autocompleteOptions()
 
         causes = ["Natural", "Suicide", "Accidental", "Homicide", "Pending", "Undetermined"]
         
@@ -124,6 +123,10 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
     
     }
     
+    
+    func autocompleteOptions() {
+        Coroner_Deputy.filterStrings(["Trent", "Evan", "Eura","Matthew"])
+    }
 
 }
 
