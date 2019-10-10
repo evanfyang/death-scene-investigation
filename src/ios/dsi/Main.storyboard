@@ -73,7 +73,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DSI_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="qtQ-bP-1eC">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DSI_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="qtQ-bP-1eC">
                                         <rect key="frame" x="117" y="138" width="180" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -286,6 +286,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DSI_Logo.png" width="1024" height="1024"/>
+        <image name="DSI_Logo" width="1024" height="1024"/>
     </resources>
 </document>
