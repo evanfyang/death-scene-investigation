@@ -14,9 +14,9 @@
 DROP TABLE IF EXISTS `Investigator`;
 CREATE TABLE `Investigator` (
   `Username` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
-  `First_Name` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Last_Name` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Password` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `First_Name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Last_Name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Password` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `DeathSceneInvestigation`;
@@ -230,15 +230,11 @@ CREATE TABLE `DecedentInformation` (
     FOREIGN KEY (`CaseNum`)
         REFERENCES `DeathSceneInvestigation` (`CaseNum`)
 )  ENGINE=INNODB DEFAULT CHARSET=UTF8MB4 COLLATE = UTF8MB4_UNICODE_CI;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
 --
 -- Table structure for table `IncidentInformation`
 --
 
 DROP TABLE IF EXISTS `IncidentInformation`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `IncidentInformation` (
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Version` INT UNSIGNED NOT NULL, 
@@ -429,7 +425,6 @@ CREATE TABLE `Investigation` (
    PRIMARY KEY (`CaseNum`, `Version`), 
    FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `NarrativeComments`
@@ -493,8 +488,6 @@ CREATE TABLE `PillsOnScene` (
 --
 
 DROP TABLE IF EXISTS `firstTest`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `firstTest` (
   `Narrative_Comments` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -515,8 +508,6 @@ CREATE TABLE `login` (
 --
 
 DROP TABLE IF EXISTS `secondTest`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `secondTest` (
   `Narrative_Comments` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
