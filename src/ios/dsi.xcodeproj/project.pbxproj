@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E51567C234676F80067F6C7 /* DSI_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E51567B234676F80067F6C7 /* DSI_Logo.png */; };
+		2E18E203234D66DA001B8289 /* RegisterNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18E202234D66DA001B8289 /* RegisterNewUserViewController.swift */; };
 		2E5156802346832C0067F6C7 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51567F2346832C0067F6C7 /* RoundButton.swift */; };
 		8B8F5DB846D1C0B7F7D9B9B8 /* Pods_dsi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A710FCA6DA1170715C3593 /* Pods_dsi.framework */; };
 		CD3DE4422262A2010004FFC2 /* MDSIDocProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3DE4412262A2010004FFC2 /* MDSIDocProperties.swift */; };
@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		11B719DE752F5AFAA8551B67 /* Pods-dsi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dsi.debug.xcconfig"; path = "Target Support Files/Pods-dsi/Pods-dsi.debug.xcconfig"; sourceTree = "<group>"; };
-		2E51567B234676F80067F6C7 /* DSI_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DSI_Logo.png; path = "../../../../App Logo/DSI_Logo.png"; sourceTree = "<group>"; };
+		2E18E202234D66DA001B8289 /* RegisterNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewUserViewController.swift; sourceTree = "<group>"; };
 		2E51567F2346832C0067F6C7 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		99A710FCA6DA1170715C3593 /* Pods_dsi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dsi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DFA232A3B084F7B9D7DA70 /* Pods-dsi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dsi.release.xcconfig"; path = "Target Support Files/Pods-dsi/Pods-dsi.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +121,7 @@
 				CDC32BFA224D7B7300465068 /* AppDelegate.swift */,
 				CD3DE4412262A2010004FFC2 /* MDSIDocProperties.swift */,
 				CDDC9BDB225D300B00A18DBE /* SignInViewController.swift */,
+				2E18E202234D66DA001B8289 /* RegisterNewUserViewController.swift */,
 				CDB9C207225AA0AE00592E26 /* Investigation.swift */,
 				CD7F183B225170FD00E29C19 /* DecedentInformation.swift */,
 				CDD35A1C22527D7300104B54 /* IncidentInformation.swift */,
@@ -139,7 +140,6 @@
 				CDC32BFE224D7B7300465068 /* Forms.storyboard */,
 				CD3E3755226CD47300361010 /* Main.storyboard */,
 				2E51567F2346832C0067F6C7 /* RoundButton.swift */,
-				2E51567B234676F80067F6C7 /* DSI_Logo.png */,
 				CD3E375D226CE31900361010 /* PendingForms.storyboard */,
 				CD3E3759226CD62500361010 /* PublishedForms.storyboard */,
 				CD3E374E226CD44200361010 /* NewForms.storyboard */,
@@ -215,7 +215,6 @@
 				CD3E3753226CD44200361010 /* NewForms.storyboard in Resources */,
 				CD3E375A226CD62500361010 /* PublishedForms.storyboard in Resources */,
 				CD3E375E226CE31900361010 /* PendingForms.storyboard in Resources */,
-				2E51567C234676F80067F6C7 /* DSI_Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +270,7 @@
 				CD7F183C225170FD00E29C19 /* DecedentInformation.swift in Sources */,
 				CDC32C11224D97C800465068 /* NarrativeComments.swift in Sources */,
 				CDB9C208225AA0AE00592E26 /* Investigation.swift in Sources */,
+				2E18E203234D66DA001B8289 /* RegisterNewUserViewController.swift in Sources */,
 				CDBA8434225B986F000EA7BA /* CaseHistory.swift in Sources */,
 				CDC32BFD224D7B7300465068 /* deathsceneInvestigation.swift in Sources */,
 				CDC32C13224D99A400465068 /* PillsOnScene.swift in Sources */,
