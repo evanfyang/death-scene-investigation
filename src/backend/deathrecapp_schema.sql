@@ -145,7 +145,7 @@ CREATE TABLE `CaseHistory` (
   `O_Prev` BOOL DEFAULT NULL,
   `O_CurrDepMood` BOOL DEFAULT NULL,
   `O_CurrMenHelProb` BOOL DEFAULT NULL,
-  `O_DiagMenHealthProbField` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `O_DiagMenHealthProb` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `O_TreatMenHealth` BOOL DEFAULT NULL,
    PRIMARY KEY (`CaseNum`, `Version`), 
    FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
