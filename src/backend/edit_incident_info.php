@@ -8,6 +8,7 @@ ini_set('display_errors', 1);
 
 // Incident Information
 $CaseNum=$_POST['CaseNum'];
+$Version=$_POST['Version'];
 $Death_Date=$_POST['Death_Date'];
 $Death_Time=$_POST['Death_Time'];
 $Injury_Date=$_POST['Injury_Date'];
@@ -63,8 +64,8 @@ if ($conn->connect_error) {
 }
 
 // inserts data from app into incident information table
-$sql = "INSERT INTO IncidentInformation (CaseNum,Death_Date,Death_Time,Injury_Date,Injury_Time,PlaceDeath,PlaceInjury,LS_Date,LS_Time,LS_Loc,LS_CC,DD_Date,DD_Time,DD_Loc,DD_CC,Found_Dead_By,FDB_Address,Last_Seen_Alive,LSA_Address,Witness,Weather,Activity,Position_Body,Livor,Rigor,Consisent_With_Position,Clothed,Partially_Clothed,Unclothed,Dis_Mark,Body_Temp,Body_Decomp,Immed_Cause,Due_to,Due_to_2) VALUES ('".$CaseNum."','".$Death_Date."','".$Death_Time."','".$Injury_Date."','".$Injury_Time."','".$PlaceDeath."','".$PlaceInjury."','".$LS_Date."','".$LS_Time."','".$LS_Loc."','".$LS_CC."','".$DD_Date."','".$DD_Time."','".$DD_Loc."','".$DD_CC."','".$Found_Dead_By."','".$FDB_Address."','".$Last_Seen_Alive."','".$LSA_Address."','".$Witness."','".$Weather."','".$Activity."','".$Position_Body."','".$Livor."','".$Rigor."','".$Consisent_With_Position."','".$Clothed."','".$Partially_Clothed."','".$Unclothed."','".$Dis_Mark."','".$Body_Temp."','".$Body_Decomp."','".$Immed_Cause."','".$Due_to."','".$Due_to_2."')";
-$result = mysqli_query($mysqli, $DIquery);
+$sql = "INSERT INTO IncidentInformation (CaseNum, Version, Death_Date,Death_Time,Injury_Date,Injury_Time,PlaceDeath,PlaceInjury,LS_Date,LS_Time,LS_Loc,LS_CC,DD_Date,DD_Time,DD_Loc,DD_CC,Found_Dead_By,FDB_Address,Last_Seen_Alive,LSA_Address,Witness,Weather,Activity,Position_Body,Livor,Rigor,Consisent_With_Position,Clothed,Partially_Clothed,Unclothed,Dis_Mark,Body_Temp,Body_Decomp,Immed_Cause,Due_to,Due_to_2) VALUES ('".$CaseNum."', '".$Version."','".$Death_Date."','".$Death_Time."','".$Injury_Date."','".$Injury_Time."','".$PlaceDeath."','".$PlaceInjury."','".$LS_Date."','".$LS_Time."','".$LS_Loc."','".$LS_CC."','".$DD_Date."','".$DD_Time."','".$DD_Loc."','".$DD_CC."','".$Found_Dead_By."','".$FDB_Address."','".$Last_Seen_Alive."','".$LSA_Address."','".$Witness."','".$Weather."','".$Activity."','".$Position_Body."','".$Livor."','".$Rigor."','".$Consisent_With_Position."','".$Clothed."','".$Partially_Clothed."','".$Unclothed."','".$Dis_Mark."','".$Body_Temp."','".$Body_Decomp."','".$Immed_Cause."','".$Due_to."','".$Due_to_2."')";
+
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

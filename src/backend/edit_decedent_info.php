@@ -9,6 +9,7 @@ ini_set('display_errors', 1);
 
 // Decedent Information
 $CaseNum=$_POST['CaseNum'];
+$Version=$_POST['Version'];
 $First_Name=$_POST['First_Name'];
 $Last_Name=$_POST['Last_Name'];
 $Gender=$_POST['Gender'];
@@ -63,8 +64,8 @@ if ($conn->connect_error) {
 }
 
 // inserts data from app into decedent information table
-$sql = "INSERT INTO DecedentInformation (CaseNum, First_Name, Last_Name, Gender, Age, Birth_Place, SSN_Num, Address, City, Country_of_Res, State_of_Res, Zip, Height, Weight, Eyes, Hair, Race, Ethnicity, Marital_Status, Surving_Spouse, Mother_MN, Father_N, Pregnant, Homeless, Veteran, Retired, Active, other1, Branch, Last_Tour, Education, Employment, Industry, Current_Occupation) VALUES ('".$CaseNum."','".$First_Name."','".$Last_Name."','".$Gender."','".$Age."','".$Birth_Place."','".$SSN_Num."','".$Address."','".$City."','".$Country_of_Res."','".$State_of_Res."','".$Zip."','".$Height."','".$Weight."','".$Eyes."','".$Hair."','".$Race."','".$Ethnicity."','".$Marital_Status."','".$Surving_Spouse."','".$Mother_MN."','".$Father_N."','".$Pregnant."','".$Homeless."','".$Veteran."','".$Retired."','".$Active."','".$other1."','".$Branch."','".$Last_Tour."','".$Education."','".$Employment."','".$Industry."','".$Current_Occupation."')";
-$result = mysqli_query($mysqli, $DIquery);
+$sql = "INSERT INTO DecedentInformation (CaseNum, Version, First_Name, Last_Name, Gender, Age, Birth_Place, SSN_Num, Address, City, Country_of_Res, State_of_Res, Zip, Height, Weight, Eyes, Hair, Race, Ethnicity, Marital_Status, Surving_Spouse, Mother_MN, Father_N, Pregnant, Homeless, Veteran, Retired, Active, other1, Branch, Last_Tour, Education, Employment, Industry, Current_Occupation) VALUES ('".$CaseNum."', '".$Version."''".$First_Name."','".$Last_Name."','".$Gender."','".$Age."','".$Birth_Place."','".$SSN_Num."','".$Address."','".$City."','".$Country_of_Res."','".$State_of_Res."','".$Zip."','".$Height."','".$Weight."','".$Eyes."','".$Hair."','".$Race."','".$Ethnicity."','".$Marital_Status."','".$Surving_Spouse."','".$Mother_MN."','".$Father_N."','".$Pregnant."','".$Homeless."','".$Veteran."','".$Retired."','".$Active."','".$other1."','".$Branch."','".$Last_Tour."','".$Education."','".$Employment."','".$Industry."','".$Current_Occupation."')";
+
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

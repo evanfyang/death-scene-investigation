@@ -42,7 +42,7 @@ if ($conn->connect_error) {
 
 // inserts data from app into pills on scene table
 $sql = "INSERT INTO PillsOnScene (CaseNum, Version, NameOfDrug, DateFilled, RxNum, Dosing, Strength, RxQuantity, QuantityRemaining, PharmName, PharmCity) VALUES ('".$CaseNum."','".$Version."','".$NameOfDrug."','".$DateFilled."','".$RxNum."','".$NameOnRx."','".$Dosing."','".$Strength."','".$RxQuantity."','".$QuantityRemaining."','".$PharmName."','".$PharmCity."')";
-$result = mysqli_query($mysqli, $DIquery);
+
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

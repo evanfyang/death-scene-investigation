@@ -7,6 +7,8 @@ ini_set('display_errors', 1);
  */
 
 // Narrative Comments
+$CaseNum=$_POST['CaseNum'];
+$Version=$_POST['Version'];
 $Narrative_Comments=$_POST['Narrative_Comments'];
 
 // for local testing
@@ -29,8 +31,8 @@ if ($conn->connect_error) {
 }
 
 // inserts data from app into narrative comments table
-$sql = "INSERT INTO NarrativeComments (CaseNum, Narrative_Comments) VALUES ('".$CaseNum."','".$Narrative_Comments."')";
-$result = mysqli_query($mysqli, $DIquery);
+$sql = "INSERT INTO NarrativeComments (CaseNum, Version, Narrative_Comments) VALUES ('".$CaseNum."','".$Version."','".$Narrative_Comments."')";
+
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

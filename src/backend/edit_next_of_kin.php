@@ -8,6 +8,7 @@ ini_set('display_errors', 1);
 
 // Next of Kin
 $CaseNum = $_POST['CaseNum'];
+$Version = $_POST['Version'];
 $Notified_by = $_POST['Notified_by'];
 $Date_Notified = $_POST['Date_Notified'];
 $Time_Notified = $_POST['Time_Notified'];
@@ -39,8 +40,8 @@ if ($conn->connect_error) {
 }
 
 // inserts data from app into next of kin table
-$sql = "INSERT INTO NextofKin (CaseNum, Notified_by, Date_Notified, Time_Notified, Name, Relationship, Phone_Number, Adress, City_1, State, Zip_1) VALUES ('".$CaseNum."','".$Notified_by."','".$Date_Notified."','".$Time_Notified."','".$Name."','".$Relationship."','".$Phone_Number."','".$Adress."','".$City_1."','".$State."','".$Zip_1."')";
-$result = mysqli_query($mysqli, $DIquery);
+$sql = "INSERT INTO NextofKin (CaseNum, Version, Notified_by, Date_Notified, Time_Notified, Name, Relationship, Phone_Number, Adress, City_1, State, Zip_1) VALUES ('".$CaseNum."', '".$Version."','".$Notified_by."','".$Date_Notified."','".$Time_Notified."','".$Name."','".$Relationship."','".$Phone_Number."','".$Adress."','".$City_1."','".$State."','".$Zip_1."')";
+
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

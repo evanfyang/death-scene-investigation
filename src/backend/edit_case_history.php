@@ -10,6 +10,7 @@ ini_set('display_errors', 1);
 
 // Case History
 $CaseNum =$_POST['CaseNum'];
+$Version=$_POST['Version'];
 $N_NursingHome =$_POST['N_NursingHome'];
 $N_SIDS =$_POST['N_SIDS'];
 $N_Smoker =$_POST['N_Smoker'];
@@ -114,6 +115,17 @@ $O_CurrMenHelProb =$_POST['O_CurrMenHelProb'];
 $O_DiagMenHealthProb =$_POST['O_DiagMenHealthProb'];
 $O_TreatMenHealth=$_POST['O_TreatMenHealth'];
 
+// for local testing
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "deathrecapp";
+
+// for database on server
+//$servername = "statsqltest.as.uky.edu";
+//$username = "deathrecadmin";
+//$password = "^YGUG6tqpzpqE6G";
+//$dbname = "deathrecapp";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -123,8 +135,8 @@ if ($conn->connect_error) {
 }
 
 // inserts data from app into case history table
-$sql = "INSERT INTO CaseHistory (CaseNum,N_NursingHome,N_SIDS,N_Smoker,N_Diabetes,N_Heart,A_Fall,A_Hunting,A_PlayingWG,A_Load,A_MotorVehicle,A_TargetShooting,A_SelfDefenseShooting,A_ShowingGun,A_CleanGun,A_GunDefect,A_CelebFiring,A_Other,A_MVCrash,A_Passenger,A_Driver,A_Pedestrian,A_LapBeltUsed,A_ShoulderBeltUsed,A_HelmetWorn,A_AirbagDeploy,A_HitRun,A_NonHighway,A_VehicleType,S_LCWLTW,S_ALC,S_CDM,S_DMHP,S_TMI,S_FP,S_PHP,S_JP,S_LoE,S_RD,S_IPP,S_IPL,S_IPTL,S_IPV,S_ORP,S_SP,S_AP,S_SubP,S_RCP,S_LegP,S_RSRF,S_ODRF,S_PVC,S_VVC,S_Other,S_LSN,S_DADBS,S_HSA,S_ThS,S_Note,H_Brawl,H_DrugRel,H_IPL,H_IPTL,H_IPP,H_OtherRel,H_IAC,H_AWAC,H_AOMP,H_GangRel,H_Jealousy,H_JustHom,H_OthAAC,H_HC,H_IB,H_RandoV,H_TerrorA,H_Other,H_MercKill,H_ChildFat,H_InfantIn,H_ChildWitnI,H_ChPSN,H_VWAPOOD,H_ThreatenedHom,H_WhoWasThr,H_TheVicis,O_DrugPara,O_DrugField,O_WitnessPres,O_PrevOver,O_DrugAbuseProb,O_AlcoholAbuseProblem,O_TreatForSubAbu,O_NalOpAnAd,O_ChrPain,O_CurrPainTreat,O_HisIncar,O_CurrIncar,O_RecRel,O_Prev,O_CurrDepMood,O_CurrMenHelProb,O_DiagMenHealthProb,O_TreatMenHealth)VALUES('".$CaseNum."','".$N_NursingHome."','".$N_SIDS."','".$N_Smoker."','".$N_Diabetes."','".$N_Heart."','".$A_Fall."','".$A_Hunting."','".$A_PlayingWG."','".$A_Load."','".$A_MotorVehicle."','".$A_TargetShooting."','".$A_SelfDefenseShooting."','".$A_ShowingGun."','".$A_CleanGun."','".$A_GunDefect."','".$A_CelebFiring."','".$A_Other."','".$A_MVCrash."','".$A_Passenger."','".$A_Driver."','".$A_Pedestrian."','".$A_LapBeltUsed."','".$A_ShoulderBeltUsed."','".$A_HelmetWorn."','".$A_AirbagDeploy."','".$A_HitRun."','".$A_NonHighway."','".$A_VehicleType."','".$S_LCWLTW."','".$S_ALC."','".$S_CDM."','".$S_DMHP."','".$S_TMI."','".$S_FP."','".$S_PHP."','".$S_JP."','".$S_LoE."','".$S_RD."','".$S_IPP."','".$S_IPL."','".$S_IPTL."','".$S_IPV."','".$S_ORP."','".$S_SP."','".$S_AP."','".$S_SubP."','".$S_RCP."','".$S_LegP."','".$S_RSRF."','".$S_ODRF."','".$S_PVC."','".$S_VVC."','".$S_Other."','".$S_LSN."','".$S_DADBS."','".$S_HSA."','".$S_ThS."','".$S_Note."','".$H_Brawl."','".$H_DrugRel."','".$H_IPL."','".$H_IPTL."','".$H_IPP."','".$H_OtherRel."','".$H_IAC."','".$H_AWAC."','".$H_AOMP."','".$H_GangRel."','".$H_Jealousy."','".$H_JustHom."','".$H_OthAAC."','".$H_HC."','".$H_IB."','".$H_RandoV."','".$H_TerrorA."','".$H_Other."','".$H_MercKill."','".$H_ChildFat."','".$H_InfantIn."','".$H_ChildWitnI."','".$H_ChPSN."','".$H_VWAPOOD."','".$H_ThreatenedHom."','".$H_WhoWasThr."','".$H_TheVicis."','".$O_DrugPara."','".$O_DrugField."','".$O_WitnessPres."','".$O_PrevOver."','".$O_DrugAbuseProb."','".$O_AlcoholAbuseProblem."','".$O_TreatForSubAbu."','".$O_NalOpAnAd."','".$O_ChrPain."','".$O_CurrPainTreat."','".$O_HisIncar."','".$O_CurrIncar."','".$O_RecRel."','".$O_Prev."','".$O_CurrDepMood."','".$O_CurrMenHelProb."','".$O_DiagMenHealthProb."','".$O_TreatMenHealth."')";
-$result = mysqli_query($mysqli, $DIquery);
+$sql = "INSERT INTO CaseHistory (CaseNum,Version, N_NursingHome,N_SIDS,N_Smoker,N_Diabetes,N_Heart,A_Fall,A_Hunting,A_PlayingWG,A_Load,A_MotorVehicle,A_TargetShooting,A_SelfDefenseShooting,A_ShowingGun,A_CleanGun,A_GunDefect,A_CelebFiring,A_Other,A_MVCrash,A_Passenger,A_Driver,A_Pedestrian,A_LapBeltUsed,A_ShoulderBeltUsed,A_HelmetWorn,A_AirbagDeploy,A_HitRun,A_NonHighway,A_VehicleType,S_LCWLTW,S_ALC,S_CDM,S_DMHP,S_TMI,S_FP,S_PHP,S_JP,S_LoE,S_RD,S_IPP,S_IPL,S_IPTL,S_IPV,S_ORP,S_SP,S_AP,S_SubP,S_RCP,S_LegP,S_RSRF,S_ODRF,S_PVC,S_VVC,S_Other,S_LSN,S_DADBS,S_HSA,S_ThS,S_Note,H_Brawl,H_DrugRel,H_IPL,H_IPTL,H_IPP,H_OtherRel,H_IAC,H_AWAC,H_AOMP,H_GangRel,H_Jealousy,H_JustHom,H_OthAAC,H_HC,H_IB,H_RandoV,H_TerrorA,H_Other,H_MercKill,H_ChildFat,H_InfantIn,H_ChildWitnI,H_ChPSN,H_VWAPOOD,H_ThreatenedHom,H_WhoWasThr,H_TheVicis,O_DrugPara,O_DrugField,O_WitnessPres,O_PrevOver,O_DrugAbuseProb,O_AlcoholAbuseProblem,O_TreatForSubAbu,O_NalOpAnAd,O_ChrPain,O_CurrPainTreat,O_HisIncar,O_CurrIncar,O_RecRel,O_Prev,O_CurrDepMood,O_CurrMenHelProb,O_DiagMenHealthProb,O_TreatMenHealth)VALUES('".$CaseNum."', '".$Version."', '".$N_NursingHome."','".$N_SIDS."','".$N_Smoker."','".$N_Diabetes."','".$N_Heart."','".$A_Fall."','".$A_Hunting."','".$A_PlayingWG."','".$A_Load."','".$A_MotorVehicle."','".$A_TargetShooting."','".$A_SelfDefenseShooting."','".$A_ShowingGun."','".$A_CleanGun."','".$A_GunDefect."','".$A_CelebFiring."','".$A_Other."','".$A_MVCrash."','".$A_Passenger."','".$A_Driver."','".$A_Pedestrian."','".$A_LapBeltUsed."','".$A_ShoulderBeltUsed."','".$A_HelmetWorn."','".$A_AirbagDeploy."','".$A_HitRun."','".$A_NonHighway."','".$A_VehicleType."','".$S_LCWLTW."','".$S_ALC."','".$S_CDM."','".$S_DMHP."','".$S_TMI."','".$S_FP."','".$S_PHP."','".$S_JP."','".$S_LoE."','".$S_RD."','".$S_IPP."','".$S_IPL."','".$S_IPTL."','".$S_IPV."','".$S_ORP."','".$S_SP."','".$S_AP."','".$S_SubP."','".$S_RCP."','".$S_LegP."','".$S_RSRF."','".$S_ODRF."','".$S_PVC."','".$S_VVC."','".$S_Other."','".$S_LSN."','".$S_DADBS."','".$S_HSA."','".$S_ThS."','".$S_Note."','".$H_Brawl."','".$H_DrugRel."','".$H_IPL."','".$H_IPTL."','".$H_IPP."','".$H_OtherRel."','".$H_IAC."','".$H_AWAC."','".$H_AOMP."','".$H_GangRel."','".$H_Jealousy."','".$H_JustHom."','".$H_OthAAC."','".$H_HC."','".$H_IB."','".$H_RandoV."','".$H_TerrorA."','".$H_Other."','".$H_MercKill."','".$H_ChildFat."','".$H_InfantIn."','".$H_ChildWitnI."','".$H_ChPSN."','".$H_VWAPOOD."','".$H_ThreatenedHom."','".$H_WhoWasThr."','".$H_TheVicis."','".$O_DrugPara."','".$O_DrugField."','".$O_WitnessPres."','".$O_PrevOver."','".$O_DrugAbuseProb."','".$O_AlcoholAbuseProblem."','".$O_TreatForSubAbu."','".$O_NalOpAnAd."','".$O_ChrPain."','".$O_CurrPainTreat."','".$O_HisIncar."','".$O_CurrIncar."','".$O_RecRel."','".$O_Prev."','".$O_CurrDepMood."','".$O_CurrMenHelProb."','".$O_DiagMenHealthProb."','".$O_TreatMenHealth."')";
+
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
