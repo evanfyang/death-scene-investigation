@@ -1,0 +1,49 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+/*
+ * Retrieves the form elements for the specified part of the form
+ */
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "deathrecapp";
+
+//$servername = "statsqltest.as.uky.edu";
+//$username = "deathrecadmin";
+//$password = "^YGUG6tqpzpqE6G";
+//$dbname = "deathrecapp";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Retrieve the relevant fields
+$field=$_POST['field'];
+$casenum=$_POST['casenum'];
+
+// Make query
+$sql = "SELECT * FROM `". $field ."` WHERE `CaseNum` = ". $casenum ;
+if(!$result = mysqli_query($conn, $sql)) {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+// Show resulting fields
+if(mysqli_num_rows($result) > 0) {
+    $data = array();
+
+    //read the rows of result
+    while($row = mysqli_fetch_assoc($result)) {
+         $data[] = $row;
+    }
+
+    header('Content-type: application/json');
+    print json_encode($data);
+}
+
+$conn->close();
+?>

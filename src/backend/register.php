@@ -4,6 +4,11 @@ $username = "root";
 $password = "";
 $dbname = "deathrecapp";
 
+//$servername = "statsqltest.as.uky.edu";
+//$username = "deathrecadmin";
+//$password = "^YGUG6tqpzpqE6G";
+//$dbname = "deathrecapp";
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -18,18 +23,15 @@ $first_name=$_POST['firstname'];
 $last_name=$_POST['lastname'];
 
 // Make sure the username is available
-$sql = "SELECT * FROM login WHERE user='$user'";
+$sql = "SELECT * FROM login WHERE user='". $user ."'";
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 $count = mysqli_num_rows($result);
 
-
 if ($count == 0) { // There is no matching username 
-    $sql = "INSERT INTO Investigator(Username, Password, First_Name, Last_Name) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO Investigator(`Username`, `Password`, `First_Name`, `Last_Name`) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ssss', $user, $pass, $first_name, $last_name);
     
-
-
     if($stmt->execute()) {
         echo "User created successfully!";
     }

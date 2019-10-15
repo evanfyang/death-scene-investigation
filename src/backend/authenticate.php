@@ -1,8 +1,14 @@
 <?php
-$servername = "statsqltest.as.uky.edu";
-$username = "deathrecadmin";
-$password = "^YGUG6tqpzpqE6G";
+$servername = "localhost";
+$username = "root";
+$password = "";
 $dbname = "deathrecapp";
+
+//$servername = "statsqltest.as.uky.edu";
+//$username = "deathrecadmin";
+//$password = "^YGUG6tqpzpqE6G";
+//$dbname = "deathrecapp";
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -10,31 +16,32 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-//$user=$_POST['admin'];
-//$pass=$_POST['password'];
+// Get relevant fields
+$user=$_POST['username'];
+$pass=$_POST['password'];
 
-$user="admin";
-$pass="password";
-echo $user;
-echo $pass;
 
-$sql = "SELECT * FROM login WHERE user='$user' and password='$pass'";
+// Check to make sure the username actually exists
+$sql = "SELECT Password FROM Investigator WHERE Username='" .$user ."'";
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 $count = mysqli_num_rows($result);
 
-
 if ($count == 1) {
-	//Valid
-	echo"valid";
-}
+    // Check to make sure the password and username match
+    $row = mysqli_fetch_row($result);
+    if($row[0] == $pass) {
+        echo "success!";
+    }
+    else { // Password does not match
+        echo "Incorrect password";
+    }
 
+}
 else 
 {
 	// Invalid
-	echo"invalid";
+	echo"No username under ". $username. " found";
 }
 
 $conn->close();
-
-
 ?>
