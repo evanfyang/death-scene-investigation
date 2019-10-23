@@ -1,0 +1,8 @@
+each "edit" file, such as "edit_case_history" needs to: 
+    1) retrieve all of the previous versions associated with the case number
+    2) count the previous versions
+    3) IF version > 5
+        delete version 1, everything moves upward
+       ELSE
+        insert a new entity with a version++ from latest
+
