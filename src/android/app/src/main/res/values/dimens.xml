@@ -1,0 +1,16 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Font sizes based on standard android guidelines (found at https://learnui.design/blog/android-material-design-font-size-guidelines.html)-->
+    <dimen name="page_title">20sp</dimen>
+    <dimen name="paragraph_text">16sp</dimen>
+    <dimen name="list_titles">14sp</dimen>
+    <dimen name="captions">14sp</dimen>
+    <dimen name="buttons">14sp</dimen>
+    <dimen name="text_inputs">16sp</dimen>
+
+
+</resources>
