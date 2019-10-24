@@ -433,7 +433,6 @@ class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
         
         Alcohol_Field?.filterStrings(tox_list)
-        Alcohol_Field?.theme = SearchTextFieldTheme.darkTheme()
         Amph_Field?.filterStrings(tox_list)
         Barbituat_field?.filterStrings(tox_list)
         Benzo_field?.filterStrings(tox_list)
