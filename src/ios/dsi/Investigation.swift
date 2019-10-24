@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SearchTextField
 
 class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
@@ -95,40 +96,39 @@ class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var Alcohol_Use_Sus: UISwitch!
     @IBOutlet weak var Drug_Use_Sus: UISwitch!
     @IBOutlet weak var Alcohol: UISwitch!
-    @IBOutlet weak var Alcohol_Field: UITextField!
+    @IBOutlet weak var Alcohol_Field: SearchTextField?
     @IBOutlet weak var Amphe: UISwitch!
-    @IBOutlet weak var Amph_Field: UITextField!
+    @IBOutlet weak var Amph_Field: SearchTextField!
     @IBOutlet weak var Barbitua: UISwitch!
-    @IBOutlet weak var Barbituat_field: UITextField!
+    @IBOutlet weak var Barbituat_field: SearchTextField?
     @IBOutlet weak var Benzo: UISwitch!
-    @IBOutlet weak var Benzo_field: UITextField!
+    @IBOutlet weak var Benzo_field: SearchTextField?
     @IBOutlet weak var Cannabinoids: UISwitch!
-    @IBOutlet weak var Cannab_Field: UITextField!
+    @IBOutlet weak var Cannab_Field: SearchTextField?
     @IBOutlet weak var Cocaine: UISwitch!
-    @IBOutlet weak var Cocaine_Field: UITextField!
+    @IBOutlet weak var Cocaine_Field: SearchTextField?
     @IBOutlet weak var Fentanyl: UISwitch!
-    @IBOutlet weak var Fent_Field: UITextField!
+    @IBOutlet weak var Fent_Field: SearchTextField?
     @IBOutlet weak var Methadone: UISwitch!
-    @IBOutlet weak var Methadone_Field: UITextField!
+    @IBOutlet weak var Methadone_Field: SearchTextField?
     @IBOutlet weak var Opiates: UISwitch!
-    @IBOutlet weak var Opiates_Field: UITextField!
+    @IBOutlet weak var Opiates_Field: SearchTextField?
     @IBOutlet weak var Oxycodone: UISwitch!
-    @IBOutlet weak var Oxycodone_Field: UITextField!
+    @IBOutlet weak var Oxycodone_Field: SearchTextField?
     @IBOutlet weak var Propo: UISwitch!
-    @IBOutlet weak var Propo_field: UITextField!
+    @IBOutlet weak var Propo_field: SearchTextField?
     @IBOutlet weak var Analgesics: UISwitch!
-    @IBOutlet weak var Analgesics_field: UITextField!
+    @IBOutlet weak var Analgesics_field: SearchTextField?
     @IBOutlet weak var Bupren: UISwitch!
-    @IBOutlet weak var Bupren_Field: UITextField!
+    @IBOutlet weak var Bupren_Field: SearchTextField?
     @IBOutlet weak var Anticonv: UISwitch!
-    @IBOutlet weak var Anti_conv_Field
-    : UITextField!
+    @IBOutlet weak var Anti_conv_Field: SearchTextField?
     @IBOutlet weak var Antidep: UISwitch!
-    @IBOutlet weak var Antdep_field: UITextField!
+    @IBOutlet weak var Antdep_field: SearchTextField?
     @IBOutlet weak var Antipsycho: UISwitch!
-    @IBOutlet weak var Antipsycho_fields: UITextField!
+    @IBOutlet weak var Antipsycho_fields: SearchTextField?
     @IBOutlet weak var Other: UISwitch!
-    @IBOutlet weak var Other_Field: UITextField!
+    @IBOutlet weak var Other_Field: SearchTextField?
     @IBOutlet weak var Body_Transported: UISwitch!
     @IBOutlet weak var Cremation: UISwitch!
     @IBOutlet weak var Cremation_Permit: UISwitch!
@@ -427,6 +427,33 @@ class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         return false
     }
     
+    func toxTerms() {
+        
+        var tox_list = ["10-monohydroxyoxcarbazepine", "25B-NBOMe", "25C-NBOMe", "25D-NBOMe", "25H-NBOMe", "25I-NBOMe", "2-hydroxyethylflurazepam", "3-methylfentanyl", "4-methoxybutyrylfentanyl", "5F-AMB", "5F-PB-22", "6-MNA", "6-monoacetylmorphine", "7-aminoclonazepam", "7-aminoflunitrazepam", "9-hydroxyrisperidone", "AB-CHMINACA", "AB-PINACA", "Acebutolol", "Acetaminophen", "Acetazolamide", "Acetone", "Acetylfentanyl", "acrylfentanyl", "Alfentanil", "Allobarbital", "Alpha-PBP", "Alpha-PPP", "Alpha-PVP", "Alprazolam", "Alprenolol", "Amiodarone", "Amitriptyline", "Amlodipine", "Amobarbital", "Amoxapine", "Amphetamine", "A-OH-Alprazolam", "Aripiprazole", "Atenolol", "Atomoxetine", "Azithromycin", "Baclofen", "Barbital", "BDB", "Benzocaine", "Benzoylecgonine", "Benzphetamine", "Benztropine", "beta-hydroxythiofentanyl", "Betamethasone", "Betaxolol", "Bisoprolol", "Brodifacoum", "Bromazepam", "Brompheniramine", "Buphedrone", "Bupivacaine", "Buprenorphine", "Bupropion", "Buspirone", "Butabarbital", "Butalbital", "Butaxamine", "Butorphanol", "Butylone", "Butyrylfentanyl/Isobutyrylfentanyl", "BZP (Benzylpiperazine)", "Caffeine", "Carbamazepine", "Carbamazepine-10", "carfentanil", "Carisoprodol", "Carprofen", "Ceftriaxone", "Chloramphenicol", "Chlordiazepoxide", "Chlorothiazide", "Chlorpheniramine", "Chlorpromazine", "Chlorpropamide", "Cimetidine", "Ciprofloxacin", "Citalopram", "Clindamycin", "Clomipramine", "Clonazepam", "Clonidine", "Clorazepate", "Clozapine", "Cocaethylene", "Cocaine", "Codeine", "Cotinine", "Coumarin", "Cyclizine", "Cyclobenzaprine", "Dehydroaripiprazole", "Demoxepam", "Desalkylflurazepam", "Desethylamiodarone", "Desipramine", "Norclomipramine/n-desmethylclomipramine", "Desmethylflunitrazepam", "Desmethylpapaverine", "Dexamethasone", "Dextromethorphan", "Diacetylmorphine", "Diazepam", "Diclofenac", "Dicyclomine", "Diflunisal", "Digoxin", "Dihydrocodeine", "Diltiazem", "Dimenhydrinate", "Diphenhydramine", "Disopyramide", "Donepezil", "Dosulepin", "Doxepin", "Doxylamine", "Duloxetine", "EDDP", "EMDP", "Emetine", "Ephedrine", "Erythromycin", "Esmolol", "Estazolam", "Eszopiclone", "Ethanol", "Ethosuximide", "Ethylmethcathinone", "Ethylmethocathinone", "Ethylone", "Etizolan", "Etodolac", "Etomidate", "Felbamate", "Fenoprofen", "Fentanyl", "Flecainide", "Flephedrone", "Flumazenil", "Flunitrazepam", "Fluoxetine", "Fluphenazine", "Flurazepam", "Fluvoxamine", "furanylfentanyl", "Furosemide", "Gabapentin", "Glutethimide", "Guaifenesin", "Haloperidol", "Hexobarbital", "Hydrochlorothiazide", "Hydrocodone", "Hydromorphone", "Hydroxychloroquine", "Hydroxytriazolam", "Hydroxyzine", "Ibuprofen", "Imipramine", "Indomethacin", "Isopropanol", "JWH-015", "JWH-018", "JWH-019", "JWH-073", "JWH-122", "Ketamine", "Ketoprofen", "Ketorolac", "Labetalol", "Lamotrigine", "Levetiracetam", "Levofloxacin", "Lidocaine", "Loratadine", "Lorazepam", "Lormetazepam", "LSD", "MAM-2201", "Chlorophenylpiperazine / mCPP (1", "MDA", "MDMA", "MDPV", "Meclofenamic Acid", "Medazepam", "Meperidine", "Mephedrone", "Mephobarbital", "Mepivacaine", "Meprobamate", "Mescaline", "Mesoridazine", "Metaproterenol", "Metaxalone", "Methadone", "Methamphetamine", "Methanol", "Methaqualone", "Methcathinone", "Methedrone", "Methocarbamol", "Methohexital", "Methoxetamine", "Methsuximide", "Methylethcathinone", "Methylone", "Methylphenidate", "Metoclopramide", "Metoprolol", "Mexiletine", "Mianserin", "Midazolam", "Mirtazapine", "Morphine", "Nadolol", "Nalbuphine", "Nalorphine", "Naloxone", "Naltrexone", "Naproxen", "Nefazodone", "Nicotine", "Nifedipine", "Nitrazepam", "Norbuprenorphine", "Norclozapine", "Nordiazepam", "Nordoxepin", "Norfentanyl", "Norfluoxetine", "Norketamine", "Normeperidine", "Norpropoxyphene", "Norsertraline", "Nortramadol/n-desmethyltramadol", "Nortriptyline", "Norvenlafaxine/n-desmethylvenlafaxine", "Noscapine", "Olanzapine", "Orphenadrine", "Oxaprozin", "Oxazepam", "Oxprenolol", "Oxycodone", "Oxymetazoline", "Oxymorphone", "Papaverine", "para-fluorobutyrylfentanyl/para-fluoroisobutyrylfentanyl", "Paroxetine", "PB-22", "Pentazocine", "Pentedrone", "Pentobarbital", "Pentoxifylline", "Pentylone", "Perphenazine", "Phenacetin", "Phenazepam", "Phencyclidine", "Phendimetrazine", "Phenelzine", "Phenobarbital", "Phensuximide", "Phentermine", "Phenylbutazone", "Phenylpropanolamine", "Phenytoin", "Pholcodine", "Pimozide", "Pindolol", "Piperacillin", "Piroxicam", "PMA", "Pramipexole", "Pramoxine", "Prazepam", "Pregabalin", "Primidone", "Probenecid", "Procainamide", "Procaine", "Prochlorperazine", "Promethazine", "Propofol", "Propoxyphene", "Propranolol", "Protriptyline", "Pseudoephedrine", "Psilocin", "Pyrilamine", "Quetiapine", "Quinidine", "Ramelteon", "Ranitidine", "Reserpine", "Risperidone", "Rocuronium", "Ropinirole", "Ropivacaine", "Salicylates", "Salvinorin A", "Secobarbital", "Sertraline", "Sildenafil", "Sotalol", "Strychnine", "Sufentanil", "Sulfanilamide", "Sulindac", "Sumatriptan", "Tadalafil", "Temazepam", "Tetrahydrozoline", "Tetrazepam", "TFMPP (1", "THC", "THC-COOH", "Thebaine", "Thiopental", "Thioridazine", "Tilmicosin", "Timolol", "Tizanadine", "Tolbutamide", "Tolmetin", "Topiramate", "Tramadol", "Trazodone", "Triamterene", "Triazolam", "Trifluoperazine", "Trihexyphenidyl", "Trimipramine", "Triprolidine", "U47700", "UR-144", "Valproic Acid", "Vardenafil", "Venlafaxine", "Verapamil", "Warfarin", "XLR-11", "xylazine", "Zaleplon", "Ziprasidone", "Zolpidem", "Zonisamide", "Zopiclone", "Other", "Propanolol", "methoxyacetylfentanyl", "5F-AB-PINACA", "5F-ADB", "5F-ADB-PINACA", "5F-NNEI", "5F-NNEI", "5F-THJ", "AB-FUBINACA", "ADB-FUBINACA", "ADBICA", "ADB-PINACA", "AMB", "APP-FUBINACA", "APP-FUBINACA", "EAM-2201", "FAB-144", "FDU-PB-22", "JWH-210", "JWH-250", "M-144", "MAB-CHMINACA", "MA-CHMINACA", "MDMB-CHMICA", "MDMB-FUBINACA", "MN18", "MO-CHMINACA", "NNEI", "PX1", "PX2", "PX3", "SDB-006", "THJ", "THJ-018", "THJ-2201", "XLR12", "Desvenalafaxine/o-desmethylvenlafaxine", "Cyclopropylfentanyl", "Ocfentanil", "Tetrahydrofuranfentanyl", "N-Ethylpentylone", "Flubromazolam", "Etizolam", "Dimethylone", "Dubutylone", "Clonazolam", "cis-3-Methylfentanyl", "4-ANPP", "Desmetramadol/o-desmethyltramadol", "1-Difluoroethane", "Loperamide", "Mitragynine", "Cetirizine", "Drug Class Only", "NEGATIVE"]
+        
+        
+        Alcohol_Field?.filterStrings(tox_list)
+        Alcohol_Field?.theme = SearchTextFieldTheme.darkTheme()
+        Amph_Field?.filterStrings(tox_list)
+        Barbituat_field?.filterStrings(tox_list)
+        Benzo_field?.filterStrings(tox_list)
+        Cannab_Field?.filterStrings(tox_list)
+        Cocaine_Field?.filterStrings(tox_list)
+        Fent_Field?.filterStrings(tox_list)
+        Methadone_Field?.filterStrings(tox_list)
+        Opiates_Field?.filterStrings(tox_list)
+        Oxycodone_Field?.filterStrings(tox_list)
+        Propo_field?.filterStrings(tox_list)
+        Analgesics_field?.filterStrings(tox_list)
+        Bupren_Field?.filterStrings(tox_list)
+        Anti_conv_Field?.filterStrings(tox_list)
+        Antdep_field?.filterStrings(tox_list)
+        Antipsycho_fields?.filterStrings(tox_list)
+        Other_Field?.filterStrings(tox_list)
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ScrollView?.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
@@ -436,6 +463,10 @@ class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         ScrollView5?.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
         ScrollView6?.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
         ScrollView7?.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
+        
+        toxTerms()
+
+        
         self.Evidence_Collected?.delegate = self
         self.Collected_By?.delegate = self
         self.Date?.delegate = self
@@ -480,7 +511,7 @@ class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         self.Cost_of_Transport?.delegate = self
         self.Funeral_Home?.delegate = self
         self.Phone_Number_1?.delegate = self
-        
+
         
         // Do any additional setup after loading the view.
         Fire_Type.tag = 0
@@ -495,6 +526,7 @@ class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         NF_Type.delegate = self
         NF_Type.dataSource = self
         nf_val = ["Sharp Instrument", "Blunt Instrument", "Poisoning", "Hanging/Strangulation/Suffocation", "Personal Weapons (e.g Fist)", "Fall (Pushed/Jump)", "Explosive", "Drowning", "Fire or Burns", "Shaking", "Motor Vehicle", "Biological Weapons", "Other (Specify in Narrative Comments)"]
+        
        
         if allVar.isPending || allVar.isPublished{
             Evidence_Collected?.text = allVar.Evidence_Collected?.text
@@ -556,6 +588,7 @@ class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             if let bool = allVar.Lower_Ex?.isOn{Lower_Ex?.setOn(bool,animated: bool)}
             if let bool = allVar.Unknown?.isOn{Unknown?.setOn(bool,animated: bool)}
             if let bool = allVar.Additional_Wounds?.isOn{Additional_Wounds?.setOn(bool,animated: bool)}
+            
             Name_Ph?.text = allVar.Name_Ph?.text
             Number_PH?.text = allVar.Number_PH?.text
             Medical_History?.text = allVar.Medical_History?.text
@@ -599,11 +632,14 @@ class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             Number_Of_Shells?.text = allVar.Number_Of_Shells?.text
             
         }
-            
+        
     }
     
+ 
+        
+    }
     
-    
-}
+
+
 
 
