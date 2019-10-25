@@ -9,8 +9,14 @@
 import UIKit
 
 class RegisterNewUserViewController: UIViewController {
-    
+
     @IBOutlet weak var ScrollView: UIScrollView!
+    @IBOutlet weak var FirstNameField: UITextField!
+    @IBOutlet weak var LastNameField: UITextField!
+    @IBOutlet weak var UserIDField: UITextField!
+    @IBOutlet weak var EmailField: UITextField!
+    @IBOutlet weak var PasswordField: UITextField!
+    @IBOutlet weak var ConfirmPasswordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +24,38 @@ class RegisterNewUserViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func clickedRegisterButton(_ sender: Any) {
+        guard
+        let FirstName = FirstNameField.text, !FirstName.isEmpty,
+        let LastName = LastNameField.text, !LastName.isEmpty,
+        let userID = UserIDField.text, !userID.isEmpty,
+        let Email = EmailField.text, !Email.isEmpty,
+        let Password = PasswordField.text, !Password.isEmpty,
+        let ConfirmPassword = ConfirmPasswordField.text, !ConfirmPassword.isEmpty
+        else
+        {
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "One of the required fields is empty.")
+            return
+        }
+        if Password != ConfirmPassword
+        {
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "Your passwords do not match.")
+            return
+        }
+        else
+        {
+            // Send data to backend for verification
+            displayMessage(msgTitle: "Thank You!", actionTitle: "Dismiss", message: "Your registration has been sent to KYVDRS. Allow up to three business days for confirmation.")
+            FirstNameField.text = "";
+            LastNameField.text = "";
+            UserIDField.text = "";
+            EmailField.text = "";
+            PasswordField.text = "";
+            ConfirmPasswordField.text = "";
+            return
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -32,12 +32,12 @@ extension UIViewController
         }
     }
     
-    func displayMessage(message: String)->Void
+    func displayMessage(msgTitle: String, actionTitle: String, message: String)->Void
     {
         DispatchQueue.main.async
             {
-                let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-                let OKButton = UIAlertAction(title: "OK", style: .default)
+                let alertController = UIAlertController(title: msgTitle, message: message, preferredStyle: .alert)
+                let OKButton = UIAlertAction(title: actionTitle, style: .default)
                 {
                     (action: UIAlertAction!) in
                     DispatchQueue.main.async
@@ -57,6 +57,16 @@ extension UIViewController
                 let homePage = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
                 let appDelegate = UIApplication.shared.delegate
                 appDelegate?.window??.rootViewController = homePage
+        }
+    }
+    
+    func navigateToLoginPage()->Void {
+        DispatchQueue.main.async
+        {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let loginPage = storyBoard.instantiateViewController(withIdentifier: "SignInViewController")
+            let appDelegate = UIApplication.shared.delegate
+            appDelegate?.window??.rootViewController = loginPage
         }
     }
     

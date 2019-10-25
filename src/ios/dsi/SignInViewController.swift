@@ -43,18 +43,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate
         // Early exit if a textfield empty
         guard let userID = UserNameTextField.text, !userID.isEmpty,
             let password = UserPassWordTextField.text, !password.isEmpty
-            else{
-                print("username or password is empty")
-                displayMessage(message: "One of the required fields is empty")
+            else {
+                displayMessage(msgTitle: "Error", actionTitle: "OK", message: "One of the required fields is empty.")
                 return
-        }
-        if userID == "Team1"{
-            if password == "1234"{
-                goToHomePage()
-        }
-            else{
-                displayMessage(message: "Username or password incorrect")
             }
+        if userID == "Team6"
+        {
+            if password == "1234"
+            {
+                goToHomePage()
+            }
+            else
+            {
+                displayMessage(msgTitle: "Error", actionTitle: "OK", message: "Username or password incorrect")
+            }
+        }
     }
-}
 }

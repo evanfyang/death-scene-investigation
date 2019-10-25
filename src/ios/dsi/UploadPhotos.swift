@@ -27,7 +27,7 @@ class Upload_Photos: UIViewController, UINavigationControllerDelegate, UIImagePi
     
     @IBAction func TakePhoto1(_ sender: UIButton) {
         if index > 4{
-            displayMessage(message: "Maximum number of photos allowed is 5")
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "Maximum number of photos allowed is 5.")
             return
         }
         let imagePicker =  UIImagePickerController()
