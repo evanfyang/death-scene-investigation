@@ -16,6 +16,10 @@ class PendingFormViewController: UIViewController {
     
     @IBOutlet weak var ScrollView: UIScrollView!
     
+    @IBAction func clickedLogout(_ sender: Any) {
+        navigateToLoginPage();
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ScrollView?.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
