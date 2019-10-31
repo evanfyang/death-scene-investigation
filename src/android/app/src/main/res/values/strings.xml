@@ -12,4 +12,14 @@
     <string name="login_failed">"Login failed"</string>
     <string name="reigster_clickable_text"> New user? Register here!</string>
     <string name="login_text"> KYVDRS FORM</string>
+    <string name="case_number"> Case Number</string>
+
+    <string name="death_scene_investigation">Death Scene Investigation</string>
+    <string name="investigation">Investigation</string>
+    <string name="narrative_comments">Narrative Comments</string>
+    <string name="decedent_info">Decedent Info</string>
+    <string name="case_history">Case History</string>
+    <string name="incident_info">Incident Info</string>
+    <string name="next_of_kin">Next of Kin</string>
+    <string name="pills_on_scene">Pills on Scene</string>
 </resources>
