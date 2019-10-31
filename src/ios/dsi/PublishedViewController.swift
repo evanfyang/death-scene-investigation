@@ -22,6 +22,9 @@ class PublishedViewController: UIViewController {
     @IBAction func publishedButton(_ sender: UIButton) {
     }
     
+    @IBAction func clickedLogout(_ sender: Any) {
+        navigateToLoginPage();
+    }
     /*
     // MARK: - Navigation
 

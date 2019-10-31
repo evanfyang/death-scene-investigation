@@ -21,6 +21,9 @@ class NewFormViewController: UIViewController {
    
     @IBAction func Button(_ sender: UIButton) {
     }
+    @IBAction func clickedLogout(_ sender: Any) {
+        navigateToLoginPage();
+    }
     
     /*
     // MARK: - Navigation

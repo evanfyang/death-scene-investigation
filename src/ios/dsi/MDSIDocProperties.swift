@@ -147,39 +147,39 @@ struct MDSIDocProperties {
     var Alcohol_Use_Sus: UISwitch?
     var Drug_Use_Sus: UISwitch?
     var Alcohol: UISwitch?
-    var Alcohol_Field: UITextField?
+    var Alcohol_Field: SearchTextField?
     var Amphe: UISwitch?
-    var Amph_Field: UITextField?
+    var Amph_Field: SearchTextField?
     var Barbitua: UISwitch?
-    var Barbituat_field: UITextField?
+    var Barbituat_field: SearchTextField?
     var Benzo: UISwitch?
-    var Benzo_field: UITextField?
+    var Benzo_field: SearchTextField?
     var Cannabinoids: UISwitch?
-    var Cannab_Field: UITextField?
+    var Cannab_Field: SearchTextField?
     var Cocaine: UISwitch?
-    var Cocaine_Field: UITextField?
+    var Cocaine_Field: SearchTextField?
     var Fentanyl: UISwitch?
-    var Fent_Field: UITextField?
+    var Fent_Field: SearchTextField?
     var Methadone: UISwitch?
-    var Methadone_Field: UITextField?
+    var Methadone_Field: SearchTextField?
     var Opiates: UISwitch?
-    var Opiates_Field: UITextField?
+    var Opiates_Field: SearchTextField?
     var Oxycodone: UISwitch?
-    var Oxycodone_Field: UITextField?
+    var Oxycodone_Field: SearchTextField?
     var Propo: UISwitch?
-    var Propo_field: UITextField?
+    var Propo_field: SearchTextField?
     var Analgesics: UISwitch?
-    var Analgesics_field: UITextField?
+    var Analgesics_field: SearchTextField?
     var Bupren: UISwitch?
-    var Bupren_Field: UITextField?
+    var Bupren_Field: SearchTextField?
     var Anticonv: UISwitch?
-    var Anti_conv_Field: UITextField?
+    var Anti_conv_Field: SearchTextField?
     var Antidep: UISwitch?
-    var Antdep_field: UITextField?
+    var Antdep_field: SearchTextField?
     var Antipsycho: UISwitch?
-    var Antipsycho_fields: UITextField?
+    var Antipsycho_fields: SearchTextField?
     var Other: UISwitch?
-    var Other_Field: UITextField?
+    var Other_Field: SearchTextField?
     var Body_Transported: UISwitch?
     var Cremation: UISwitch?
     var Cremation_Permit: UISwitch?
