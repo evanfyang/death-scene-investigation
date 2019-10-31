@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ed6-4n-0Fl">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ed6-4n-0Fl">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +11,7 @@
         <!--New Form View Controller-->
         <scene sceneID="rhr-a0-KvH">
             <objects>
-                <viewController storyboardIdentifier="NewFormViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BRt-tu-bdV" customClass="NewFormViewController" customModule="MDSI_form" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewFormViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BRt-tu-bdV" customClass="NewFormViewController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Azo-K8-wdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,10 +59,10 @@
         <scene sceneID="6io-tu-Qcb">
             <objects>
                 <navigationController storyboardIdentifier="NewFormNav" title="NewFormNav" id="Ed6-4n-0Fl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Form" id="OGR-zM-ipH"/>
+                    <tabBarItem key="tabBarItem" title="New Form" image="square.and.pencil" catalog="system" id="OGR-zM-ipH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xeR-9L-rPo">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -76,4 +74,7 @@
             <point key="canvasLocation" x="409" y="880"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
+    </resources>
 </document>

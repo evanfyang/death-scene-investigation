@@ -114,6 +114,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="QXP-yL-7lF">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="elt-O2-unC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rdm-la-UIy" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5HT-j4-zx6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -126,7 +127,6 @@
                         <segue destination="Ncn-2G-eFi" kind="relationship" relationship="viewControllers" id="nrn-du-RxP"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="elt-O2-unC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3623" y="790"/>
         </scene>
@@ -134,7 +134,7 @@
         <scene sceneID="A9X-AY-7Nd">
             <objects>
                 <viewControllerPlaceholder storyboardName="NewForms" id="t4P-eE-wQ9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="l4D-8C-eCv"/>
+                    <tabBarItem key="tabBarItem" title="New Form" image="square.and.pencil" catalog="system" id="l4D-8C-eCv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozs-W0-bw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +144,7 @@
         <scene sceneID="TV0-i1-h27">
             <objects>
                 <viewControllerPlaceholder storyboardName="PendingForms" id="AMk-sq-il2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="CSa-0M-8K0"/>
+                    <tabBarItem key="tabBarItem" title="Pending Forms" image="doc.on.doc" catalog="system" selectedImage="doc.on.doc" id="CSa-0M-8K0"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ob-gN-XNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,7 +154,7 @@
         <scene sceneID="UfO-jy-WHg">
             <objects>
                 <viewControllerPlaceholder storyboardName="PublishedForms" id="Ncn-2G-eFi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qlm-3I-fTJ"/>
+                    <tabBarItem key="tabBarItem" title="Published Forms" image="doc.richtext" catalog="system" selectedImage="doc.richtext" id="qlm-3I-fTJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VT-Zz-mgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -382,5 +382,8 @@
     </scenes>
     <resources>
         <image name="DSI_Logo" width="1024" height="1024"/>
+        <image name="doc.on.doc" catalog="system" width="58" height="64"/>
+        <image name="doc.richtext" catalog="system" width="56" height="64"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
 </document>
