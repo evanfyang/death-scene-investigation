@@ -1,13 +1,13 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "deathrecapp";
-
-//$servername = "statsqltest.as.uky.edu";
-//$username = "deathrecadmin";
-//$password = "^YGUG6tqpzpqE6G";
+//$servername = "localhost";
+//$username = "root";
+//$password = "";
 //$dbname = "deathrecapp";
+
+$servername = "statsqltest.as.uky.edu";
+$username = "deathrecadmin";
+$password = "^YGUG6tqpzpqE6G";
+$dbname = "deathrecapp";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

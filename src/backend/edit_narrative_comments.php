@@ -12,16 +12,16 @@ $Version=$_POST['Version'];
 $Narrative_Comments=$_POST['Narrative_Comments'];
 
 // for local testing
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "deathrecapp";
+//$servername = "localhost";
+//$username = "root";
+//$password = "";
+//$dbname = "deathrecapp";
 
 // for database on server
-//$servername = "statsqltest.as.uky.edu";
-//$username = "deathrecadmin";
-//$password = "^YGUG6tqpzpqE6G";
-//$dbname = "deathrecapp";
+$servername = "statsqltest.as.uky.edu";
+$username = "deathrecadmin";
+$password = "^YGUG6tqpzpqE6G";
+$dbname = "deathrecapp";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

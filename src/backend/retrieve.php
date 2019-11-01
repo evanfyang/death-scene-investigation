@@ -5,15 +5,15 @@ ini_set('display_errors', 1);
  * Retrieves the form elements for the specified part of the form
  */
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "deathrecapp";
-
-//$servername = "statsqltest.as.uky.edu";
-//$username = "deathrecadmin";
-//$password = "^YGUG6tqpzpqE6G";
+//$servername = "localhost";
+//$username = "root";
+//$password = "";
 //$dbname = "deathrecapp";
+
+$servername = "statsqltest.as.uky.edu";
+$username = "deathrecadmin";
+$password = "^YGUG6tqpzpqE6G";
+$dbname = "deathrecapp";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
