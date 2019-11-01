@@ -63,10 +63,19 @@ extension UIViewController
     func navigateToLoginPage()->Void {
         DispatchQueue.main.async
         {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let loginPage = storyBoard.instantiateViewController(withIdentifier: "SignInViewController")
-            let appDelegate = UIApplication.shared.delegate
-            appDelegate?.window??.rootViewController = loginPage
+            let alert = UIAlertController(title: "Are you sure you want to logout?", message: nil, preferredStyle: .actionSheet)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+            let logout = UIAlertAction(title: "Logout", style: .default, handler: { action in
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let loginPage = storyBoard.instantiateViewController(withIdentifier: "SignInViewController")
+                let appDelegate = UIApplication.shared.delegate
+                appDelegate?.window??.rootViewController = loginPage
+            })
+            logout.setValue(UIColor.red, forKey: "titleTextColor")
+            alert.addAction(logout)
+            self.present(alert, animated: true)
         }
     }
     

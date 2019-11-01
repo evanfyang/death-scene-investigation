@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="1454" y="903"/>
         </scene>
-        <!--Published View Controller-->
+        <!--Published Forms-->
         <scene sceneID="gXk-WC-RSX">
             <objects>
                 <viewController id="zyR-gv-ajb" customClass="PublishedViewController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,8 +58,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iZO-Gq-4o5"/>
                     </view>
-                    <navigationItem key="navigationItem" id="acj-xd-6ZX">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="tG3-e0-VG7">
+                    <navigationItem key="navigationItem" title="Published Forms" id="acj-xd-6ZX">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tG3-e0-VG7">
                             <connections>
                                 <action selector="clickedLogout:" destination="zyR-gv-ajb" id="ey5-PX-GQ1"/>
                             </connections>

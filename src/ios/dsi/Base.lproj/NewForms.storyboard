@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Form View Controller-->
+        <!--New and Saved Forms-->
         <scene sceneID="rhr-a0-KvH">
             <objects>
                 <viewController storyboardIdentifier="NewFormViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BRt-tu-bdV" customClass="NewFormViewController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,28 +19,21 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d8R-wN-Qe4">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfn-GF-8aB">
-                                        <rect key="frame" x="67" y="29" width="281" height="39"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Click Here To Start A New Form"/>
-                                        <connections>
-                                            <action selector="Button:" destination="BRt-tu-bdV" eventType="touchUpInside" id="BSO-Oz-zOP"/>
-                                            <action selector="Button:" destination="cm0-ox-CCu" eventType="touchUpInside" id="naJ-pR-BU0"/>
-                                            <action selector="newFormButton:" destination="cm0-ox-CCu" eventType="touchUpInside" id="GG3-H4-7t8"/>
-                                            <segue destination="S5F-Iz-x84" kind="show" id="95v-Ac-tF6"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4xd-Ks-kas"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JEd-zj-c7y">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Kub-i7-wCh">
+                    <navigationItem key="navigationItem" title="New and Saved Forms" id="JEd-zj-c7y">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Kub-i7-wCh">
                             <connections>
                                 <action selector="clickedLogout:" destination="BRt-tu-bdV" id="Y7N-VF-TQH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" width="50" id="P9v-K2-ZUA">
+                            <connections>
+                                <action selector="addButtonClicked:" destination="BRt-tu-bdV" id="z4Q-ps-5G8"/>
+                                <segue destination="S5F-Iz-x84" kind="show" id="RdP-Jh-GNh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -49,17 +42,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i97-1f-TjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="cm0-ox-CCu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1159.4202898550725" y="877.23214285714278"/>
         </scene>
         <!--Forms-->
         <scene sceneID="F7K-I4-adU">
             <objects>
-                <viewControllerPlaceholder storyboardName="Forms" id="S5F-Iz-x84" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Forms" id="S5F-Iz-x84" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xy4-RS-kB1"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Fc-JM-kAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886" y="879"/>
+            <point key="canvasLocation" x="1875" y="877"/>
         </scene>
         <!--NewFormNav-->
         <scene sceneID="6io-tu-Qcb">
@@ -81,6 +75,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="64" height="58"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
 </document>

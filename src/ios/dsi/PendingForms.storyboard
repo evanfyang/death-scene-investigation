@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pending Form View Controller-->
+        <!--Pending Forms-->
         <scene sceneID="0x8-VW-u8V">
             <objects>
                 <viewController id="pxc-Tq-b8U" customClass="PendingFormViewController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,8 +35,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="K5j-ym-R7L"/>
                     </view>
-                    <navigationItem key="navigationItem" id="S3L-Gm-7sJ">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="eQt-lg-0b8">
+                    <navigationItem key="navigationItem" title="Pending Forms" id="S3L-Gm-7sJ">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="eQt-lg-0b8">
                             <connections>
                                 <action selector="clickedLogout:" destination="pxc-Tq-b8U" id="zNp-YO-LUi"/>
                             </connections>

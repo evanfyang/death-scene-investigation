@@ -47,16 +47,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate
                 displayMessage(msgTitle: "Error", actionTitle: "OK", message: "One of the required fields is empty.")
                 return
             }
-        if userID == "Team6"
+        if userID == "Team6" && password == "1234"
         {
-            if password == "1234"
-            {
-                goToHomePage()
-            }
-            else
-            {
-                displayMessage(msgTitle: "Error", actionTitle: "OK", message: "Username or password incorrect")
-            }
+            goToHomePage()
+        }
+        else
+        {
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "Username or password incorrect")
         }
     }
 }
