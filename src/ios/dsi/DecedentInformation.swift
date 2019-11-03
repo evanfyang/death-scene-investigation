@@ -279,7 +279,7 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         self.Current_Occupation?.delegate = self
         
         // Do any additional setup after loading the view.
-        print(allVar.CaseNum)
+        print(allVar.CaseNum as Any)
         //let Race_Pick = UIPickerView()
         Race_Pick.tag = 0
         Race?.inputView = Race_Pick

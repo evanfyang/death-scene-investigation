@@ -128,7 +128,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elt-O2-unC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3623" y="790"/>
+            <point key="canvasLocation" x="-2719" y="770"/>
         </scene>
         <!--NewForms-->
         <scene sceneID="A9X-AY-7Nd">
@@ -138,7 +138,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozs-W0-bw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3973" y="1218"/>
+            <point key="canvasLocation" x="-2037" y="478"/>
         </scene>
         <!--PendingForms-->
         <scene sceneID="TV0-i1-h27">
@@ -148,7 +148,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ob-gN-XNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3622" y="1303"/>
+            <point key="canvasLocation" x="-2021" y="769"/>
         </scene>
         <!--PublishedForms-->
         <scene sceneID="UfO-jy-WHg">
@@ -158,7 +158,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VT-Zz-mgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3249" y="1218"/>
+            <point key="canvasLocation" x="-2013" y="1061"/>
         </scene>
         <!--Register New User-->
         <scene sceneID="hpy-kP-ZUy">
@@ -359,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMf-u6-keW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1781" y="94"/>
+            <point key="canvasLocation" x="-1806" y="94"/>
         </scene>
         <!--Login Registration Navigation Controller-->
         <scene sceneID="7HZ-WP-yWn">

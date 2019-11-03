@@ -34,7 +34,7 @@
 		CDC32C13224D99A400465068 /* PillsOnScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC32C12224D99A400465068 /* PillsOnScene.swift */; };
 		CDD35A1D22527D7300104B54 /* IncidentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD35A1C22527D7300104B54 /* IncidentInformation.swift */; };
 		CDDC9BDC225D300B00A18DBE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC9BDB225D300B00A18DBE /* SignInViewController.swift */; };
-		CDDC9BDE225D320300A18DBE /* UsefulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC9BDD225D320300A18DBE /* UsefulFunctions.swift */; };
+		CDDC9BDE225D320300A18DBE /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC9BDD225D320300A18DBE /* UIViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +69,7 @@
 		CDC32C12224D99A400465068 /* PillsOnScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsOnScene.swift; sourceTree = "<group>"; };
 		CDD35A1C22527D7300104B54 /* IncidentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentInformation.swift; sourceTree = "<group>"; };
 		CDDC9BDB225D300B00A18DBE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		CDDC9BDD225D320300A18DBE /* UsefulFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsefulFunctions.swift; sourceTree = "<group>"; };
+		CDDC9BDD225D320300A18DBE /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +138,7 @@
 				CD89B6C92266771100502DFD /* UploadPhotos.swift */,
 				CDC32C12224D99A400465068 /* PillsOnScene.swift */,
 				CDC32BFC224D7B7300465068 /* deathsceneInvestigation.swift */,
-				CDDC9BDD225D320300A18DBE /* UsefulFunctions.swift */,
+				CDDC9BDD225D320300A18DBE /* UIViewControllerExtensions.swift */,
 				2E5596A5236E4CC5004F6DBD /* LoginRegistrationNavigationController.swift */,
 				2E5596A7236E5690004F6DBD /* HomePageTabBarController.swift */,
 				2E51567F2346832C0067F6C7 /* RoundButton.swift */,
@@ -281,7 +281,7 @@
 				CDC32BFD224D7B7300465068 /* deathsceneInvestigation.swift in Sources */,
 				CDC32C13224D99A400465068 /* PillsOnScene.swift in Sources */,
 				CD3E3760226CE3EC00361010 /* PendingFormViewController.swift in Sources */,
-				CDDC9BDE225D320300A18DBE /* UsefulFunctions.swift in Sources */,
+				CDDC9BDE225D320300A18DBE /* UIViewControllerExtensions.swift in Sources */,
 				CDD35A1D22527D7300104B54 /* IncidentInformation.swift in Sources */,
 				CDC32C0D224D875200465068 /* NextofKin.swift in Sources */,
 				CD3E375C226CD63E00361010 /* NewFormViewController.swift in Sources */,

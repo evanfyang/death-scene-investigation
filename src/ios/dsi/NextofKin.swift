@@ -86,7 +86,7 @@ class Next_of_Kin: UIViewController, UITextFieldDelegate {
         
        
         
-        print(allVar.CaseNum)
+        print(allVar.CaseNum as Any)
         // Do any additional setup after loading the view.
     }
     
