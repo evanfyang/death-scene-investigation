@@ -50,6 +50,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate
         if userID == "Team6" && password == "1234"
         {
             goToHomePage()
+            UserNameTextField.text = ""
+            UserPassWordTextField.text = ""
         }
         else
         {

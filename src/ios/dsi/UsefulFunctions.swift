@@ -53,10 +53,13 @@ extension UIViewController
     func goToHomePage()->Void{
         DispatchQueue.main.async
             {
+                //let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                //let homePage = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+                //let appDelegate = UIApplication.shared.delegate
+                //appDelegate?.window??.rootViewController = homePage
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let homePage = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-                let appDelegate = UIApplication.shared.delegate
-                appDelegate?.window??.rootViewController = homePage
+                let HomeViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+                self.present(HomeViewController, animated: true, completion: nil)
         }
     }
     
@@ -68,10 +71,15 @@ extension UIViewController
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
             let logout = UIAlertAction(title: "Logout", style: .default, handler: { action in
-                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let loginPage = storyBoard.instantiateViewController(withIdentifier: "SignInViewController")
-                let appDelegate = UIApplication.shared.delegate
-                appDelegate?.window??.rootViewController = loginPage
+                //self.navigationController?.popToRootViewController(animated: true)
+                //let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                //let loginPage = storyBoard.instantiateViewController(withIdentifier: "LoginViewController")
+                //let appDelegate = UIApplication.shared.delegate
+                //appDelegate?.window??.rootViewController = loginPage
+                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                
+                //self.view.window?.rootViewController = appDelegate?.window??.rootViewController
+
             })
             logout.setValue(UIColor.red, forKey: "titleTextColor")
             alert.addAction(logout)

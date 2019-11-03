@@ -111,11 +111,10 @@
             </objects>
             <point key="canvasLocation" x="-2718.840579710145" y="93.75"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--HomePageTabBar-->
         <scene sceneID="QXP-yL-7lF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="elt-O2-unC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rdm-la-UIy" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" title="HomePageTabBar" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rdm-la-UIy" customClass="HomePageTabBarController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5HT-j4-zx6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -127,6 +126,7 @@
                         <segue destination="Ncn-2G-eFi" kind="relationship" relationship="viewControllers" id="nrn-du-RxP"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="elt-O2-unC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3623" y="790"/>
         </scene>
@@ -163,7 +163,7 @@
         <!--Register New User-->
         <scene sceneID="hpy-kP-ZUy">
             <objects>
-                <viewController storyboardIdentifier="RegisterNewUserViewController" title="Register New User" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lHw-ra-L30" customClass="RegisterNewUserViewController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterNewUserViewController" title="Register New User" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lHw-ra-L30" customClass="RegisterNewUserViewController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="U5M-bU-M43">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,10 +361,10 @@
             </objects>
             <point key="canvasLocation" x="-1781" y="94"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Login Registration Navigation Controller-->
         <scene sceneID="7HZ-WP-yWn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PQA-fL-88l" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="PQA-fL-88l" customClass="LoginRegistrationNavigationController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nuI-Au-tS0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
