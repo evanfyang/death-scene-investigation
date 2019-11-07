@@ -17,7 +17,6 @@
 		CD3E3756226CD47300361010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3E3755226CD47300361010 /* Main.storyboard */; };
 		CD3E375A226CD62500361010 /* PublishedForms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3E3759226CD62500361010 /* PublishedForms.storyboard */; };
 		CD3E375C226CD63E00361010 /* NewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E375B226CD63E00361010 /* NewFormViewController.swift */; };
-		CD3E375E226CE31900361010 /* PendingForms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3E375D226CE31900361010 /* PendingForms.storyboard */; };
 		CD3E3760226CE3EC00361010 /* PendingFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E375F226CE3EC00361010 /* PendingFormViewController.swift */; };
 		CD3E3764226D14AF00361010 /* PublishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E3763226D14AF00361010 /* PublishedViewController.swift */; };
 		CD7F183C225170FD00E29C19 /* DecedentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F183B225170FD00E29C19 /* DecedentInformation.swift */; };
@@ -33,7 +32,7 @@
 		CDC32C11224D97C800465068 /* NarrativeComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC32C10224D97C800465068 /* NarrativeComments.swift */; };
 		CDC32C13224D99A400465068 /* PillsOnScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC32C12224D99A400465068 /* PillsOnScene.swift */; };
 		CDD35A1D22527D7300104B54 /* IncidentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD35A1C22527D7300104B54 /* IncidentInformation.swift */; };
-		CDDC9BDC225D300B00A18DBE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC9BDB225D300B00A18DBE /* SignInViewController.swift */; };
+		CDDC9BDC225D300B00A18DBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC9BDB225D300B00A18DBE /* LoginViewController.swift */; };
 		CDDC9BDE225D320300A18DBE /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC9BDD225D320300A18DBE /* UIViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		CD3E3755226CD47300361010 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CD3E3759226CD62500361010 /* PublishedForms.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PublishedForms.storyboard; sourceTree = "<group>"; };
 		CD3E375B226CD63E00361010 /* NewFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFormViewController.swift; sourceTree = "<group>"; };
-		CD3E375D226CE31900361010 /* PendingForms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PendingForms.storyboard; sourceTree = "<group>"; };
 		CD3E375F226CE3EC00361010 /* PendingFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingFormViewController.swift; sourceTree = "<group>"; };
 		CD3E3763226D14AF00361010 /* PublishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedViewController.swift; sourceTree = "<group>"; };
 		CD7F183B225170FD00E29C19 /* DecedentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecedentInformation.swift; sourceTree = "<group>"; };
@@ -68,7 +66,7 @@
 		CDC32C10224D97C800465068 /* NarrativeComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativeComments.swift; sourceTree = "<group>"; };
 		CDC32C12224D99A400465068 /* PillsOnScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsOnScene.swift; sourceTree = "<group>"; };
 		CDD35A1C22527D7300104B54 /* IncidentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentInformation.swift; sourceTree = "<group>"; };
-		CDDC9BDB225D300B00A18DBE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		CDDC9BDB225D300B00A18DBE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CDDC9BDD225D320300A18DBE /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,7 +122,7 @@
 			children = (
 				CDC32BFA224D7B7300465068 /* AppDelegate.swift */,
 				CD3DE4412262A2010004FFC2 /* MDSIDocProperties.swift */,
-				CDDC9BDB225D300B00A18DBE /* SignInViewController.swift */,
+				CDDC9BDB225D300B00A18DBE /* LoginViewController.swift */,
 				2E18E202234D66DA001B8289 /* RegisterNewUserViewController.swift */,
 				CDB9C207225AA0AE00592E26 /* Investigation.swift */,
 				CD7F183B225170FD00E29C19 /* DecedentInformation.swift */,
@@ -146,7 +144,6 @@
 				CDC32C03224D7B7400465068 /* LaunchScreen.storyboard */,
 				CDC32BFE224D7B7300465068 /* Forms.storyboard */,
 				CD3E3755226CD47300361010 /* Main.storyboard */,
-				CD3E375D226CE31900361010 /* PendingForms.storyboard */,
 				CD3E3759226CD62500361010 /* PublishedForms.storyboard */,
 				CD3E374E226CD44200361010 /* NewForms.storyboard */,
 				CDC32C06224D7B7400465068 /* Info.plist */,
@@ -220,7 +217,6 @@
 				CDC32C00224D7B7300465068 /* Forms.storyboard in Resources */,
 				CD3E3753226CD44200361010 /* NewForms.storyboard in Resources */,
 				CD3E375A226CD62500361010 /* PublishedForms.storyboard in Resources */,
-				CD3E375E226CE31900361010 /* PendingForms.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +281,7 @@
 				CDD35A1D22527D7300104B54 /* IncidentInformation.swift in Sources */,
 				CDC32C0D224D875200465068 /* NextofKin.swift in Sources */,
 				CD3E375C226CD63E00361010 /* NewFormViewController.swift in Sources */,
-				CDDC9BDC225D300B00A18DBE /* SignInViewController.swift in Sources */,
+				CDDC9BDC225D300B00A18DBE /* LoginViewController.swift in Sources */,
 				2E5596A6236E4CC5004F6DBD /* LoginRegistrationNavigationController.swift in Sources */,
 				CD89B6CA2266771100502DFD /* UploadPhotos.swift in Sources */,
 				2E5596A8236E5690004F6DBD /* HomePageTabBarController.swift in Sources */,

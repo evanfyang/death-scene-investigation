@@ -9,7 +9,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController, UITextFieldDelegate
+class LognViewController: UIViewController, UITextFieldDelegate
 {
     
     @IBOutlet weak var UserNameTextField: UITextField!

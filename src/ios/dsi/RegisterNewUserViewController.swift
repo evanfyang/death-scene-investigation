@@ -10,11 +10,15 @@ import UIKit
 
 class RegisterNewUserViewController: UIViewController {
 
+    
     @IBOutlet weak var ScrollView: UIScrollView!
+    
+    
     @IBOutlet weak var FirstNameField: UITextField!
     @IBOutlet weak var LastNameField: UITextField!
-    @IBOutlet weak var UserIDField: UITextField!
+    @IBOutlet weak var UserTypeField: UITextField!
     @IBOutlet weak var EmailField: UITextField!
+    @IBOutlet weak var CountyField: UITextField!
     @IBOutlet weak var PasswordField: UITextField!
     @IBOutlet weak var ConfirmPasswordField: UITextField!
     
@@ -28,8 +32,9 @@ class RegisterNewUserViewController: UIViewController {
         guard
         let FirstName = FirstNameField.text, !FirstName.isEmpty,
         let LastName = LastNameField.text, !LastName.isEmpty,
-        let userID = UserIDField.text, !userID.isEmpty,
+        let UserType = UserTypeField.text, !UserType.isEmpty,
         let Email = EmailField.text, !Email.isEmpty,
+        let County = CountyField.text, !County.isEmpty,
         let Password = PasswordField.text, !Password.isEmpty,
         let ConfirmPassword = ConfirmPasswordField.text, !ConfirmPassword.isEmpty
         else
@@ -48,8 +53,9 @@ class RegisterNewUserViewController: UIViewController {
             displayMessage(msgTitle: "Thank You!", actionTitle: "Dismiss", message: "Your registration has been sent to KYVDRS. Allow up to three business days for confirmation.")
             FirstNameField.text = "";
             LastNameField.text = "";
-            UserIDField.text = "";
+            UserTypeField.text = "";
             EmailField.text = "";
+            CountyField.text = "";
             PasswordField.text = "";
             ConfirmPasswordField.text = "";
             return
