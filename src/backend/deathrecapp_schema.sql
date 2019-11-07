@@ -22,6 +22,7 @@ CREATE TABLE `Investigator` (
 DROP TABLE IF EXISTS `DeathSceneInvestigation`;
 CREATE TABLE `DeathSceneInvestigation` (
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `Version` INT UNSIGNED NOT NULL, 
   `Coroner_Deputy` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `County` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Date_of_Call` DATE DEFAULT NULL,
@@ -29,13 +30,7 @@ CREATE TABLE `DeathSceneInvestigation` (
   `Person_Calling` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Police_Agency` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Time_of_Arrival` TIME DEFAULT NULL,
-  -- suspected cause
-  `natural`  BOOL DEFAULT NULL,
-  `accident` BOOL DEFAULT NULL,
-  `suicide` BOOL DEFAULT NULL,
-  `homicide` BOOL DEFAULT NULL,
-  `pending` BOOL DEFAULT NULL,
-  `undetermined` BOOL DEFAULT NULL
+  `Suspected` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `CaseHistory`;
