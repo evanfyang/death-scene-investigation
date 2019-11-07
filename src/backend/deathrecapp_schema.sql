@@ -30,7 +30,7 @@ CREATE TABLE `DeathSceneInvestigation` (
   `Person_Calling` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Police_Agency` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Time_of_Arrival` TIME DEFAULT NULL,
-  'Suspected' varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `Suspected` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `CaseHistory`;
