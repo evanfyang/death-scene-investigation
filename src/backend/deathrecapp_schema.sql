@@ -11,6 +11,8 @@
 --
 -- Table structure for table `DeathSceneInvestigation`
 --
+SET FOREIGN_KEY_CHECKS = 0;
+
 DROP TABLE IF EXISTS `Investigator`;
 CREATE TABLE `Investigator` (
   `email` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
@@ -463,7 +465,7 @@ CREATE TABLE `edits` (
   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-
+SET FOREIGN_KEY_CHECKS = 1;
 /*
 DROP TABLE IF EXISTS `edits_decedent_information`;
 CREATE TABLE `edits_decedent_information` (
