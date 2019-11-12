@@ -14,11 +14,11 @@
 DROP TABLE IF EXISTS `Investigator`;
 CREATE TABLE `Investigator` (
   `email` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
-  `county` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
-  `password` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
-  `firstname` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
-  `lastname` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL
+  `county` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `firstname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `DeathSceneInvestigation`;
