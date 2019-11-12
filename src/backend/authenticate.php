@@ -22,7 +22,7 @@ $pass=$_POST['password'];
 
 
 // Check to make sure the username actually exists
-$sql = "SELECT Password FROM Investigator WHERE Username='" .$user ."'";
+$sql = "SELECT password FROM Investigator WHERE username='" .$user ."'";
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 $count = mysqli_num_rows($result);
 
