@@ -448,7 +448,7 @@ CREATE TABLE `assigned_to` (
   `Username` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`Username`, `CaseNum`), 
-  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`email`),
   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -459,7 +459,7 @@ CREATE TABLE `edits` (
   `CaseSection` varchar(30) NOT NULL, 
   `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Username`, `CaseNum`, `CaseSection`, `Timestamp`), 
-  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`email`),
   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
