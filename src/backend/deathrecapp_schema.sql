@@ -13,10 +13,12 @@
 --
 DROP TABLE IF EXISTS `Investigator`;
 CREATE TABLE `Investigator` (
-  `Username` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
-  `First_Name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Last_Name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Password` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
+  `email` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `county` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `type` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `password` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `firstname` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `lastname` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `DeathSceneInvestigation`;
