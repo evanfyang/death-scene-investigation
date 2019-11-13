@@ -11,9 +11,15 @@
 --
 -- Table structure for table `DeathSceneInvestigation`
 --
+DROP DATABASE IF EXISTS `deathrecapp`;
+CREATE DATABASE `deathrecapp`;
+USE `deathrecapp`;
+
 DROP TABLE IF EXISTS `Investigator`;
 CREATE TABLE `Investigator` (
-  `Username` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `Email` varchar(100) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `User_Type` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `County` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `First_Name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Last_Name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Password` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -448,21 +454,21 @@ CREATE TABLE `secondTest` (
 
 DROP TABLE IF EXISTS `assigned_to`;
 CREATE TABLE `assigned_to` (
-  `Username` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
+  `Email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`Username`, `CaseNum`), 
-  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  PRIMARY KEY (`Email`, `CaseNum`), 
+  FOREIGN KEY (`Email`) REFERENCES `Investigator`(`Email`),
   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `edits`;
 CREATE TABLE `edits` (
-  `Username` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
+  `Email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `CaseSection` varchar(30) NOT NULL, 
   `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`Username`, `CaseNum`, `CaseSection`, `Timestamp`), 
-  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Username`),
+  PRIMARY KEY (`Email`, `CaseNum`, `CaseSection`, `Timestamp`), 
+  FOREIGN KEY (`Email`) REFERENCES `Investigator`(`Email`),
   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
