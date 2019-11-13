@@ -18,12 +18,12 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE IF EXISTS `Investigator`;
 CREATE TABLE `Investigator` (
-  `email` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
-  `county` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `firstname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lastname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
+  `Email` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `County` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Type` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Password` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Firstname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Lastname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `DeathSceneInvestigation`;
@@ -453,7 +453,7 @@ CREATE TABLE `assigned_to` (
   `Email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`Username`, `CaseNum`), 
-  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`email`),
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Email`),
   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -464,7 +464,7 @@ CREATE TABLE `edits` (
   `CaseSection` varchar(30) NOT NULL, 
   `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Username`, `CaseNum`, `CaseSection`, `Timestamp`), 
-  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`email`),
+  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Email`),
   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
