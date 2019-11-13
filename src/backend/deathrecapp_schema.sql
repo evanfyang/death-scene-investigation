@@ -237,7 +237,7 @@ CREATE TABLE `IncidentInformation` (
   `Body_Temp` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Body_Decomp` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Immed_Cause` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Due_to` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Due_to` varchar(50 0) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Due_to_2` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
    PRIMARY KEY (`CaseNum`, `Version`), 
    FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
@@ -380,7 +380,7 @@ CREATE TABLE `NextofKin` (
   `Name` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Relationship` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Phone_Number` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Adress` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Address` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `City_1` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `State` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Zip_1` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
