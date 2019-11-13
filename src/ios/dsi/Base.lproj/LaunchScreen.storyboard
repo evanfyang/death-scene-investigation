@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEATH SCENE INVESTIGATION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSS-b0-w5L">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEATH SCENE INVESTIGATION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSS-b0-w5L">
                                 <rect key="frame" x="0.0" y="385.66666666666669" width="414" height="125"/>
                                 <color key="backgroundColor" red="1" green="0.96848858740703248" blue="0.12218630832395427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -31,7 +31,7 @@
                             <constraint firstItem="kSS-b0-w5L" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1Rq-cp-EB5"/>
                             <constraint firstItem="kSS-b0-w5L" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Pyo-eU-ECC"/>
                             <constraint firstItem="kSS-b0-w5L" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="dm9-2W-3yS"/>
-                            <constraint firstAttribute="trailing" secondItem="kSS-b0-w5L" secondAttribute="trailing" id="hcr-wc-TjF"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kSS-b0-w5L" secondAttribute="trailing" id="hcr-wc-TjF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

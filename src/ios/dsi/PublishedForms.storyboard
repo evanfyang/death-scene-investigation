@@ -26,62 +26,27 @@
             </objects>
             <point key="canvasLocation" x="1454" y="903"/>
         </scene>
-        <!--Published View Controller-->
+        <!--Published Forms-->
         <scene sceneID="gXk-WC-RSX">
             <objects>
                 <viewController id="zyR-gv-ajb" customClass="PublishedViewController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ma5-Q7-LwW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7q5-kN-lb7">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ol3-ab-cX3">
-                                        <rect key="frame" x="113" y="73" width="189" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="View Published Forms Here"/>
-                                        <connections>
-                                            <action selector="publishedButton:" destination="zyR-gv-ajb" eventType="touchUpInside" id="FNs-l8-eLA"/>
-                                            <segue destination="pQR-1j-pov" kind="show" id="I54-SZ-qog"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxF-y6-WG2">
-                                        <rect key="frame" x="93" y="53" width="229" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                </subviews>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iZO-Gq-4o5"/>
                     </view>
-                    <navigationItem key="navigationItem" id="acj-xd-6ZX">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="tG3-e0-VG7">
+                    <navigationItem key="navigationItem" title="Published Forms" id="acj-xd-6ZX">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tG3-e0-VG7">
                             <connections>
                                 <action selector="clickedLogout:" destination="zyR-gv-ajb" id="ey5-PX-GQ1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="ScrollView" destination="7q5-kN-lb7" id="HUj-nw-FZ9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biQ-xD-u2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2269.5652173913045" y="900.66964285714278"/>
-        </scene>
-        <!--Forms-->
-        <scene sceneID="GRn-mj-jA8">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Forms" id="pQR-1j-pov" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="1u7-Yl-2eQ"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="egk-Qc-eMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2901" y="900"/>
         </scene>
     </scenes>
     <resources>

@@ -40,7 +40,7 @@ if ($count == 1) {
 else 
 {
 	// Invalid
-	echo"No username under ". $username. " found";
+	echo"No username under ". $user. " found";
 }
 
 $conn->close();

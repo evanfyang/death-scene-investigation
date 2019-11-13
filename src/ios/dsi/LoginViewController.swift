@@ -9,7 +9,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController, UITextFieldDelegate
+class LognViewController: UIViewController, UITextFieldDelegate
 {
     
     @IBOutlet weak var UserNameTextField: UITextField!
@@ -47,16 +47,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate
                 displayMessage(msgTitle: "Error", actionTitle: "OK", message: "One of the required fields is empty.")
                 return
             }
-        if userID == "Team6"
+        if userID == "Team6" && password == "1234"
         {
-            if password == "1234"
-            {
-                goToHomePage()
-            }
-            else
-            {
-                displayMessage(msgTitle: "Error", actionTitle: "OK", message: "Username or password incorrect")
-            }
+            goToHomePage()
+            UserNameTextField.text = ""
+            UserPassWordTextField.text = ""
+        }
+        else
+        {
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "Username or password incorrect")
         }
     }
 }

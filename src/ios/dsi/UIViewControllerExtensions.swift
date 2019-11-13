@@ -54,19 +54,24 @@ extension UIViewController
         DispatchQueue.main.async
             {
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let homePage = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-                let appDelegate = UIApplication.shared.delegate
-                appDelegate?.window??.rootViewController = homePage
+                let HomeViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+                self.present(HomeViewController, animated: true, completion: nil)
         }
     }
     
     func navigateToLoginPage()->Void {
         DispatchQueue.main.async
         {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let loginPage = storyBoard.instantiateViewController(withIdentifier: "SignInViewController")
-            let appDelegate = UIApplication.shared.delegate
-            appDelegate?.window??.rootViewController = loginPage
+            let alert = UIAlertController(title: "Are you sure you want to logout?", message: nil, preferredStyle: .actionSheet)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+            let logout = UIAlertAction(title: "Logout", style: .default, handler: { action in
+                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            })
+            logout.setValue(UIColor.red, forKey: "titleTextColor")
+            alert.addAction(logout)
+            self.present(alert, animated: true)
         }
     }
     

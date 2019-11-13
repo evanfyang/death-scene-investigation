@@ -19,8 +19,10 @@ class NewFormViewController: UIViewController {
     
     @IBOutlet weak var ScrollView: UIScrollView!
    
-    @IBAction func Button(_ sender: UIButton) {
+
+    @IBAction func addButtonClicked(_ sender: Any) {
     }
+    
     @IBAction func clickedLogout(_ sender: Any) {
         navigateToLoginPage();
     }
