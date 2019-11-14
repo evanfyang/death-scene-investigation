@@ -240,7 +240,7 @@ CREATE TABLE `IncidentInformation` (
   `Body_Temp` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Body_Decomp` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Immed_Cause` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Due_to` varchar(50 0) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Due_to` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Due_to_2` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
    PRIMARY KEY (`CaseNum`, `Version`), 
    FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
@@ -452,8 +452,8 @@ DROP TABLE IF EXISTS `assigned_to`;
 CREATE TABLE `assigned_to` (
   `Email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`Username`, `CaseNum`), 
-  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Email`),
+  PRIMARY KEY (`Email`, `CaseNum`), 
+  FOREIGN KEY (`Email`) REFERENCES `Investigator`(`Email`),
   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -463,8 +463,8 @@ CREATE TABLE `edits` (
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `CaseSection` varchar(30) NOT NULL, 
   `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`Username`, `CaseNum`, `CaseSection`, `Timestamp`), 
-  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`Email`),
+  PRIMARY KEY (`Email`, `CaseNum`, `CaseSection`, `Timestamp`), 
+  FOREIGN KEY (`Email`) REFERENCES `Investigator`(`Email`),
   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
