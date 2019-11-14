@@ -20,7 +20,6 @@ if ($conn->connect_error) {
 $user=$_POST['username'];
 $pass=$_POST['password'];
 
-
 // Check to make sure the username actually exists
 $sql = "SELECT password FROM Investigator WHERE username='" .$user ."'";
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
