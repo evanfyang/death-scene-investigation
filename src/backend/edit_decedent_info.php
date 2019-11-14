@@ -37,12 +37,13 @@ $Veteran=$_POST['Veteran'] ?? '0';
 $Retired=$_POST['Retired'] ?? '0';
 $Active=$_POST['Active'];
 $other1=$_POST['other1'] ?? '0';
+$other_field=$_POST['other_field'];
 $Branch=$_POST['Branch'];
 $Last_Tour=$_POST['Last_Tour'];
 $Education=$_POST['Education'];	
 $Employment=$_POST['Employment'];
 $Industry=$_POST['Industry'];
-$Current_Occupation=$_POST['Current_Occupation'];
+$Current_Occupations=$_POST['Current_Occupations'];
 
 // for local testing
 //$servername = "localhost";
@@ -64,7 +65,7 @@ if ($conn->connect_error) {
 }
 
 // inserts data from app into decedent information table
-$sql = "INSERT INTO DecedentInformation (CaseNum, Version, First_Name, Last_Name, Gender, Age, Birth_Place, SSN_Num, Address, City, Country_of_Res, State_of_Res, Zip, Height, Weight, Eyes, Hair, Race, Ethnicity, Marital_Status, Surving_Spouse, Mother_MN, Father_N, Pregnant, Homeless, Veteran, Retired, Active, other1, Branch, Last_Tour, Education, Employment, Industry, Current_Occupation) VALUES ('".$CaseNum."', '".$Version."''".$First_Name."','".$Last_Name."','".$Gender."','".$Age."','".$Birth_Place."','".$SSN_Num."','".$Address."','".$City."','".$Country_of_Res."','".$State_of_Res."','".$Zip."','".$Height."','".$Weight."','".$Eyes."','".$Hair."','".$Race."','".$Ethnicity."','".$Marital_Status."','".$Surving_Spouse."','".$Mother_MN."','".$Father_N."','".$Pregnant."','".$Homeless."','".$Veteran."','".$Retired."','".$Active."','".$other1."','".$Branch."','".$Last_Tour."','".$Education."','".$Employment."','".$Industry."','".$Current_Occupation."')";
+$sql = "INSERT INTO DecedentInformation (CaseNum, Version, First_Name, Last_Name, Gender, Age, Birth_Place, SSN_Num, Address, City, Country_of_Res, State_of_Res, Zip, Height, Weight, Eyes, Hair, Race, Ethnicity, Marital_Status, Surving_Spouse, Mother_MN, Father_N, Pregnant, Homeless, Veteran, Retired, Active, other1, other_field, Branch, Last_Tour, Education, Employment, Industry, Current_Occupations) VALUES ('".$CaseNum."', '".$Version."','".$First_Name."','".$Last_Name."','".$Gender."','".$Age."','".$Birth_Place."','".$SSN_Num."','".$Address."','".$City."','".$Country_of_Res."','".$State_of_Res."','".$Zip."','".$Height."','".$Weight."','".$Eyes."','".$Hair."','".$Race."','".$Ethnicity."','".$Marital_Status."','".$Surving_Spouse."','".$Mother_MN."','".$Father_N."','".$Pregnant."','".$Homeless."','".$Veteran."','".$Retired."','".$Active."','".$other1."','".$other_field."','".$Branch."','".$Last_Tour."','".$Education."','".$Employment."','".$Industry."','".$Current_Occupations."')";
 
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;

@@ -17,11 +17,11 @@ if ($conn->connect_error) {
 }
 
 // Get relevant fields
-$user=$_POST['username'];
+$user=$_POST['email'];
 $pass=$_POST['password'];
 
 // Check to make sure the username actually exists
-$sql = "SELECT password FROM Investigator WHERE username='" .$user ."'";
+$sql = "SELECT Password FROM Investigator WHERE Email='" .$user ."'";
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 $count = mysqli_num_rows($result);
 
