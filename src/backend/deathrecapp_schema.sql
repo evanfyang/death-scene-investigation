@@ -240,7 +240,7 @@ CREATE TABLE `IncidentInformation` (
   `Body_Temp` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Body_Decomp` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Immed_Cause` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Due_to` varchar(50 0) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Due_to` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Due_to_2` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
    PRIMARY KEY (`CaseNum`, `Version`), 
    FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
