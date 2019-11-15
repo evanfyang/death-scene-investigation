@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-dsi/Pods-dsi-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework
