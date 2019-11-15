@@ -21,6 +21,8 @@ class NewFormViewController: UIViewController {
    
 
     @IBAction func addButtonClicked(_ sender: Any) {
+        // SHOULD START A DSI OBJECT IN BACKEND
+        let url = URL(string: "");
     }
     
     @IBAction func clickedLogout(_ sender: Any) {
