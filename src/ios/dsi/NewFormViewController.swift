@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class NewFormViewController: UIViewController {
 
@@ -22,7 +23,8 @@ class NewFormViewController: UIViewController {
 
     @IBAction func addButtonClicked(_ sender: Any) {
         // SHOULD START A DSI OBJECT IN BACKEND
-        let url = URL(string: "");
+        let url = URL(string: "https://statsqltest.as.uky.edu/start_death_scene_investigation.php");
+        
     }
     
     @IBAction func clickedLogout(_ sender: Any) {
