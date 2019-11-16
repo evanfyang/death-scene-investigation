@@ -8,10 +8,60 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Case Number-->
+        <scene sceneID="0Mg-ym-3C4">
+            <objects>
+                <viewController id="dTN-NV-whi" userLabel="Case Number" customClass="CaseNumberController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bB8-vv-vNl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Case Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4G0-fb-r2M">
+                                <rect key="frame" x="109.00000000000001" y="378" width="196.33333333333337" height="37"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-tv-X7s">
+                                <rect key="frame" x="82" y="431" width="250" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeB-Jv-CuA">
+                                <rect key="frame" x="82" y="534" width="250" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="createCasePushed:" destination="dTN-NV-whi" eventType="touchUpInside" id="qnq-7R-Tl0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4G0-fb-r2M" firstAttribute="centerX" secondItem="bB8-vv-vNl" secondAttribute="centerX" id="QQe-P4-CV2"/>
+                            <constraint firstItem="4G0-fb-r2M" firstAttribute="centerY" secondItem="bB8-vv-vNl" secondAttribute="centerY" constant="-51.5" id="jbg-k1-ocZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ikv-Zx-MR4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tYl-tH-9C3"/>
+                    <connections>
+                        <outlet property="caseNumberField" destination="1wC-tv-X7s" id="qcA-6E-snU"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="1yJ-Qs-sIV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qi-sX-lMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3162.3188405797105" y="93.75"/>
+        </scene>
         <!--Death Scene Investigation-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="Death_Scene_Investigation" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeathSceneInvestigationController" id="BYZ-38-t0r" customClass="Death_Scene_Investigation" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,7 +237,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="4Rc-DT-7Ye" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2150.7246376811595" y="93.75"/>
+            <point key="canvasLocation" x="-2304" y="94"/>
         </scene>
         <!--Next of Kin-->
         <scene sceneID="ecK-Vk-sFD">
@@ -369,6 +419,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Dp7-GI-6Lp"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aWQ-UJ-nW8"/>
                     <connections>
                         <outlet property="Adress" destination="zO8-9v-Pq9" id="xZw-fj-xqE"/>
                         <outlet property="City_1" destination="Cz2-h8-cYq" id="VEx-e6-6Q9"/>
@@ -586,6 +637,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OIc-tg-Kxw"/>
                     </view>
+                    <navigationItem key="navigationItem" id="r7r-hy-YZJ"/>
                     <connections>
                         <outlet property="Address" destination="xfq-Z2-EPU" id="RhK-Ap-tC6"/>
                         <outlet property="Age" destination="1WZ-xX-rWi" id="bJm-zM-YLf"/>
@@ -772,6 +824,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Pnh-gA-hb5"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ea8-ut-o8n"/>
                     <connections>
                         <outlet property="Ethnicity" destination="X3K-cX-GUu" id="QAV-Ga-3Gd"/>
                         <outlet property="Eyes" destination="nzm-QO-EaO" id="aVb-oz-3Wk"/>
@@ -982,6 +1035,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fNJ-rp-3Ny"/>
                     </view>
+                    <navigationItem key="navigationItem" id="IVK-Bi-7FT"/>
                     <connections>
                         <outlet property="Active" destination="HPV-n8-YtK" id="tRG-oI-lQZ"/>
                         <outlet property="Branch" destination="m7r-GS-LzI" id="eL2-9K-GPe"/>
@@ -1183,6 +1237,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LVp-tU-pO9"/>
                     </view>
+                    <navigationItem key="navigationItem" id="RU9-4F-6Jc"/>
                     <connections>
                         <outlet property="Death_Date" destination="xGH-WY-gxd" id="s1S-Vm-o7n"/>
                         <outlet property="Death_Time" destination="6jS-aq-d8p" id="vPW-qf-dEk"/>
@@ -1388,6 +1443,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tkq-JQ-5G7"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dwV-zK-zlT"/>
                     <connections>
                         <outlet property="DD_CC" destination="abg-al-OAB" id="B0U-k7-VJn"/>
                         <outlet property="DD_Date" destination="6ve-OK-OgC" id="3f1-oY-pz4"/>
@@ -1619,6 +1675,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Zsb-RO-uxU"/>
                     </view>
+                    <navigationItem key="navigationItem" id="uVy-6G-urD"/>
                     <connections>
                         <outlet property="Activity" destination="zrI-re-ifq" id="DHf-91-zje"/>
                         <outlet property="Body_Decomp" destination="TsM-gt-Tim" id="81K-EG-7Su"/>
@@ -1866,6 +1923,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="e7u-fb-aSi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ByU-AQ-xwL"/>
                     <connections>
                         <outlet property="Admitted" destination="jBZ-Qv-KuR" id="6Ve-gP-jwV"/>
                         <outlet property="Attending_PHN" destination="uN5-6K-GEo" id="QOe-eT-7Ig"/>
@@ -2106,6 +2164,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="v6f-ln-PpB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="N9k-Jv-P3z"/>
                     <connections>
                         <outlet property="Autopsy" destination="0Jt-dP-Ppv" id="pDz-ho-d2q"/>
                         <outlet property="Cornea_Donate" destination="zDa-Yk-OQP" id="QhK-Rg-gVh"/>
@@ -2345,6 +2404,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="05W-vE-fsa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="I0X-k5-WgT"/>
                     <connections>
                         <outlet property="Alcohol" destination="fhj-AK-D2m" id="QcB-Dp-14L"/>
                         <outlet property="Alcohol_Field" destination="w6v-hp-UVg" id="h74-gT-GcU"/>
@@ -2567,6 +2627,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4WP-9q-WaW"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3DG-gc-30u"/>
                     <connections>
                         <outlet property="Analgesics" destination="OT5-ck-Xqk" id="7Zd-1S-jd6"/>
                         <outlet property="Analgesics_field" destination="OT5-ck-Xqk" id="oQP-Ir-M6G"/>
@@ -2722,6 +2783,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nrZ-pR-ctA"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZY8-Bg-fzk"/>
                     <connections>
                         <outlet property="Body_Released_To" destination="icZ-Hb-Ulk" id="Ffc-JU-xHi"/>
                         <outlet property="Body_Transported" destination="FK5-G0-cS1" id="Uog-aM-4g2"/>
@@ -2896,6 +2958,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oJB-cb-foH"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Spd-TM-OoV"/>
                     <connections>
                         <outlet property="Abdo_LB" destination="ye0-jK-Qsa" id="VqU-hl-O2B"/>
                         <outlet property="Additional_Wounds" destination="gD8-dL-IgN" id="d6t-xw-Odl"/>
@@ -3148,6 +3211,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="leC-hF-fCK"/>
                     </view>
+                    <navigationItem key="navigationItem" id="J21-8D-1TS"/>
                     <connections>
                         <outlet property="Caliber" destination="Bfp-Sy-Z71" id="CIw-4C-Td1"/>
                         <outlet property="Casings_Recov" destination="PHW-LZ-78n" id="qNo-dY-o5m"/>
@@ -3380,6 +3444,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wfS-4U-LLv"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NO8-gD-B4R"/>
                     <connections>
                         <outlet property="A_Fall" destination="YF2-zo-CYg" id="rKq-0b-rCA"/>
                         <outlet property="A_Hunting" destination="w7F-kd-fw2" id="cH7-Pl-m7K"/>
@@ -3614,6 +3679,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BOt-Yg-BHo"/>
                     </view>
+                    <navigationItem key="navigationItem" id="M2o-D2-QgY"/>
                     <connections>
                         <outlet property="A_AirbagDeploy" destination="ygL-95-mYU" id="5dl-Eo-S8g"/>
                         <outlet property="A_CelebFiring" destination="37P-ce-HSb" id="jju-KW-HEU"/>
@@ -3870,6 +3936,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Dyq-Q6-0Y3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gEc-E3-f5p"/>
                     <connections>
                         <outlet property="S_ALC" destination="6sD-rK-Zod" id="Q2D-IA-O8e"/>
                         <outlet property="S_CDM" destination="pbE-dS-HGR" id="BKc-mi-Gsj"/>
@@ -4109,6 +4176,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PC3-To-Nou"/>
                     </view>
+                    <navigationItem key="navigationItem" id="RVa-cc-r4v"/>
                     <connections>
                         <outlet property="S_AP" destination="J1d-Nu-Ifg" id="UNG-Dc-GcO"/>
                         <outlet property="S_DADBS" destination="B7e-UT-RMY" id="wpd-W2-0gS"/>
@@ -4365,6 +4433,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hIR-53-MFM"/>
                     </view>
+                    <navigationItem key="navigationItem" id="98b-5S-gOG"/>
                     <connections>
                         <outlet property="H_AOMP" destination="Emc-bZ-RsQ" id="F41-Xs-hr7"/>
                         <outlet property="H_AWAC" destination="ZZB-HH-98F" id="fQA-mL-c4K"/>
@@ -4628,6 +4697,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="07Z-X8-q1W"/>
                     </view>
+                    <navigationItem key="navigationItem" id="04F-PW-ObC"/>
                     <connections>
                         <outlet property="H_ChPSN" destination="Bhe-VB-VLn" id="icZ-lX-lYm"/>
                         <outlet property="H_ChildFat" destination="pLm-JP-SXC" id="Gqm-GU-0BI"/>
@@ -4852,6 +4922,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ggx-W4-Jg6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pWp-DV-nOs"/>
                     <connections>
                         <outlet property="O_AlcoholAbuseProblem" destination="nHq-92-Sxd" id="jvY-6x-411"/>
                         <outlet property="O_ChrPain" destination="9OL-3g-2vW" id="vks-t4-mCd"/>
@@ -5095,6 +5166,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AYL-uw-B8K"/>
                     </view>
+                    <navigationItem key="navigationItem" id="30F-7O-Kve"/>
                     <connections>
                         <outlet property="DateFilled" destination="k1P-LX-NVO" id="89a-gM-7a2"/>
                         <outlet property="Dosing" destination="ToA-yU-vPK" id="Ygm-Ke-MW5"/>
@@ -5204,6 +5276,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="e49-zu-XP5"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wfb-xb-hkQ"/>
                     <connections>
                         <outlet property="ScrollView" destination="5Kl-dq-1nw" id="qds-au-qD1"/>
                         <outlet property="UserImage1" destination="zga-Fr-Q5l" id="Auj-lk-kD0"/>
@@ -5257,6 +5330,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qEI-gH-8YT"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8pa-QJ-oh1"/>
                     <connections>
                         <outlet property="Narrative_Comments" destination="nOs-Fa-wb6" id="45U-pF-4ki"/>
                         <outlet property="ScrollView" destination="etr-69-1fQ" id="Np3-xw-B7B"/>
@@ -5277,12 +5351,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pfC-jb-I4R"/>
+                        <segue destination="dTN-NV-whi" kind="relationship" relationship="rootViewController" id="rGB-Ud-tcW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czH-Pt-9N4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2881" y="94"/>
+            <point key="canvasLocation" x="-4277" y="94"/>
         </scene>
     </scenes>
     <resources>
