@@ -11,6 +11,7 @@ import Alamofire
 
 class CaseNumberController: UIViewController {
     
+    @IBOutlet weak var countyField: UITextField!
     @IBOutlet weak var caseNumberField: UITextField!
     
     override func viewDidLoad() {
@@ -22,7 +23,8 @@ class CaseNumberController: UIViewController {
 
     @IBAction func createCasePushed(_ sender: Any) {
         // Make sure the case number has been entered
-        guard let casenum = caseNumberField.text, !casenum.isEmpty
+        guard let casenum = caseNumberField.text, !casenum.isEmpty,
+        let county = countyField.text, !county.isEmpty
             else {
                 displayMessage(msgTitle: "Error", actionTitle: "OK", message: "One of the required fields is empty.")
                 return
@@ -31,6 +33,7 @@ class CaseNumberController: UIViewController {
         let url = "https://statsqltest.as.uky.edu/start_death_scene_investigation.php"
         let params: Parameters=[ // ADD INVESTIGATOR LATER IN DB
                 "casenum":casenum,
+                "county": county
         ]
         
         Alamofire.request(url, method:.post, parameters:params).validate().responseString {
