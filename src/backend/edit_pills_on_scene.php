@@ -9,6 +9,7 @@ ini_set('display_errors', 1);
 // Pills on scene
 $CaseNum=$_POST['CaseNum'];
 $Version=$_POST['Version'];
+$row_num=$_POST['row_num'];
 $NameOfDrug=$_POST['NameOfDrug'];
 $DateFilled=$_POST['DateFilled'];
 $RxNum=$_POST['RxNum'];
@@ -41,7 +42,7 @@ if ($conn->connect_error) {
 }
 
 // inserts data from app into pills on scene table
-$sql = "INSERT INTO PillsOnScene (CaseNum, Version, NameOfDrug, DateFilled, RxNum, Dosing, Strength, RxQuantity, QuantityRemaining, PharmName, PharmCity) VALUES ('".$CaseNum."','".$Version."','".$NameOfDrug."','".$DateFilled."','".$RxNum."','".$NameOnRx."','".$Dosing."','".$Strength."','".$RxQuantity."','".$QuantityRemaining."','".$PharmName."','".$PharmCity."')";
+$sql = "INSERT INTO PillsOnScene (CaseNum, Version, row_num, NameOfDrug, DateFilled, RxNum, NameOnRx, Dosing, Strength, RxQuantity, QuantityRemaining, PharmName, PharmCity) VALUES ('".$CaseNum."','".$Version."', '".$row_num."','".$NameOfDrug."','".$DateFilled."','".$RxNum."','".$NameOnRx."','".$Dosing."','".$Strength."','".$RxQuantity."','".$QuantityRemaining."','".$PharmName."','".$PharmCity."')";
 
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
