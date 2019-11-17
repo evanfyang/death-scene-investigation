@@ -30,7 +30,7 @@ $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 $count = mysqli_num_rows($result);
 
 if ($count == 0) { // There is no matching username
-    $sql = "INSERT INTO Investigator(`email`, `county` ,  `type`, `password`, `firstname`, `lastname`) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO Investigator(`Email`, `County` ,  `Type`, `Password`, `Firstname`, `Lastname`) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ssssss', $user, $county, $type,  $pass, $first_name, $last_name);
 

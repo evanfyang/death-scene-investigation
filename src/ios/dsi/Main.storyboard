@@ -153,7 +153,7 @@
         <scene sceneID="hpy-kP-ZUy">
             <objects>
                 <viewController storyboardIdentifier="RegisterNewUserViewController" title="Register New User" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lHw-ra-L30" customClass="RegisterNewUserViewController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" contentMode="scaleToFill" ambiguous="YES" id="U5M-bU-M43">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="U5M-bU-M43">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

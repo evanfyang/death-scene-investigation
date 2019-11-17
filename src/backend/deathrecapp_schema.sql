@@ -11,30 +11,34 @@
 --
 -- Table structure for table `DeathSceneInvestigation`
 --
+DROP DATABASE IF EXISTS `deathrecapp`;
+CREATE DATABASE `deathrecapp`;
+USE `deathrecapp`;
 SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE IF EXISTS `Investigator`;
 CREATE TABLE `Investigator` (
-  `email` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
-  `county` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `firstname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lastname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
+  `Email` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `County` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Type` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Password` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Firstname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Lastname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `DeathSceneInvestigation`;
 CREATE TABLE `DeathSceneInvestigation` (
-  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci PRIMARY KEY NOT NULL,
+  `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Version` INT UNSIGNED NOT NULL, 
   `Coroner_Deputy` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `County` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `County` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Date_of_Call` DATE DEFAULT NULL,
   `Time_of_Call` TIME DEFAULT NULL,
   `Person_Calling` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Police_Agency` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Time_of_Arrival` TIME DEFAULT NULL,
   `Suspected` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+   PRIMARY KEY (`CaseNum`, `County`), 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `CaseHistory`;
@@ -237,7 +241,7 @@ CREATE TABLE `IncidentInformation` (
   `Body_Temp` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Body_Decomp` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Immed_Cause` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Due_to` varchar(50 0) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Due_to` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Due_to_2` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
    PRIMARY KEY (`CaseNum`, `Version`), 
    FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
@@ -447,21 +451,21 @@ CREATE TABLE `secondTest` (
 
 DROP TABLE IF EXISTS `assigned_to`;
 CREATE TABLE `assigned_to` (
-  `Username` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
+  `Email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`Username`, `CaseNum`), 
-  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`email`),
+  PRIMARY KEY (`Email`, `CaseNum`), 
+  FOREIGN KEY (`Email`) REFERENCES `Investigator`(`Email`),
   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `edits`;
 CREATE TABLE `edits` (
-  `Username` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
+  `Email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL, 
   `CaseNum` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `CaseSection` varchar(30) NOT NULL, 
   `Timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`Username`, `CaseNum`, `CaseSection`, `Timestamp`), 
-  FOREIGN KEY (`Username`) REFERENCES `Investigator`(`email`),
+  PRIMARY KEY (`Email`, `CaseNum`, `CaseSection`, `Timestamp`), 
+  FOREIGN KEY (`Email`) REFERENCES `Investigator`(`Email`),
   FOREIGN KEY (`CaseNum`) REFERENCES `DeathSceneInvestigation`(`CaseNum`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

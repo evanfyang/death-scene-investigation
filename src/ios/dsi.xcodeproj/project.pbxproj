@@ -34,6 +34,7 @@
 		CDD35A1D22527D7300104B54 /* IncidentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD35A1C22527D7300104B54 /* IncidentInformation.swift */; };
 		CDDC9BDC225D300B00A18DBE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC9BDB225D300B00A18DBE /* LoginViewController.swift */; };
 		CDDC9BDE225D320300A18DBE /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC9BDD225D320300A18DBE /* UIViewControllerExtensions.swift */; };
+		F135C643237F6F7E00F9C053 /* CaseNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F135C642237F6F7E00F9C053 /* CaseNumberController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		CDD35A1C22527D7300104B54 /* IncidentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentInformation.swift; sourceTree = "<group>"; };
 		CDDC9BDB225D300B00A18DBE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CDDC9BDD225D320300A18DBE /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		F135C642237F6F7E00F9C053 /* CaseNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseNumberController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				CDC32BFA224D7B7300465068 /* AppDelegate.swift */,
 				CD3DE4412262A2010004FFC2 /* MDSIDocProperties.swift */,
 				CDDC9BDB225D300B00A18DBE /* LoginViewController.swift */,
+				F135C642237F6F7E00F9C053 /* CaseNumberController.swift */,
 				2E18E202234D66DA001B8289 /* RegisterNewUserViewController.swift */,
 				CDB9C207225AA0AE00592E26 /* Investigation.swift */,
 				CD7F183B225170FD00E29C19 /* DecedentInformation.swift */,
@@ -289,6 +292,7 @@
 				2E5156802346832C0067F6C7 /* RoundButton.swift in Sources */,
 				CDC32BFB224D7B7300465068 /* AppDelegate.swift in Sources */,
 				CD3E3764226D14AF00361010 /* PublishedViewController.swift in Sources */,
+				F135C643237F6F7E00F9C053 /* CaseNumberController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
