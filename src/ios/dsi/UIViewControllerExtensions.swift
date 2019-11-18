@@ -68,6 +68,15 @@ extension UIViewController
          }
      }
     
+    func goToTableOfContents()->Void{
+         DispatchQueue.main.async
+             {
+                 let storyBoard = UIStoryboard(name: "Forms", bundle: nil)
+                 let DSIController = storyBoard.instantiateViewController(withIdentifier: "TableOfContentsController") as! TableOfContentsTableViewController
+                 self.present(DSIController, animated: true, completion: nil)
+         }
+     }
+    
     func navigateToLoginPage()->Void {
         DispatchQueue.main.async
         {

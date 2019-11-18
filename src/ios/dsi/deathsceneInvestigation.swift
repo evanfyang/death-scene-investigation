@@ -123,7 +123,7 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
     
     }
     
-    
+        
     func autocompleteOptions() {
         Coroner_Deputy.filterStrings(["Trent", "Evan", "Eura","Matthew"])
         County.filterStrings([
