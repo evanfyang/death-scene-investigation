@@ -69,6 +69,9 @@ class CaseNumberController: UIViewController {
         }
     }
     
+    @IBAction func clickedHamburger(_ sender: Any) {
+        self.goToTableOfContents()
+    }
     
     /*
     // MARK: - Navigation

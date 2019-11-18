@@ -38,7 +38,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeB-Jv-CuA">
                                 <rect key="frame" x="82" y="602" width="250" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,7 +61,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ikv-Zx-MR4"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tYl-tH-9C3"/>
+                    <navigationItem key="navigationItem" id="tYl-tH-9C3">
+                        <barButtonItem key="rightBarButtonItem" title="hamburger" image="line.horizontal.3" catalog="system" id="hE7-YE-yP7">
+                            <connections>
+                                <action selector="clickedHamburger:" destination="dTN-NV-whi" id="2vt-Fc-FKX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="caseNumberField" destination="1wC-tv-X7s" id="qcA-6E-snU"/>
                         <outlet property="countyField" destination="nkd-wi-xhY" id="YTA-df-XPK"/>
@@ -71,6 +77,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qi-sX-lMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3162.3188405797105" y="93.75"/>
+        </scene>
+        <!--Table Of Contents Table View Controller-->
+        <scene sceneID="lTu-tP-ZUL">
+            <objects>
+                <tableViewController storyboardIdentifier="TableOfContentsController" id="Rho-Dw-c4p" customClass="TableOfContentsTableViewController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4fi-ZL-GAW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sectionCell" id="X7u-Eb-3xL">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X7u-Eb-3xL" id="X8J-Sm-mVf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Rho-Dw-c4p" id="mhd-SU-FGw"/>
+                            <outlet property="delegate" destination="Rho-Dw-c4p" id="9uU-WO-HyJ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="phi-vR-3ka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3162" y="786"/>
         </scene>
         <!--Death Scene Investigation-->
         <scene sceneID="tne-QT-ifu">
@@ -205,7 +239,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lMe-xZ-i8O"/>
+                    <navigationItem key="navigationItem" id="lMe-xZ-i8O">
+                        <barButtonItem key="rightBarButtonItem" title="hamburger" image="line.horizontal.3" catalog="system" id="EnS-WG-6QX"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="Coroner_Deputy" destination="5Ib-6x-rDn" id="dkB-Uu-Yu6"/>
                         <outlet property="Date_of_Call" destination="pxP-cq-FaP" id="F5l-hm-gRA"/>
@@ -5343,5 +5379,6 @@
     </scenes>
     <resources>
         <image name="Body Diagram" width="1386" height="1472"/>
+        <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
     </resources>
 </document>
