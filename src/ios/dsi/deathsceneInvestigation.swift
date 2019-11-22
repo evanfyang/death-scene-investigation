@@ -52,6 +52,19 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
         allVar.Police_Agency = Police_Agency
         allVar.Time_of_Arrival = Time_of_Arrival
         allVar.Suspected = Suspected
+    }
+    
+    
+    @IBOutlet weak var ScrollView: UIScrollView!
+    
+    @IBAction func Save(_ sender: UIButton) {
+        allVar.Coroner_Deputy = Coroner_Deputy
+        allVar.Date_of_Call = Date_of_Call
+        allVar.Time_of_Call = Time_of_Call
+        allVar.Person_Calling = Person_Calling
+        allVar.Police_Agency = Police_Agency
+        allVar.Time_of_Arrival = Time_of_Arrival
+        allVar.Suspected = Suspected
         
         // Make sure the case number has been entered
         guard let casenum = allVar.CaseNum.text, !casenum.isEmpty,
@@ -96,19 +109,6 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
                 }
             }
         }
-    }
-    
-    
-    @IBOutlet weak var ScrollView: UIScrollView!
-    
-    @IBAction func Save(_ sender: UIButton) {
-        allVar.Coroner_Deputy = Coroner_Deputy
-        allVar.Date_of_Call = Date_of_Call
-        allVar.Time_of_Call = Time_of_Call
-        allVar.Person_Calling = Person_Calling
-        allVar.Police_Agency = Police_Agency
-        allVar.Time_of_Arrival = Time_of_Arrival
-        allVar.Suspected = Suspected
         
         goToHomePage()
         

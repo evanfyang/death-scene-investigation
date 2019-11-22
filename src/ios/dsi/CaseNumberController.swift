@@ -16,7 +16,7 @@ var allVar = MDSIDocProperties()
 class CaseNumberController: UIViewController {
     @IBOutlet weak var countyField: SearchTextField!
     @IBOutlet weak var caseNumberField: UITextField!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         autocompleteOptions()
