@@ -52,6 +52,55 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
         allVar.Police_Agency = Police_Agency
         allVar.Time_of_Arrival = Time_of_Arrival
         allVar.Suspected = Suspected
+        
+        
+        // Make sure the case number has been entered
+        guard let casenum = allVar.CaseNum?.text!, !casenum.isEmpty,
+        let county = allVar.County?.text, !county.isEmpty
+        else {
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "No recorded case number and county.")
+            return
+        }
+             
+        print(casenum)
+        print(county)
+        print(Coroner_Deputy.text!)
+        
+        let url = "https://statsqltest.as.uky.edu/edit_DSI.php"
+             
+        let params: Parameters=[
+                "CaseNum":casenum,
+                "County": county,
+                "Version": 0,
+                "Coroner_Deputy": Coroner_Deputy.text!,
+                "Date_of_Call": Date_of_Call.text!,
+                "Time_of_Call": Time_of_Call.text!,
+                "Person_Calling": Person_Calling.text!,
+                "Police_Agency": Police_Agency.text!,
+                "Time_of_Arrival": Time_of_Arrival.text!,
+                "Suspected": Suspected.text!
+        ]
+             
+
+        Alamofire.request(url, method:.post, parameters:params).validate().responseString {
+            response in
+            if let result = response.result.value {
+                let jsonData = result // as! NSDictionary
+                             
+                print("updating dsi info")
+
+                if(!jsonData.contains("success")){
+                    // Display an alert if an error and database insert didn't work
+                    DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
+                                 
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
+                                 
+                    self.present(alert, animated:true, completion: nil)
+                    }
+                }
+            }
+        }
     }
     
     
@@ -65,50 +114,6 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
         allVar.Police_Agency = Police_Agency
         allVar.Time_of_Arrival = Time_of_Arrival
         allVar.Suspected = Suspected
-        
-        // Make sure the case number has been entered
-        guard let casenum = allVar.CaseNum.text, !casenum.isEmpty,
-            let county = allVar.County.text, !county.isEmpty
-            else {
-                displayMessage(msgTitle: "Error", actionTitle: "OK", message: "No recorded case number and county.")
-                return
-            }
-        
-
-        let url = "https://statsqltest.as.uky.edu/start_death_scene_investigation.php"
-        
-        let params: Parameters=[
-                "CaseNum":casenum,
-                "County": county,
-                "Version": 0,
-                "Coroner_Deputy": Coroner_Deputy.text!,
-                "Date_of_Call": Date_of_Call.text!,
-                "Time_of_Call": Time_of_Call.text!,
-                "Person_Calling": Person_Calling.text!,
-                "Police_Agency": Police_Agency.text!,
-                "Time_of_Arrival": Time_of_Arrival.text!,
-                "Suspected": Suspected.text!
-        ]
-        
-        Alamofire.request(url, method:.post, parameters:params).validate().responseString {
-            response in
-            if let result = response.result.value {
-                let jsonData = result // as! NSDictionary
-                        
-                print(result)
-                
-                if(!jsonData.contains("success")){
-                    // Display an alert if an error and database insert didn't work
-                    DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
-                            
-                            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
-                            
-                            self.present(alert, animated:true, completion: nil)
-                    }
-                }
-            }
-        }
         
         goToHomePage()
         
