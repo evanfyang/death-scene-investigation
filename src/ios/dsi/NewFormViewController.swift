@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class NewFormViewController: UIViewController {
 
@@ -21,6 +22,7 @@ class NewFormViewController: UIViewController {
    
 
     @IBAction func addButtonClicked(_ sender: Any) {
+        
     }
     
     @IBAction func clickedLogout(_ sender: Any) {

@@ -16,9 +16,9 @@ struct MDSIDocProperties {
     
     
     //Death Scene Invesitgation
-    var CaseNum: UITextField?
+    var CaseNum: UITextField!
     var Coroner_Deputy: SearchTextField?
-    var County: UITextField?
+    var County: SearchTextField!
     var Date_of_Call: UITextField?
     var Time_of_Call: UITextField?
     var Person_Calling: UITextField?

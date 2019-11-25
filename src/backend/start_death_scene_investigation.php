@@ -40,44 +40,44 @@ if ($count == 0) { // There is no matching case
     if($DSI_stmt->execute()) {
         // Create the associated weak entities with version 0
         // Decedent information
-        $decedent_SQL = "INSERT INTO DecedentInformation(`CaseNum`, `Version`) VALUES (?, 0)";
+        $decedent_SQL = "INSERT INTO DecedentInformation(`CaseNum`, `Version`) VALUES (?, ?)";
         $decedent_stmt = $conn->prepare($decedent_SQL); 
-        $decedent_stmt->bind_param('s', $casenum);
+        $decedent_stmt->bind_param('si', $casenum, 0);
         $decedent_stmt->execute(); 
         $decedent_stmt->close(); 
 
         // Next of Kin
-        $next_kin_SQL = "INSERT INTO NextofKin(`CaseNum`, `Version`) VALUES (?, 0)";
+        $next_kin_SQL = "INSERT INTO NextofKin(`CaseNum`, `Version`) VALUES (?, ?)";
         $next_kin_stmt = $conn->prepare($next_kin_SQL); 
-        $next_kin_stmt->bind_param('s', $casenum);
+        $next_kin_stmt->bind_param('si', $casenum, 0);
         $next_kin_stmt->execute(); 
         $next_kin_stmt->close(); 
         
         // Incident Information
-        $incident_SQL = "INSERT INTO IncidentInformation(`CaseNum`, `Version`) VALUES (?, 0)";
+        $incident_SQL = "INSERT INTO IncidentInformation(`CaseNum`, `Version`) VALUES (?, ?)";
         $incident_stmt = $conn->prepare($incident_SQL); 
-        $incident_stmt->bind_param('s', $casenum);
+        $incident_stmt->bind_param('si', $casenum, 0);
         $incident_stmt->execute(); 
         $incident_stmt->close(); 
         
         // Investigation
-        $investigation_SQL = "INSERT INTO Investigation(`CaseNum`, `Version`) VALUES (?, 0)";
+        $investigation_SQL = "INSERT INTO Investigation(`CaseNum`, `Version`) VALUES (?, ?)";
         $investigation_stmt = $conn->prepare($investigation_SQL); 
-        $investigation_stmt->bind_param('s', $casenum);
+        $investigation_stmt->bind_param('si', $casenum, 0);
         $investigation_stmt->execute(); 
         $investigation_stmt->close(); 
         
         // Narrative Comments
-        $narrative_SQL = "INSERT INTO NarrativeComments(`CaseNum`, `Version`) VALUES (?, 0)";
+        $narrative_SQL = "INSERT INTO NarrativeComments(`CaseNum`, `Version`) VALUES (?, ?)";
         $narrative_stmt = $conn->prepare($narrative_SQL); 
-        $narrative_stmt->bind_param('s', $casenum);
+        $narrative_stmt->bind_param('si', $casenum, 0);
         $narrative_stmt->execute(); 
         $narrative_stmt->close(); 
         
         // Pills on Scene
-        $pills_SQL = "INSERT INTO PillsOnScene(`CaseNum`, `Version`) VALUES (?, 0)";
+        $pills_SQL = "INSERT INTO PillsOnScene(`CaseNum`, `Version`) VALUES (?, ?)";
         $pills_stmt = $conn->prepare($pills_SQL); 
-        $pills_stmt->bind_param('s', $casenum);
+        $pills_stmt->bind_param('si', $casenum, 0);
         $pills_stmt->execute(); 
         $pills_stmt->close();
 

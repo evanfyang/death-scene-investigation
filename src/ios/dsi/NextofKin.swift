@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class Next_of_Kin: UIViewController, UITextFieldDelegate {
     

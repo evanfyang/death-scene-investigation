@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class Incident_Information: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     

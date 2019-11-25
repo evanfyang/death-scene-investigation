@@ -59,6 +59,24 @@ extension UIViewController
         }
     }
     
+    func goToDeathSceneInvestigation()->Void{
+         DispatchQueue.main.async
+             {
+                 let storyBoard = UIStoryboard(name: "Forms", bundle: nil)
+                 let DSIController = storyBoard.instantiateViewController(withIdentifier: "DeathSceneInvestigationController") as! Death_Scene_Investigation
+                 self.present(DSIController, animated: true, completion: nil)
+         }
+     }
+    
+    func goToTableOfContents()->Void{
+         DispatchQueue.main.async
+             {
+                 let storyBoard = UIStoryboard(name: "Forms", bundle: nil)
+                 let DSIController = storyBoard.instantiateViewController(withIdentifier: "TableOfContentsController") as! TableOfContentsTableViewController
+                 self.present(DSIController, animated: true, completion: nil)
+         }
+     }
+    
     func navigateToLoginPage()->Void {
         DispatchQueue.main.async
         {

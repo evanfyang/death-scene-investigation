@@ -8,6 +8,7 @@
 
 import UIKit
 import SearchTextField
+import Alamofire
 
 class Pills_On_Scene: UIViewController, UITextFieldDelegate{
     
