@@ -39,7 +39,19 @@ if ($conn->connect_error) {
 
 $sql = "INSERT INTO DeathSceneInvestigation (CaseNum, Version, Coroner_Deputy, County, Date_of_Call, Time_of_Call, Person_Calling, Police_Agency, Time_of_Arrival, Suspected) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('ssss', $user, $county, $type,  $pass, $first_name, $last_name);
+$stmt->bind_param('ssssssssss', 
+		$CaseNum,
+		$Version,
+		$Coroner_Deputy,
+		$County,
+		$Date_of_Call,
+		$Time_of_Call,
+		$Person_Calling,
+		$Police_Agency,
+		$Time_of_Arrival,
+		$Suspected
+		); 
+		
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
