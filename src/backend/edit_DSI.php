@@ -37,7 +37,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO DeathSceneInvestigation (CaseNum, Version, Coroner_Deputy, County, Date_of_Call, Time_of_Call, Person_Calling, Police_Agency, Time_of_Arrival, Suspected) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO DeathSceneInvestigation(`CaseNum`, `Version`, `Coroner_Deputy`, `County`, `Date_of_Call`, `Time_of_Call`, `Person_Calling`, `Police_Agency`, `Time_of_Arrival`, `Suspected`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('ssssssssss', 
 		$CaseNum,
@@ -49,11 +49,14 @@ $stmt->bind_param('ssssssssss',
 		$Person_Calling,
 		$Police_Agency,
 		$Time_of_Arrival,
-		$Suspected
-		); 
+		$Suspected); 
 		
-if(!$result = mysqli_query($conn, $sql)) {
+if($stmt->execute()) {
+    echo "success";
+}
+else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+$stmt->close();
 
 ?>

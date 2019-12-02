@@ -6,9 +6,6 @@ Date: 12/01/2019
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-/*
- * Retrieves the form elements for the specified part of the form
- */
 
 //$servername = "localhost";
 //$username = "root";
@@ -28,12 +25,11 @@ if ($conn->connect_error) {
 }
 
 // Retrieve the relevant fields
-$field=$_POST['field'];
-$casenum=$_POST['casenum'];
-$version=$_POST['version'];
+$email=$_POST['email'];
 
 // Make query
-$sql = "SELECT * FROM `". $field ."` WHERE `CaseNum` = ". $casenum ." AND `Version` = " .$version ;
+// Version with -1 means form is finalized
+$sql = "SELECT CaseNum, County, Date_Created, Version FROM `DeathSceneInvestigation` WHERE `Email` = '". $email ."' AND `Version` =  -1";
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

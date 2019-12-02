@@ -1,9 +1,4 @@
 <?php
-/*
-Author: Eura Shin
-Date: 12/01/2019
-*/
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 /*
@@ -30,25 +25,18 @@ if ($conn->connect_error) {
 // Retrieve the relevant fields
 $field=$_POST['field'];
 $casenum=$_POST['casenum'];
-$version=$_POST['version'];
 
 // Make query
-$sql = "SELECT * FROM `". $field ."` WHERE `CaseNum` = ". $casenum ." AND `Version` = " .$version ;
+$sql = "SELECT MAX(Version) AS Version FROM `". $field ."` AS Version WHERE `CaseNum` = '". $casenum. "'";
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 // Show resulting fields
 if(mysqli_num_rows($result) > 0) {
-    $data = array();
-
-    //read the rows of result
     while($row = mysqli_fetch_assoc($result)) {
-         $data[] = $row;
+         echo $row['Version'];
     }
-
-    header('Content-type: application/json');
-    print json_encode($data);
 }
 else {
     echo "Error: No results";
