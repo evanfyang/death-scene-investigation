@@ -1,9 +1,11 @@
 <?php
+/*
+Author: Eura Shin
+Date: 12/01/2019
+*/
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-/*
- * Retrieves the form elements for the specified part of the form
- */
 
 //$servername = "localhost";
 //$username = "root";
@@ -23,20 +25,26 @@ if ($conn->connect_error) {
 }
 
 // Retrieve the relevant fields
-$field=$_POST['field'];
-$casenum=$_POST['casenum'];
+$email=$_POST['email'];
 
 // Make query
-$sql = "SELECT MAX(Version) AS Version FROM `". $field ."` AS Version WHERE `CaseNum` = '". $casenum. "'";
+// Version with -1 means form is finalized
+$sql = "SELECT CaseNum, County, Date_Created, Version FROM `DeathSceneInvestigation` WHERE `Email` = '". $email ."' AND `Version` >=  0";
 if(!$result = mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 // Show resulting fields
 if(mysqli_num_rows($result) > 0) {
+    $data = array();
+
+    //read the rows of result
     while($row = mysqli_fetch_assoc($result)) {
-         echo $row['Version'];
+         $data[] = $row;
     }
+
+    header('Content-type: application/json');
+    print json_encode($data);
 }
 else {
     echo "Error: No results";

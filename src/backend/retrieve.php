@@ -1,4 +1,9 @@
 <?php
+/*
+Author: Eura Shin
+Date: 12/01/2019
+*/
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 /*
