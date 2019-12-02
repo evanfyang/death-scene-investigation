@@ -93,4 +93,54 @@ extension UIViewController
         }
     }
     
+    func dateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd" //Your date format
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.timeZone = TimeZone(abbreviation:"EST" )
+        dateFormatter.locale =  Locale(identifier: "en_US_POSIX")
+        
+        let date = dateFormatter.string(from: date)
+        
+        return date
+    }
+    
+    func timeToString(time: Date) -> String {
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "hh:mm:ss" //Your date format
+        timeFormatter.locale =  Locale(identifier: "en_US_POSIX")
+        timeFormatter.timeZone = TimeZone(abbreviation: "EST")
+        
+        let time = timeFormatter.string(from: time)
+        
+        return time
+    }
+    
+    // Function to return a dicrtionary of of body parameter values for all text fields that are not empty
+    func buildParameters(names:Array<String>, values: Array<String>) -> Dictionary<String, Any> {
+
+        var parameters = [String: Any]()
+        
+        var i=0;
+        for val in values {
+            if(!val.isEmpty) { // Should include in parameters
+                parameters[names[i]] = val
+            }
+            else if(names[i].contains("Date")) { // Cannot leave empty string for date
+               // let date = stringToDate(dateString: "0000-00-00")
+                
+                parameters[names[i]] = "2000-01-01"
+            }
+            else if(names[i].contains("Time")) { // Cannot leave empty string for time
+                //let time = stringToTime(timeString: "00:00:00")
+            
+                parameters[names[i]] = "00:00:00"
+            }
+            
+            i = i + 1
+        }
+        
+        return(parameters);
+    }
+    
 }

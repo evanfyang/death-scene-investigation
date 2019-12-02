@@ -12,8 +12,8 @@ import Alamofire
 class Next_of_Kin: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var Notified_by: UITextField!
-    @IBOutlet weak var Date_Notified: UITextField!
-    @IBOutlet weak var Time_Notified: UITextField!
+    @IBOutlet weak var Date_Notified: UIDatePicker!
+    @IBOutlet weak var Time_Notified: UIDatePicker!
     @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var Relationship: UITextField!
     @IBOutlet weak var Phone_Number: UITextField!
@@ -36,6 +36,64 @@ class Next_of_Kin: UIViewController, UITextFieldDelegate {
         allVar.City_1 = City_1
         allVar.State = State
         allVar.Zip_1 = Zip_1
+        
+        // Make sure the case number has been entered
+        guard let casenum = allVar.CaseNum?.text, !casenum.isEmpty
+        else {
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "No recorded case number and county.")
+            return
+        }
+        
+        let url = "https://statsqltest.as.uky.edu/edit_next_of_kin.php"
+             
+        let params = buildParameters(
+            names: ["CaseNum",
+                    "Version",
+                    "Notified_by",
+                    "Date_Notified",
+                    "Time_Notified",
+                    "Name",
+                    "Relationship",
+                    "Phone_Number",
+                    "Adress",
+                    "City_1",
+                    "State",
+                    "Zip_1"],
+            values: [casenum,
+                     String(allVar.Version + 1),
+                     Notified_by.text!,
+                     dateToString(date: Date_Notified.date),
+                     timeToString(time: Time_Notified.date),
+                     Name.text!,
+                     Relationship.text!,
+                     Phone_Number.text!,
+                     Adress.text!,
+                     City_1.text!,
+                     State.text!,
+                     Zip_1.text!
+                    ]
+            )
+        
+        Alamofire.request(url, method:.post, parameters:params).validate().responseString {
+            response in
+            if let result = response.result.value {
+                let jsonData = result // as! NSDictionary
+                             
+                if(!jsonData.contains("success")){
+                    // Display an alert if an error and database insert didn't work
+                    DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
+                                 
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
+                                 
+                    self.present(alert, animated:true, completion: nil)
+                    }
+                }
+                else {
+                    print("success")
+                }
+            }
+        }
     }
     
     @IBAction func Save(_ sender: UIButton) {
@@ -62,8 +120,8 @@ class Next_of_Kin: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         ScrollView?.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
         self.Notified_by?.delegate = self
-        self.Date_Notified?.delegate = self
-        self.Time_Notified?.delegate = self
+        //self.Date_Notified?.delegate = self
+        //self.Time_Notified?.delegate = self
         self.Name?.delegate = self
         self.Relationship?.delegate = self
         self.Phone_Number?.delegate = self
@@ -74,8 +132,8 @@ class Next_of_Kin: UIViewController, UITextFieldDelegate {
         
         if allVar.isPending || allVar.isPublished{
             Notified_by?.text = allVar.Notified_by?.text
-            Date_Notified?.text = allVar.Date_Notified?.text
-            Time_Notified?.text = allVar.Time_Notified?.text
+            Date_Notified.date = allVar.Date_Notified.date
+            Time_Notified.date = allVar.Time_Notified.date
             Name?.text = allVar.Name?.text
             Relationship?.text = allVar.Relationship?.text
             Phone_Number?.text = allVar.Phone_Number?.text
