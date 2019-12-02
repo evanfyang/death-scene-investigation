@@ -34,7 +34,9 @@ class CaseNumberController: UIViewController, UITextFieldDelegate {
         let url = "https://statsqltest.as.uky.edu/start_death_scene_investigation.php"
         let params: Parameters=[ // ADD INVESTIGATOR LATER IN DB
                 "casenum":casenum,
-                "county": county
+                "county": county,
+                "email": Email,
+                "date": dateToString(date: Date())
         ]
         
         Alamofire.request(url, method:.post, parameters:params).validate().responseString {

@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 
+var CaseNumber: String = "" // Global to track the casenumber
+
 class NewFormViewController: UIViewController {
 
     override func viewDidLoad() {

@@ -10,6 +10,9 @@
 import UIKit
 import Alamofire
 
+var Email: String = ""
+
+
 class LognViewController: UIViewController, UITextFieldDelegate
 {
     
@@ -54,9 +57,9 @@ class LognViewController: UIViewController, UITextFieldDelegate
                 displayMessage(msgTitle: "Error", actionTitle: "OK", message: "One of the required fields is empty.")
                 
                 return
-                
-        }
+            }
         
+        Email = username
         /*
          
          if username == "Team6" && password == "1234"
