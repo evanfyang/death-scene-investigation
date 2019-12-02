@@ -96,7 +96,7 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var Last_Name: UITextField!
     @IBOutlet weak var Gender: UITextField!
     @IBOutlet weak var Age: UITextField!
-    @IBOutlet weak var Date_Of_Birth: UITextField!
+    @IBOutlet weak var Date_of_Birth: UIDatePicker!
     @IBOutlet weak var Birth_Place: UITextField!
     @IBOutlet weak var SSN_Num: UITextField!
     @IBOutlet weak var Address: UITextField!
@@ -114,12 +114,12 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var Surving_Spouse: UITextField!
     @IBOutlet weak var Mother_MN: UITextField!
     @IBOutlet weak var Father_N: UITextField!
-    @IBOutlet weak var Pregnant: UITextField!
-    @IBOutlet weak var Homeless: UITextField!
-    @IBOutlet weak var Veteran: UITextField!
-    @IBOutlet weak var Retired: UITextField!
-    @IBOutlet weak var Active: UITextField!
-    @IBOutlet weak var other: UITextField!
+    @IBOutlet weak var Pregnant: UISwitch!
+    @IBOutlet weak var Homeless: UISwitch!
+    @IBOutlet weak var Veteran: UISwitch!
+    @IBOutlet weak var Retired: UISwitch!
+    @IBOutlet weak var Active: UISwitch!
+    @IBOutlet weak var other: UISwitch!
     @IBOutlet weak var Branch: UITextField!
     @IBOutlet weak var Last_Tour: UITextField!
     @IBOutlet weak var Education: UITextField!
@@ -136,7 +136,7 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         allVar.Last_Name = Last_Name
         allVar.Gender = Gender
         allVar.Age = Age
-        allVar.Date_Of_Birth = Date_Of_Birth
+        allVar.Date_of_Birth = Date_of_Birth
         allVar.Birth_Place = Birth_Place
         allVar.SSN_Num = SSN_Num
         allVar.Address = Address
@@ -183,7 +183,7 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         allVar.Last_Name = Last_Name
         allVar.Gender = Gender
         allVar.Age = Age
-        allVar.Date_Of_Birth = Date_Of_Birth
+        allVar.Date_of_Birth = Date_of_Birth
         allVar.Birth_Place = Birth_Place
         allVar.SSN_Num = SSN_Num
         allVar.Address = Address
@@ -252,7 +252,7 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         self.Last_Name?.delegate = self
         self.Gender?.delegate = self
         self.Age?.delegate = self
-        self.Date_Of_Birth?.delegate = self
+        //self.Date_Of_Birth?.delegate = self
         self.Birth_Place?.delegate = self
         self.SSN_Num?.delegate = self
         self.Address?.delegate = self
@@ -267,12 +267,12 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         self.Surving_Spouse?.delegate = self
         self.Mother_MN?.delegate = self
         self.Father_N?.delegate = self
-        self.Pregnant?.delegate = self
-        self.Homeless?.delegate = self
-        self.Veteran?.delegate = self
-        self.Retired?.delegate = self
-        self.Active?.delegate = self
-        self.other?.delegate = self
+        //self.Pregnant?.delegate = self
+        //self.Homeless?.delegate = self
+        //self.Veteran?.delegate = self
+        //self.Retired?.delegate = self
+        //self.Active?.delegate = self
+        //self.other?.delegate = self
         self.Branch?.delegate = self
         self.Last_Tour?.delegate = self
         self.Industry?.delegate = self
@@ -337,12 +337,12 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
             Surving_Spouse?.text = allVar.Surving_Spouse?.text
             Mother_MN?.text = allVar.Mother_MN?.text
             Father_N?.text = allVar.Father_N?.text
-            Pregnant?.text = allVar.Pregnant?.text
-            Homeless?.text = allVar.Homeless?.text
-            Veteran?.text = allVar.Veteran?.text
-            Retired?.text = allVar.Retired?.text
-            Active?.text = allVar.Active?.text
-            other?.text = allVar.other?.text
+            Pregnant.isOn = allVar.Pregnant.isOn
+            Homeless.isOn = allVar.Homeless.isOn
+            Veteran.isOn = allVar.Veteran.isOn
+            Retired.isOn = allVar.Retired.isOn
+            Active.isOn = allVar.Active.isOn
+            other.isOn = allVar.other.isOn
             Branch?.text = allVar.Branch?.text
             Last_Tour?.text = allVar.Last_Tour?.text
             Education?.text = allVar.Education?.text

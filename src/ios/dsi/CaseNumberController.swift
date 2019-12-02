@@ -46,7 +46,6 @@ class CaseNumberController: UIViewController, UITextFieldDelegate {
                 
                 //if there is no error
                 if(jsonData.contains("success")){
-                    self.caseNumberField.text = ""
                     self.goToDeathSceneInvestigation()
                 }
                 else {

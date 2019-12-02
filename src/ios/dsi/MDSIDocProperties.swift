@@ -13,23 +13,23 @@ struct MDSIDocProperties {
     
     var isPending: Bool = false
     var isPublished: Bool = false
-    
+    var Version: Int = 0
     
     //Death Scene Invesitgation
     var CaseNum: UITextField!
     var Coroner_Deputy: SearchTextField?
-    var County: SearchTextField!
-    var Date_of_Call: UITextField?
-    var Time_of_Call: UITextField?
+    var County: SearchTextField?
+    var Date_of_Call: UIDatePicker!
+    var Time_of_Call: UIDatePicker!
     var Person_Calling: UITextField?
     var Police_Agency: UITextField?
-    var Time_of_Arrival: UITextField?
+    var Time_of_Arrival: UIDatePicker!
     var Suspected: UITextField?
     
     //Next of Kin
     var Notified_by: UITextField?
-    var Date_Notified: UITextField?
-    var Time_Notified: UITextField?
+    var Date_Notified: UIDatePicker!
+    var Time_Notified: UIDatePicker!
     var Name: UITextField?
     var Relationship: UITextField?
     var Phone_Number: UITextField?
@@ -43,7 +43,7 @@ struct MDSIDocProperties {
     var Last_Name: UITextField?
     var Gender: UITextField?
     var Age: UITextField?
-    var Date_Of_Birth: UITextField?
+    var Date_of_Birth: UIDatePicker!
     var Birth_Place: UITextField?
     var SSN_Num: UITextField?
     var Address: UITextField?
@@ -61,12 +61,12 @@ struct MDSIDocProperties {
     var Surving_Spouse: UITextField?
     var Mother_MN: UITextField?
     var Father_N: UITextField?
-    var Pregnant: UITextField?
-    var Homeless: UITextField?
-    var Veteran: UITextField?
-    var Retired: UITextField?
-    var Active: UITextField?
-    var other: UITextField?
+    var Pregnant: UISwitch!
+    var Homeless: UISwitch!
+    var Veteran: UISwitch!
+    var Retired: UISwitch!
+    var Active: UISwitch!
+    var other: UISwitch!
     var Branch: UITextField?
     var Last_Tour: UITextField?
     var Education: UITextField?

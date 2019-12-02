@@ -26,6 +26,9 @@ class LognViewController: UIViewController, UITextFieldDelegate
         // Do any additional setup after loading the view.
         self.UserNameTextField?.delegate = self
         self.UserPassWordTextField?.delegate = self
+
+
+
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
