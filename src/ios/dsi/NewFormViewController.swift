@@ -14,9 +14,22 @@ var CaseNumber: String = "" // Global to track the casenumber
 
 class NewFormViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBAction func addFormClicked(_ sender: Any) {
+        self.goToCaseNumberPage()
+    }
     @IBOutlet weak var tableView: UITableView!
     
     var formList = [formData]()
+    
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        super.prepare(for: segue, sender: sender)
+
+        if let secondViewController = segue.destination as? CaseNumberController {
+            secondViewController.modalPresentationStyle = .fullScreen
+        }
+    }*/
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

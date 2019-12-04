@@ -95,11 +95,11 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
                 if(!jsonData.contains("success")){
                     // Display an alert if an error and database insert didn't work
                     DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
+                    /*let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
                                  
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
                                  
-                    self.present(alert, animated:true, completion: nil)
+                    self.present(alert, animated:true, completion: nil)*/
                     }
                 }
                 else {
@@ -136,6 +136,7 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated:true);
         ScrollView?.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
         // Do any additional setup after loading the view.
         self.Coroner_Deputy?.delegate = self

@@ -63,8 +63,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" width="50" id="P9v-K2-ZUA">
                             <connections>
-                                <action selector="addButtonClicked:" destination="BRt-tu-bdV" id="z4Q-ps-5G8"/>
-                                <segue destination="S5F-Iz-x84" kind="show" id="RdP-Jh-GNh"/>
+                                <action selector="addFormClicked:" destination="BRt-tu-bdV" id="vBh-TL-VTd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

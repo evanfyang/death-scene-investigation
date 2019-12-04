@@ -55,16 +55,32 @@ extension UIViewController
             {
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let HomeViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+                //let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+                //appDelegate.window?.rootViewController = HomeViewController
                 self.present(HomeViewController, animated: true, completion: nil)
         }
     }
     
+    func goToCaseNumberPage()->Void{
+         DispatchQueue.main.async
+             {
+                let storyBoard = UIStoryboard(name: "Forms", bundle: nil)
+                let FormsNavController = storyBoard.instantiateViewController(withIdentifier: "FormsNavigationController") as! UINavigationController
+                //let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+                //self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                //appDelegate.window?.rootViewController = FormsNavController
+                self.present(FormsNavController, animated: true, completion: nil)
+         }
+     }
+    
     func goToDeathSceneInvestigation()->Void{
          DispatchQueue.main.async
              {
-                 let storyBoard = UIStoryboard(name: "Forms", bundle: nil)
-                 let DSIController = storyBoard.instantiateViewController(withIdentifier: "DeathSceneInvestigationController") as! Death_Scene_Investigation
-                 self.present(DSIController, animated: true, completion: nil)
+                let storyBoard = UIStoryboard(name: "Forms", bundle: nil)
+                let DSIController = storyBoard.instantiateViewController(withIdentifier: "DeathSceneInvestigationController") as! Death_Scene_Investigation
+                //let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+                //appDelegate.window?.rootViewController = DSIController
+                self.present(DSIController, animated: true, completion: nil)
          }
      }
     

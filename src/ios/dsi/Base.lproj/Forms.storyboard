@@ -11,7 +11,8 @@
         <!--Case Number-->
         <scene sceneID="0Mg-ym-3C4">
             <objects>
-                <viewController id="dTN-NV-whi" userLabel="Case Number" customClass="CaseNumberController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qi-sX-lMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="CaseNumberController" id="dTN-NV-whi" userLabel="Case Number" customClass="CaseNumberController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bB8-vv-vNl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,10 +67,9 @@
                     <connections>
                         <outlet property="caseNumberField" destination="1wC-tv-X7s" id="qcA-6E-snU"/>
                         <outlet property="countyField" destination="nkd-wi-xhY" id="YTA-df-XPK"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="1yJ-Qs-sIV"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToDSI" id="1yJ-Qs-sIV"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0qi-sX-lMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3162.3188405797105" y="93.75"/>
         </scene>
@@ -5310,10 +5310,11 @@
             </objects>
             <point key="canvasLocation" x="15290" y="94"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Forms Navigation Controller-->
         <scene sceneID="rul-Jb-IPK">
             <objects>
-                <navigationController storyboardIdentifier="UINavigationController" automaticallyAdjustsScrollViewInsets="NO" id="GMl-zQ-eor" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czH-Pt-9N4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="FormsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="GMl-zQ-eor" customClass="FormsNavigationController" customModule="dsi" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="82h-3S-l9C">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -5324,7 +5325,6 @@
                         <segue destination="dTN-NV-whi" kind="relationship" relationship="rootViewController" id="rGB-Ud-tcW"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="czH-Pt-9N4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4277" y="94"/>
         </scene>

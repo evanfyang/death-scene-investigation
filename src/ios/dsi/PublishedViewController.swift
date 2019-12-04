@@ -14,6 +14,8 @@ class PublishedViewController: UIViewController, UITableViewDelegate, UITableVie
         
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     var formList = [formData]()
     
     override func viewDidLoad() {

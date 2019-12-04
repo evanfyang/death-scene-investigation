@@ -17,6 +17,7 @@ class CaseNumberController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var countyField: SearchTextField!
     @IBOutlet weak var caseNumberField: UITextField!
 
+    
     @IBAction func createCasePushed(_ sender: Any) {
         // Save global case number variable value
         allVar.CaseNum = caseNumberField
@@ -47,7 +48,8 @@ class CaseNumberController: UIViewController, UITextFieldDelegate {
                 
                 //if there is no error
                 if(jsonData.contains("success")){
-                    self.goToDeathSceneInvestigation()
+                    //self.goToDeathSceneInvestigation()
+                    self.performSegue(withIdentifier: "goToDSI", sender: nil)
                 }
                 else {
                     // Display an alert if an error and database insert didn't work

@@ -82,11 +82,11 @@ class Next_of_Kin: UIViewController, UITextFieldDelegate {
                 if(!jsonData.contains("success")){
                     // Display an alert if an error and database insert didn't work
                     DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
+                    /*let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
                                  
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
                                  
-                    self.present(alert, animated:true, completion: nil)
+                    self.present(alert, animated:true, completion: nil)*/
                     }
                 }
                 else {
