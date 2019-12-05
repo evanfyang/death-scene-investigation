@@ -109,7 +109,8 @@ class Incident_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         allVar.LS_Time = LS_Time
         allVar.LS_Loc = LS_Loc
         allVar.LS_CC = LS_CC
-        /*
+    }
+    @IBAction func Next_2(_ sender: UIButton) {
         allVar.DD_Date = DD_Date
         allVar.DD_Time = DD_Time
         allVar.DD_Loc = DD_Loc
@@ -121,6 +122,8 @@ class Incident_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         allVar.Witness = Witness
         allVar.Weather = Weather
         allVar.Activity = Activity
+    }
+    @IBAction func Next_3(_ sender: UIButton) {
         allVar.Position_Body = Position_Body
         allVar.Livor = Livor
         allVar.Rigor = Rigor
@@ -134,13 +137,6 @@ class Incident_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         allVar.Immed_Cause = Immed_Cause
         allVar.Due_to = Due_to
         allVar.Due_to_2 = Due_to_2
- */
-    }
-    @IBAction func Next_2(_ sender: UIButton) {
-
-    }
-    @IBAction func Next_3(_ sender: UIButton) {
-        
     }
     
     
@@ -289,6 +285,110 @@ class Incident_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         
     }
     
+    
+    func sendToDatabase() {
+        // Make sure the case number has been entered
+        guard let casenum = allVar.CaseNum?.text, !casenum.isEmpty,
+            let county = allVar.County?.text, !county.isEmpty
+            else {
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "No recorded case number and county.")
+            return
+        }
+        
+        let url = "https://statsqltest.as.uky.edu/edit_DSI.php"
+             allVar.Death_Date = Death_Date
+             allVar.Death_Time = Death_Time
+             allVar.Injury_Date = Injury_Date
+             allVar.PlaceDeath = PlaceDeath
+             allVar.PlaceInjury = PlaceInjury
+             allVar.LS_Date = LS_Date
+             allVar.LS_Time = LS_Time
+             allVar.LS_Loc = LS_Loc
+             allVar.LS_CC = LS_CC
+             allVar.DD_Date = DD_Date
+             allVar.DD_Time = DD_Time
+             allVar.DD_Loc = DD_Loc
+             allVar.DD_CC = DD_CC
+             allVar.Found_Dead_By = Found_Dead_By
+             allVar.FDB_Address = FDB_Address
+             allVar.Last_Seen_Alive = Last_Seen_Alive
+             allVar.LSA_Address = LSA_Address
+             allVar.Witness = Witness
+             allVar.Weather = Weather
+             allVar.Activity = Activity
+             allVar.Position_Body = Position_Body
+             allVar.Livor = Livor
+             allVar.Rigor = Rigor
+             allVar.Consisent_With_Position = Consisent_With_Position
+             allVar.Clothed = Clothed
+             allVar.Partially_Clothed = Partially_Clothed
+             allVar.Unclothed = Unclothed
+             allVar.Dis_Mark = Dis_Mark
+             allVar.Body_Temp = Body_Temp
+             allVar.Body_Decomp = Body_Decomp
+             allVar.Immed_Cause = Immed_Cause
+             allVar.Due_to = Due_to
+             allVar.Due_to_2 = Due_to_2
+        let params: Parameters =
+            [
+                "CaseNum": casenum,
+                "Version": String(allVar.Version + 1),
+                "Death_Date": Death_Date.text!,
+                "Death_Time": Death_Time.text!,
+                "Injury_Date": Injury_Date.text!,
+                "PlaceDeath": PlaceDeath.text!,
+                "PlaceInjury": PlaceInjury.text!,
+                "LS_Date": LS_Date.text!,
+                "LS_Time": LS_Time.text!,
+                "LS_Loc": LS_Loc.text!,
+                "LS_CC": LS_CC.text!,
+                "DD_Date": DD_Date.text!,
+                "DD_Time": DD_Time.text!,
+                "DD_Loc": DD_Loc.text!,
+                "DD_CC": DD_CC.text!,
+                "Found_Dead_By": Found_Dead_By.text!,
+                "FDB_Address": FDB_Address.text!,
+                "Last_Seen_Alive": Last_Seen_Alive.text!,
+                "LSA_Address": LSA_Address.text!,
+                "Witness": Witness.text!,
+                "Weather": Weather.text!,
+                "Activity": Activity.text!,
+                "Position_Body": Position_Body.text!,
+                "Livor": Livor.text!,
+                "Rigor": Rigor.text!,
+                "Consisent_With_Position": Consisent_With_Position.text!,
+                "Clothed": Clothed.text!,
+                "Partially_Clothed": Partially_Clothed.text!,
+                "Unclothed": Unclothed.text!,
+                "Dis_Mark": Dis_Mark.text!,
+                "Body_Temp": Body_Temp.text!,
+                "Body_Decomp": Body_Decomp.text!,
+                "Immed_Cause": Immed_Cause.text!,
+                "Due_to": Due_to.text!,
+                "Due_to_2": Due_to_2.text!
+            ]
+        
+        Alamofire.request(url, method:.post, parameters:params).validate().responseString {
+            response in
+            if let result = response.result.value {
+                let jsonData = result // as! NSDictionary
+                             
+                if(!jsonData.contains("success")){
+                    // Display an alert if an error and database insert didn't work
+                    DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
+                                 
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
+                                 
+                    self.present(alert, animated:true, completion: nil)
+                    }
+                }
+                else {
+                    print("success")
+                }
+            }
+        }
+    }
     
     
 }

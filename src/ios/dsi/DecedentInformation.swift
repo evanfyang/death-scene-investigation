@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UITextFieldDelegate {
     
@@ -144,7 +145,9 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         allVar.Country_of_Res = Country_of_Res
         allVar.State_of_Res = State_of_Res
         allVar.Zip = Zip
-        /*
+    }
+    
+    @IBAction func Next_2(_ sender: UIButton) {
         allVar.Height = Height
         allVar.Weight = Weight
         allVar.Eyes = Eyes
@@ -155,6 +158,8 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         allVar.Surving_Spouse = Surving_Spouse
         allVar.Mother_MN = Mother_MN
         allVar.Father_N = Father_N
+    }
+    @IBAction func Next_3(_ sender: UIButton) {
         allVar.Pregnant = Pregnant
         allVar.Homeless = Homeless
         allVar.Veteran  = Veteran
@@ -166,15 +171,9 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         allVar.Education = Education
         allVar.Employment = Employment
         allVar.Industry = Industry
-        allVar.Current_Occupation = Current_Occupation*/
+        allVar.Current_Occupation = Current_Occupation
         
-        
-    }
-    @IBAction func Next_2(_ sender: UIButton) {
-       
-    }
-    @IBAction func Next_3(_ sender: UIButton) {
-        
+        sendToDatabase()
     }
     
     
@@ -222,6 +221,7 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
         allVar.Industry = Industry
         allVar.Current_Occupation = Current_Occupation
         
+        sendToDatabase()
         goToHomePage()
     }
     
@@ -240,6 +240,79 @@ class Decedent_Information: UIViewController, UIPickerViewDelegate, UIPickerView
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    func sendToDatabase() {
+        // Edit the entity with current version for form
+        // Make sure the case number has been entered
+        guard let casenum = allVar.CaseNum?.text, !casenum.isEmpty
+        else {
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "No recorded case number and county.")
+            return
+        }
+        
+        let url = "https://statsqltest.as.uky.edu/edit_decedent_information.php"
+             
+        let params: Parameters = [
+            "CaseNum": casenum,
+            "Version": allVar.Version + 1,
+            "First_Name": First_Name.text!,
+            "Last_Name": Last_Name.text!,
+            "Gender": Gender.text!,
+            "Age": Age.text!,
+            "Date_of_Birth": dateToString(date: Date_of_Birth.date),
+            "Birth_Place": Birth_Place.text!,
+            "SSN_Num": SSN_Num.text!,
+            "Address": Address.text!,
+            "City": City.text!,
+            "Country_of_Res": Country_of_Res.text!,
+            "State_of_Res": State_of_Res.text!,
+            "Zip": Zip.text!,
+            "Height": Height.text!,
+            "Weight": Weight.text!,
+            "Eyes": Eyes.text!,
+            "Hair": Hair.text!,
+            "Race": Race.text!,
+            "Ethnicity": Ethnicity.text!,
+            "Marital_Status": Marital_Status.text!,
+            "Surving_Spouse": Surving_Spouse.text!,
+            "Mother_MN": Mother_MN.text!,
+            "Father_N": Father_N.text!,
+            "Pregnant": Pregnant.isOn,
+            "Homeless": Homeless.isOn,
+            "Veteran": Veteran.isOn,
+            "Retired": Retired.isOn,
+            "Active": Active.isOn,
+            "other": other.isOn,
+            "Branch": Branch.text!,
+            "Last_Tour": Last_Tour.text!,
+            "Education": Education.text!,
+            "Employment": Employment.text!,
+            "Industry": Industry.text!,
+            "Current_Occupation": Current_Occupation.text!
+        ]
+            
+        
+        Alamofire.request(url, method:.post, parameters:params).validate().responseString {
+            response in
+            if let result = response.result.value {
+                let jsonData = result // as! NSDictionary
+                             
+                if(!jsonData.contains("success")){
+                    // Display an alert if an error and database insert didn't work
+                    DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
+                                 
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
+                                 
+                    self.present(alert, animated:true, completion: nil)
+                    }
+                }
+                else {
+                    print("success")
+                }
+            }
+        }
     }
     
     

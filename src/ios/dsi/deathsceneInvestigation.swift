@@ -53,60 +53,7 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
         allVar.Time_of_Arrival = Time_of_Arrival
         allVar.Suspected = Suspected
         
-        
-        // Make sure the case number has been entered
-        guard let casenum = allVar.CaseNum?.text, !casenum.isEmpty,
-            let county = allVar.County?.text, !county.isEmpty
-            else {
-            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "No recorded case number and county.")
-            return
-        }
-        
-        let url = "https://statsqltest.as.uky.edu/edit_DSI.php"
-             
-        let params = buildParameters(
-            names: ["CaseNum",
-                    "County",
-                    "Version",
-                    "Coroner_Deputy",
-                    "Date_of_Call",
-                    "Time_of_Call",
-                    "Person_Calling",
-                    "Police_Agency",
-                    "Time_of_Arrival",
-                    "Suspected"],
-            values: [casenum,
-                     county,
-                     String(allVar.Version + 1),
-                     Coroner_Deputy.text!,
-                     dateToString(date: Date_of_Call.date),
-                     timeToString(time: Time_of_Call.date),
-                     Person_Calling.text!,
-                     Police_Agency.text!,
-                     timeToString(time: Time_of_Arrival.date),
-                     Suspected.text!]
-            )
-        
-        Alamofire.request(url, method:.post, parameters:params).validate().responseString {
-            response in
-            if let result = response.result.value {
-                let jsonData = result // as! NSDictionary
-                             
-                if(!jsonData.contains("success")){
-                    // Display an alert if an error and database insert didn't work
-                    DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
-                                 
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
-                                 
-                    self.present(alert, animated:true, completion: nil)
-                    }
-                }
-                else {
-                    print("success")
-                }
-            }
-        }
+        sendToDatabase()
     }
     
     
@@ -121,8 +68,8 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
         allVar.Time_of_Arrival = Time_of_Arrival
         allVar.Suspected = Suspected
         
+        sendToDatabase()
         goToHomePage()
-        
     }
     
     
@@ -167,4 +114,50 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
         }
     }
 
+    func sendToDatabase() {
+        // Make sure the case number has been entered
+        guard let casenum = allVar.CaseNum?.text, !casenum.isEmpty,
+            let county = allVar.County?.text, !county.isEmpty
+            else {
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "No recorded case number and county.")
+            return
+        }
+        
+        let url = "https://statsqltest.as.uky.edu/edit_DSI.php"
+             
+        let params: Parameters =
+            [
+                "CaseNum": casenum,
+                "County": county,
+                "Version": String(allVar.Version + 1),
+                "Coroner_Deputy": Coroner_Deputy.text!,
+                "Date_of_Call": dateToString(date: Date_of_Call.date),
+                "Time_of_Call": timeToString(time: Time_of_Call.date),
+                "Person_Calling": Person_Calling.text!,
+                "Police_Agency": Police_Agency.text!,
+                "Time_of_Arrival": timeToString(time: Time_of_Arrival.date),
+                "Suspected": Suspected.text!
+            ]
+        
+        Alamofire.request(url, method:.post, parameters:params).validate().responseString {
+            response in
+            if let result = response.result.value {
+                let jsonData = result // as! NSDictionary
+                             
+                if(!jsonData.contains("success")){
+                    // Display an alert if an error and database insert didn't work
+                    DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
+                                 
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
+                                 
+                    self.present(alert, animated:true, completion: nil)
+                    }
+                }
+                else {
+                    print("success")
+                }
+            }
+        }
+    }
 }

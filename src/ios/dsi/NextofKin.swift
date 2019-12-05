@@ -37,63 +37,7 @@ class Next_of_Kin: UIViewController, UITextFieldDelegate {
         allVar.State = State
         allVar.Zip_1 = Zip_1
         
-        // Make sure the case number has been entered
-        guard let casenum = allVar.CaseNum?.text, !casenum.isEmpty
-        else {
-            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "No recorded case number and county.")
-            return
-        }
-        
-        let url = "https://statsqltest.as.uky.edu/edit_next_of_kin.php"
-             
-        let params = buildParameters(
-            names: ["CaseNum",
-                    "Version",
-                    "Notified_by",
-                    "Date_Notified",
-                    "Time_Notified",
-                    "Name",
-                    "Relationship",
-                    "Phone_Number",
-                    "Adress",
-                    "City_1",
-                    "State",
-                    "Zip_1"],
-            values: [casenum,
-                     String(allVar.Version + 1),
-                     Notified_by.text!,
-                     dateToString(date: Date_Notified.date),
-                     timeToString(time: Time_Notified.date),
-                     Name.text!,
-                     Relationship.text!,
-                     Phone_Number.text!,
-                     Adress.text!,
-                     City_1.text!,
-                     State.text!,
-                     Zip_1.text!
-                    ]
-            )
-        
-        Alamofire.request(url, method:.post, parameters:params).validate().responseString {
-            response in
-            if let result = response.result.value {
-                let jsonData = result // as! NSDictionary
-                             
-                if(!jsonData.contains("success")){
-                    // Display an alert if an error and database insert didn't work
-                    DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
-                                 
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
-                                 
-                    self.present(alert, animated:true, completion: nil)
-                    }
-                }
-                else {
-                    print("success")
-                }
-            }
-        }
+        sendToDatabase()
     }
     
     @IBAction func Save(_ sender: UIButton) {
@@ -107,6 +51,7 @@ class Next_of_Kin: UIViewController, UITextFieldDelegate {
         allVar.City_1 = City_1
         allVar.State = State
         allVar.Zip_1 = Zip_1
+        sendToDatabase()
         goToHomePage()
     }
     
@@ -147,6 +92,53 @@ class Next_of_Kin: UIViewController, UITextFieldDelegate {
         
         print(allVar.CaseNum as Any)
         // Do any additional setup after loading the view.
+    }
+    
+    func sendToDatabase() {
+        // Make sure the case number has been entered
+        guard let casenum = allVar.CaseNum?.text, !casenum.isEmpty
+        else {
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "No recorded case number and county.")
+            return
+        }
+        
+        let url = "https://statsqltest.as.uky.edu/edit_next_of_kin.php"
+             
+        let params : Parameters = [
+            "CaseNum": casenum,
+            "Version": allVar.Version + 1,
+            "Notified_by": Notified_by.text!,
+            "Date_Notified": dateToString(date: Date_Notified.date),
+            "Time_Notified": timeToString(time: Time_Notified.date),
+            "Name": Name.text!,
+            "Relationship": Relationship.text!,
+            "Phone_Number": Phone_Number.text!,
+            "Adress": Adress.text!,
+            "City_1": City_1.text!,
+            "State":  State.text!,
+            "Zip_1":Zip_1.text!]
+            
+        
+        Alamofire.request(url, method:.post, parameters:params).validate().responseString {
+            response in
+            if let result = response.result.value {
+                let jsonData = result // as! NSDictionary
+                             
+                if(!jsonData.contains("success")){
+                    // Display an alert if an error and database insert didn't work
+                    DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
+                                 
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
+                                 
+                    self.present(alert, animated:true, completion: nil)
+                    }
+                }
+                else {
+                    print("success")
+                }
+            }
+        }
     }
     
     
