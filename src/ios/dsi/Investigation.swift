@@ -8,6 +8,7 @@
 
 import UIKit
 import SearchTextField
+import Alamofire
 
 class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
@@ -96,39 +97,39 @@ class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var Alcohol_Use_Sus: UISwitch!
     @IBOutlet weak var Drug_Use_Sus: UISwitch!
     @IBOutlet weak var Alcohol: UISwitch!
-    @IBOutlet weak var Alcohol_Field: SearchTextField?
+    @IBOutlet weak var Alcohol_Field: SearchTextField!
     @IBOutlet weak var Amphe: UISwitch!
     @IBOutlet weak var Amph_Field: SearchTextField!
     @IBOutlet weak var Barbitua: UISwitch!
-    @IBOutlet weak var Barbituat_field: SearchTextField?
+    @IBOutlet weak var Barbituat_field: SearchTextField!
     @IBOutlet weak var Benzo: UISwitch!
-    @IBOutlet weak var Benzo_field: SearchTextField?
+    @IBOutlet weak var Benzo_field: SearchTextField!
     @IBOutlet weak var Cannabinoids: UISwitch!
-    @IBOutlet weak var Cannab_Field: SearchTextField?
+    @IBOutlet weak var Cannab_Field: SearchTextField!
     @IBOutlet weak var Cocaine: UISwitch!
-    @IBOutlet weak var Cocaine_Field: SearchTextField?
+    @IBOutlet weak var Cocaine_Field: SearchTextField!
     @IBOutlet weak var Fentanyl: UISwitch!
-    @IBOutlet weak var Fent_Field: SearchTextField?
+    @IBOutlet weak var Fent_Field: SearchTextField!
     @IBOutlet weak var Methadone: UISwitch!
-    @IBOutlet weak var Methadone_Field: SearchTextField?
+    @IBOutlet weak var Methadone_Field: SearchTextField!
     @IBOutlet weak var Opiates: UISwitch!
-    @IBOutlet weak var Opiates_Field: SearchTextField?
+    @IBOutlet weak var Opiates_Field: SearchTextField!
     @IBOutlet weak var Oxycodone: UISwitch!
-    @IBOutlet weak var Oxycodone_Field: SearchTextField?
+    @IBOutlet weak var Oxycodone_Field: SearchTextField!
     @IBOutlet weak var Propo: UISwitch!
-    @IBOutlet weak var Propo_field: SearchTextField?
+    @IBOutlet weak var Propo_field: SearchTextField!
     @IBOutlet weak var Analgesics: UISwitch!
-    @IBOutlet weak var Analgesics_field: SearchTextField?
+    @IBOutlet weak var Analgesics_field: SearchTextField!
     @IBOutlet weak var Bupren: UISwitch!
-    @IBOutlet weak var Bupren_Field: SearchTextField?
+    @IBOutlet weak var Bupren_Field: SearchTextField!
     @IBOutlet weak var Anticonv: UISwitch!
-    @IBOutlet weak var Anti_conv_Field: SearchTextField?
+    @IBOutlet weak var Anti_conv_Field: SearchTextField!
     @IBOutlet weak var Antidep: UISwitch!
-    @IBOutlet weak var Antdep_field: SearchTextField?
+    @IBOutlet weak var Antdep_field: SearchTextField!
     @IBOutlet weak var Antipsycho: UISwitch!
-    @IBOutlet weak var Antipsycho_fields: SearchTextField?
+    @IBOutlet weak var Antipsycho_fields: SearchTextField!
     @IBOutlet weak var Other: UISwitch!
-    @IBOutlet weak var Other_Field: SearchTextField?
+    @IBOutlet weak var Other_Field: SearchTextField!
     @IBOutlet weak var Body_Transported: UISwitch!
     @IBOutlet weak var Cremation: UISwitch!
     @IBOutlet weak var Cremation_Permit: UISwitch!
@@ -634,11 +635,138 @@ class Investigation: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
     }
     
+    func sendToDatabase() {
+        // Make sure the case number has been entered
+        guard let casenum = allVar.CaseNum?.text, !casenum.isEmpty,
+            let county = allVar.County?.text, !county.isEmpty
+            else {
+            displayMessage(msgTitle: "Error", actionTitle: "OK", message: "No recorded case number and county.")
+            return
+        }
+        
+        let url = "https://statsqltest.as.uky.edu/edit_investigation.php"
+    
+        var params: Parameters = ["CaseNum": casenum, "Version": String(allVar.Version + 1)]
+        params["Evidence_Collected"] = Evidence_Collected.text!
+        params["Collected_By"] = Collected_By.text!
+        params["Date"] = Date.text!
+        params["Time"] = Time.text!
+        params["Photo"] = Photo.isOn
+        params["Toxicology_Collected"] = Toxicology_Collected.isOn
+        params["Blood"] = Blood.isOn
+        params["Urine"] = Urine.isOn
+        params["Virteous"] = Virteous.isOn
+        params["Ems_At_Scene"] = Ems_At_Scene.isOn
+        params["Victim_Seen"] = Victim_Seen.isOn
+        params["Admitted"] = Admitted.isOn
+        params["Attending_PHN"] = Attending_PHN.isOn
+        params["Name_Ph"] = Name_Ph.text!
+        params["Number_PH"] = Number_PH.text!
+        params["Medical_History"] = Medical_History.text!
+        params["Diabetes"] = Diabetes.isOn
+        params["Medications"] = Medications
+        params["Medical_Record_Req"] = Medical_Record_Req.isOn
+        params["Koda_Notified"] = Koda_Notified.isOn
+        params["Organ_Donate"] = Organ_Donate.isOn
+        params["Tissue_Donate"] = Tissue_Donate.isOn
+        params["Cornea_Donate"] = Cornea_Donate.isOn
+        params["Police_Dep_Notif"] = Police_Dep_Notif.isOn
+        params["Officer"] = Officer.text!
+        params["KY_Marsh_Notif"] = KY_Marsh_Notif.isOn
+        params["Osha_Req"] = Osha_Req.isOn
+        params["Coroners_Inq"] = Coroners_Inq.isOn
+        params["Autopsy"] = Autopsy.isOn
+        params["Medical_Examiner"] = Medical_Examiner.text!
+        params["Death_Certificate_Signed"] = Death_Certificate_Signed.isOn
+        params["Signed_By"] = Signed_By.text!
+        params["Alcohol_Use_Sus"] = Alcohol_Use_Sus.isOn
+        params["Drug_Use_Sus"] = Drug_Use_Sus.isOn
+        params["Alcohol"] = Alcohol.isOn
+        params["Alcohol_Field"] = Alcohol_Field.text!
+        params["Amphe"] = Amphe.isOn
+        params["Amph_Field"] = Amph_Field.text!
+        params["Barbitua"] = Barbitua.isOn
+        params["Barbituat_field"] = Barbituat_field.text!
+        params["Benzo"] = Benzo.isOn
+        params["Benzo_field"] = Benzo_field.text!
+        params["Cannabinoids"] = Cannabinoids.isOn
+        params["Cannab_Field"] = Cannab_Field.text!
+        params["Cocaine"] = Cocaine.isOn
+        params["Cocaine_Field"] = Cocaine_Field.text!
+        params["Fentanyl"] = Fentanyl.isOn
+        params["Fent_Field"] = Fent_Field
+        params["Methadone"] = Methadone.isOn
+        params["Methadone_Field"] = Methadone_Field.text!
+        params["Opiates"] = Opiates.isOn
+        params["Opiates_Field"] = Opiates_Field.text!
+        params["Oxycodone"] = Oxycodone.isOn
+        params["Oxycodone_Field"] = Oxycodone_Field.text!
+        params["Propo"] = Propo.isOn
+        params["Propo_field"] = Propo_field.text!
+        params["Analgesics"] = Analgesics.isOn
+        params["Analgesics_field"] = Analgesics_field.text!
+        params["Bupren"] = Bupren.isOn
+        params["Bupren_Field"] = Bupren_Field.text!
+        params["Anticonv"] = Anticonv.isOn
+        params["Anti_conv_Field"] = Anti_conv_Field.text!
+        params["Antidep"] = Antidep.isOn
+        params["Antdep_field"] = Antdep_field.text!
+        params["Antipsycho"] = Antipsycho.isOn
+        params["Antipsycho_fields"] = Antipsycho_fields.text!
+        params["Other"] = Other.isOn
+        params["Other_Field"] = Other_Field.text!
+        params["Body_Transported"] = Body_Transported.isOn
+        params["Cremation"] = Cremation.isOn
+        params["Cremation_Permit"] = Cremation_Permit.isOn
+        params["Body_Released_To"] = Body_Released_To.text!
+        params["Cost_of_Transport"] = Cost_of_Transport.text!
+        params["Funeral_Home"] = Funeral_Home.text!
+        params["Phone_Number_1"] = Phone_Number_1.text!
+        params["Head"] = Head.isOn
+        params["Neck"] = Neck.isOn
+        params["Face"] = Face.isOn
+        params["Thorax"] = Thorax.isOn
+        params["Abdo_LB"] = Abdo_LB.isOn
+        params["Spine"] = Spine.isOn
+        params["Upper_Ex"] = Upper_Ex.isOn
+        params["Lower_Ex"] = Lower_Ex.isOn
+        params["Unknown"] = Unknown.isOn
+        params["Additional_Wounds"] = Additional_Wounds.isOn
+        params["Firearm_Type"] = Firearm_Type.text!
+        params["Firearm_Recov"] = Firearm_Recov.text!
+        params["Casings_Recov"] = Casings_Recov.text!
+        params["Weapon_NF"] = Weapon_NF.text!
+        params["Other_Firearm"] = Other_Firearm.text!
+        params["Firearm_SN"] = Firearm_SN.text!
+        params["Caliber"] = Caliber.text!
+        params["Gauge"] = Gauge.text!
+        params["Firearm_Owner"] = Firearm_Owner.text!
+        params["Gunshot_Residue"] = Gunshot_Residue.text!
+        params["Dominant_Hand"] = Dominant_Hand.text!
+        params["Type_of_Amm"] = Type_of_Amm.text!
+        params["Number_Of_Shells"] = Number_Of_Shells.text!
+        
+        Alamofire.request(url, method:.post, parameters:params).validate().responseString {
+            response in
+            if let result = response.result.value {
+                let jsonData = result // as! NSDictionary
+                             
+                if(!jsonData.contains("success")){
+                    // Display an alert if an error and database insert didn't work
+                    DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Server error", message: result, preferredStyle: .alert)
+                                 
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
+                                 
+                    self.present(alert, animated:true, completion: nil)
+                    }
+                }
+                else {
+                    print("success")
+                }
+            }
+        }
+    }
  
         
     }
-    
-
-
-
-

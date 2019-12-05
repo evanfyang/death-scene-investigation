@@ -295,7 +295,7 @@ class Incident_Information: UIViewController, UIPickerViewDelegate, UIPickerView
             return
         }
         
-        let url = "https://statsqltest.as.uky.edu/edit_DSI.php"
+        let url = "https://statsqltest.as.uky.edu/edit_incident_information.php"
              allVar.Death_Date = Death_Date
              allVar.Death_Time = Death_Time
              allVar.Injury_Date = Injury_Date
