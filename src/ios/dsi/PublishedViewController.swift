@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+
 class PublishedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
         
@@ -34,26 +35,23 @@ class PublishedViewController: UIViewController, UITableViewDelegate, UITableVie
         Alamofire.request(url, method: .post, parameters: params).validate().responseString {
         
             response in
-            
                 
-                if let result = response.result.value {
-                    let data = result.data(using: .utf8)!
-                    guard let jsonArray = try? JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]
-                        else{ print("failedh")
-                            return
-                        }
-                    //print(jsonArray) // use the json here
-                    for json in jsonArray {
-                        guard let County = json["County"] else{ return }
-                        guard let CaseNum = json["CaseNum"] else{ return }
-                        guard let Version = json["Version"] else{ return }
-                        guard let DateCreated = json["Date_Created"] else { return }
-                        self.formList.append(formData(County: County, CaseNum: CaseNum, Version: Version, DateCreated: DateCreated))
+            if let result = response.result.value {
+                let data = result.data(using: .utf8)!
+                guard let jsonArray = try? JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]
+                    else{ print("failedh")
+                        return
                     }
-                    self.tableView.reloadData()
-                    print("hello")
+                //print(jsonArray) // use the json here
+                for json in jsonArray {
+                    guard let formCounty = json["County"] else{ return }
+                    guard let formCaseNum = json["CaseNum"] else{ return }
+                    guard let formVersion = json["Version"] else{ return }
+                    guard let formDateCreated = json["Date_Created"] else { return }
+                    self.formList.append(formData(County: formCounty, CaseNum: formCaseNum, Version: formVersion, DateCreated: formDateCreated))
                 }
-
+                self.tableView.reloadData()
+            }
         }
     }
 

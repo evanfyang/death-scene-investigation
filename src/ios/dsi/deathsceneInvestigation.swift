@@ -102,8 +102,38 @@ class Death_Scene_Investigation: UIViewController, UIPickerViewDelegate, UITextF
         
         // Set version for the entire editing form
         
-        
+        // Add the existing form data if the form was pending or published
         if allVar.isPending || allVar.isPublished{
+            let params: Parameters=[
+                "version": Version,
+                "casenum": CaseNum,
+                "field": "DeathSceneInvestigation"
+            ]
+            
+            let url = "https://statsqltest.as.uky.edu/load_published_forms.php"
+            
+            Alamofire.request(url, method: .post, parameters: params).validate().responseString {
+            
+                response in
+                    
+                if let result = response.result.value {
+                    let data = result.data(using: .utf8)!
+                    guard let jsonArray = try? JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,String>]
+                        else{ print("failedh")
+                            return
+                        }
+                    //print(jsonArray) // use the json here
+                    for json in jsonArray {
+                        guard let County = json["County"] else{ return }
+                        guard let CaseNum = json["CaseNum"] else{ return }
+                        guard let Version = json["Version"] else{ return }
+                        guard let DateCreated = json["Date_Created"] else { return }
+                        self.formList.append(formData(County: County, CaseNum: CaseNum, Version: Version, DateCreated: DateCreated))
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+            
             Coroner_Deputy?.text = allVar.Coroner_Deputy?.text
             Date_of_Call.date = allVar.Date_of_Call.date
             Time_of_Call.date = allVar.Time_of_Call.date

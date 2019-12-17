@@ -12,7 +12,6 @@ import Alamofire
 
 var Email: String = ""
 
-
 class LognViewController: UIViewController, UITextFieldDelegate
 {
     

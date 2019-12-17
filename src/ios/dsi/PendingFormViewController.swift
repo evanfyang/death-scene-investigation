@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+var County = ""
+var Version = ""
+var CaseNum = ""
+
 class PendingFormViewController: UIViewController {
 
     @IBAction func PendingButton(_ sender: UIButton) {
