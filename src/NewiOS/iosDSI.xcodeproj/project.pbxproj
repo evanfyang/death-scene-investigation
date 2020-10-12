@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		863931B225343ADB007AC97E /* CreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863931B125343ADB007AC97E /* CreateController.swift */; };
+		863931B725343C33007AC97E /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863931B625343C33007AC97E /* Global.swift */; };
 		863E6CD7252D6E7D00E3279B /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863E6CD6252D6E7D00E3279B /* Create.storyboard */; };
 		86E079752525623900D28C11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E079742525623900D28C11 /* AppDelegate.swift */; };
 		86E079772525623900D28C11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E079762525623900D28C11 /* SceneDelegate.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		863931B125343ADB007AC97E /* CreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateController.swift; sourceTree = "<group>"; };
+		863931B625343C33007AC97E /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		863E6CD6252D6E7D00E3279B /* Create.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
 		86E079712525623900D28C11 /* iosDSI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosDSI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E079742525623900D28C11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		863931A52534398B007AC97E /* CreateViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				863931B625343C33007AC97E /* Global.swift */,
+				863931B125343ADB007AC97E /* CreateController.swift */,
+			);
+			path = CreateViewControllers;
+			sourceTree = "<group>";
+		};
+		863931BB25343C44007AC97E /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		863E6CDB252D6E9A00E3279B /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +131,8 @@
 		86E079732525623900D28C11 /* iosDSI */ = {
 			isa = PBXGroup;
 			children = (
+				863931BB25343C44007AC97E /* Storage */,
+				863931A52534398B007AC97E /* CreateViewControllers */,
 				86E079742525623900D28C11 /* AppDelegate.swift */,
 				86E079762525623900D28C11 /* SceneDelegate.swift */,
 				86E079782525623900D28C11 /* ViewController.swift */,
@@ -271,8 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				86E079792525623900D28C11 /* ViewController.swift in Sources */,
+				863931B225343ADB007AC97E /* CreateController.swift in Sources */,
 				86E079752525623900D28C11 /* AppDelegate.swift in Sources */,
 				86E079772525623900D28C11 /* SceneDelegate.swift in Sources */,
+				863931B725343C33007AC97E /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
