@@ -17,4 +17,12 @@ struct Storage {
             County = ""
         }
     }
+    
+    struct DeathSceneInvestigation {
+        static var Deputy = ""
+        
+        static func Clear() {
+            Deputy = ""
+        }
+    }
 }
