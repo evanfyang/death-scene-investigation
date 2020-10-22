@@ -78,7 +78,7 @@
         <!--Death Scene Investigation-->
         <scene sceneID="rPc-EG-g9e">
             <objects>
-                <viewController id="ZkY-NS-WpP" userLabel="Death Scene Investigation" sceneMemberID="viewController">
+                <viewController id="ZkY-NS-WpP" userLabel="Death Scene Investigation" customClass="DeathSceneController" customModule="iosDSI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XSh-Sq-UlQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,6 +159,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Next"/>
                                                 <connections>
+                                                    <action selector="NextButton:" destination="ZkY-NS-WpP" eventType="touchUpInside" id="Xes-Ra-BQl"/>
                                                     <segue destination="hwA-Hg-ct3" kind="show" id="PNX-GW-oYb"/>
                                                 </connections>
                                             </button>
@@ -207,7 +208,7 @@
         <!--Next of Kin-->
         <scene sceneID="465-cl-P8X">
             <objects>
-                <viewController id="hwA-Hg-ct3" userLabel="Next of Kin" sceneMemberID="viewController">
+                <viewController id="hwA-Hg-ct3" userLabel="Next of Kin" customClass="NextOfKinController" customModule="iosDSI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c8e-hj-Ipg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -365,6 +366,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Next"/>
                                                 <connections>
+                                                    <action selector="NextButton:" destination="hwA-Hg-ct3" eventType="touchUpInside" id="k8B-FD-P5T"/>
                                                     <segue destination="Zfz-E7-zeo" kind="show" id="iok-En-nyz"/>
                                                 </connections>
                                             </button>
@@ -411,7 +413,7 @@
         <!--Decedent Information-->
         <scene sceneID="dXW-ej-X8w">
             <objects>
-                <viewController id="Zfz-E7-zeo" userLabel="Decedent Information" sceneMemberID="viewController">
+                <viewController id="Zfz-E7-zeo" userLabel="Decedent Information" customClass="DecedentController" customModule="iosDSI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rLA-6f-eK4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="2500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -846,6 +848,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Next"/>
                                                 <connections>
+                                                    <action selector="NextButton:" destination="Zfz-E7-zeo" eventType="touchUpInside" id="v48-Zf-6SJ"/>
                                                     <segue destination="D8x-Tr-dlR" kind="show" id="8S4-vb-LIa"/>
                                                 </connections>
                                             </button>
@@ -892,7 +895,7 @@
         <!--Incident Information-->
         <scene sceneID="QMP-Sf-c4W">
             <objects>
-                <viewController id="D8x-Tr-dlR" userLabel="Incident Information" sceneMemberID="viewController">
+                <viewController id="D8x-Tr-dlR" userLabel="Incident Information" customClass="IncidentInfoController" customModule="iosDSI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3ie-oZ-CXc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="4500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1311,6 +1314,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Next"/>
                                                 <connections>
+                                                    <action selector="NextButton:" destination="D8x-Tr-dlR" eventType="touchUpInside" id="Y6C-lM-Mno"/>
                                                     <segue destination="NPa-mP-eQn" kind="show" id="UjL-AS-xft"/>
                                                 </connections>
                                             </button>
@@ -1358,7 +1362,7 @@
         <!--Investigation-->
         <scene sceneID="mL1-RQ-uvp">
             <objects>
-                <viewController id="NPa-mP-eQn" userLabel="Investigation" sceneMemberID="viewController">
+                <viewController id="NPa-mP-eQn" userLabel="Investigation" customClass="InvestigationController" customModule="iosDSI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPQ-Bl-VXP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="6000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2605,6 +2609,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Next"/>
                                                 <connections>
+                                                    <action selector="NextButton:" destination="NPa-mP-eQn" eventType="touchUpInside" id="u5K-g5-feA"/>
                                                     <segue destination="rPN-nd-rug" kind="show" id="oXE-W3-333"/>
                                                 </connections>
                                             </button>
@@ -2651,7 +2656,7 @@
         <!--Case History-->
         <scene sceneID="YUT-Ld-pch">
             <objects>
-                <viewController id="rPN-nd-rug" userLabel="Case History" sceneMemberID="viewController">
+                <viewController id="rPN-nd-rug" userLabel="Case History" customClass="CaseHistoryController" customModule="iosDSI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ldo-PK-oN7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2684,6 +2689,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Next"/>
                                                 <connections>
+                                                    <action selector="NextButton:" destination="rPN-nd-rug" eventType="touchUpInside" id="Zzc-bJ-Bic"/>
                                                     <segue destination="twq-7b-9Ir" kind="show" id="DSf-Mr-EXh"/>
                                                 </connections>
                                             </button>
@@ -2730,7 +2736,7 @@
         <!--Pills On Scene-->
         <scene sceneID="pvZ-h3-Kbb">
             <objects>
-                <viewController id="twq-7b-9Ir" userLabel="Pills On Scene" sceneMemberID="viewController">
+                <viewController id="twq-7b-9Ir" userLabel="Pills On Scene" customClass="PillsController" customModule="iosDSI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Fe-ta-ZPb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2763,6 +2769,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Next"/>
                                                 <connections>
+                                                    <action selector="NextButton:" destination="twq-7b-9Ir" eventType="touchUpInside" id="vIg-Be-kGp"/>
                                                     <segue destination="2c8-fV-VrO" kind="show" id="Kd5-Hh-chk"/>
                                                 </connections>
                                             </button>
@@ -2809,7 +2816,7 @@
         <!--Upload Photos-->
         <scene sceneID="HLl-VD-aZy">
             <objects>
-                <viewController id="2c8-fV-VrO" userLabel="Upload Photos" sceneMemberID="viewController">
+                <viewController id="2c8-fV-VrO" userLabel="Upload Photos" customClass="UploadPhotosController" customModule="iosDSI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7eR-ON-ILD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2842,6 +2849,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Next"/>
                                                 <connections>
+                                                    <action selector="NextButton:" destination="2c8-fV-VrO" eventType="touchUpInside" id="sE6-Wf-Jwk"/>
                                                     <segue destination="n7v-vF-Sx4" kind="show" id="gTb-bK-fH2"/>
                                                 </connections>
                                             </button>
@@ -2888,7 +2896,7 @@
         <!--Narrative/Comments-->
         <scene sceneID="6fu-XS-QA1">
             <objects>
-                <viewController id="n7v-vF-Sx4" userLabel="Narrative/Comments" sceneMemberID="viewController">
+                <viewController id="n7v-vF-Sx4" userLabel="Narrative/Comments" customClass="NarrativeController" customModule="iosDSI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JhE-wA-fJN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2922,9 +2930,12 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEI-JS-Qzn">
-                                                <rect key="frame" x="126.66666666666669" y="624.33333333333337" width="122" height="39"/>
+                                                <rect key="frame" x="153.66666666666666" y="624.33333333333337" width="68" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <state key="normal" title="Submit Form"/>
+                                                <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="SubmitButton:" destination="n7v-vF-Sx4" eventType="touchUpInside" id="Art-40-XpU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -10,6 +10,15 @@
 		863931B225343ADB007AC97E /* CreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863931B125343ADB007AC97E /* CreateController.swift */; };
 		863931B725343C33007AC97E /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863931B625343C33007AC97E /* Global.swift */; };
 		863E6CD7252D6E7D00E3279B /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863E6CD6252D6E7D00E3279B /* Create.storyboard */; };
+		86D330D9254125670085B27B /* DeathSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D330D8254125670085B27B /* DeathSceneController.swift */; };
+		86D330DE2541268B0085B27B /* NextOfKinController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D330DD2541268B0085B27B /* NextOfKinController.swift */; };
+		86D330EB254127EF0085B27B /* IncidentInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D330EA254127EF0085B27B /* IncidentInfoController.swift */; };
+		86D330F02541280E0085B27B /* InvestigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D330EF2541280E0085B27B /* InvestigationController.swift */; };
+		86D330F525412A3B0085B27B /* CaseHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D330F425412A3B0085B27B /* CaseHistoryController.swift */; };
+		86D330FA25412A580085B27B /* PillsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D330F925412A580085B27B /* PillsController.swift */; };
+		86D330FF25412A770085B27B /* UploadPhotosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D330FE25412A770085B27B /* UploadPhotosController.swift */; };
+		86D3310425412A910085B27B /* NarrativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D3310325412A910085B27B /* NarrativeController.swift */; };
+		86D3310C25412ECD0085B27B /* DecedentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D3310B25412ECD0085B27B /* DecedentController.swift */; };
 		86E079752525623900D28C11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E079742525623900D28C11 /* AppDelegate.swift */; };
 		86E079772525623900D28C11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E079762525623900D28C11 /* SceneDelegate.swift */; };
 		86E079792525623900D28C11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E079782525623900D28C11 /* ViewController.swift */; };
@@ -41,6 +50,15 @@
 		863931B125343ADB007AC97E /* CreateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateController.swift; sourceTree = "<group>"; };
 		863931B625343C33007AC97E /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		863E6CD6252D6E7D00E3279B /* Create.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
+		86D330D8254125670085B27B /* DeathSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathSceneController.swift; sourceTree = "<group>"; };
+		86D330DD2541268B0085B27B /* NextOfKinController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextOfKinController.swift; sourceTree = "<group>"; };
+		86D330EA254127EF0085B27B /* IncidentInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentInfoController.swift; sourceTree = "<group>"; };
+		86D330EF2541280E0085B27B /* InvestigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestigationController.swift; sourceTree = "<group>"; };
+		86D330F425412A3B0085B27B /* CaseHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseHistoryController.swift; sourceTree = "<group>"; };
+		86D330F925412A580085B27B /* PillsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsController.swift; sourceTree = "<group>"; };
+		86D330FE25412A770085B27B /* UploadPhotosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotosController.swift; sourceTree = "<group>"; };
+		86D3310325412A910085B27B /* NarrativeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NarrativeController.swift; sourceTree = "<group>"; };
+		86D3310B25412ECD0085B27B /* DecedentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecedentController.swift; sourceTree = "<group>"; };
 		86E079712525623900D28C11 /* iosDSI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosDSI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E079742525623900D28C11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86E079762525623900D28C11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +104,16 @@
 			isa = PBXGroup;
 			children = (
 				863931B625343C33007AC97E /* Global.swift */,
+				86D330F425412A3B0085B27B /* CaseHistoryController.swift */,
 				863931B125343ADB007AC97E /* CreateController.swift */,
+				86D330D8254125670085B27B /* DeathSceneController.swift */,
+				86D330DD2541268B0085B27B /* NextOfKinController.swift */,
+				86D330EA254127EF0085B27B /* IncidentInfoController.swift */,
+				86D330EF2541280E0085B27B /* InvestigationController.swift */,
+				86D330F925412A580085B27B /* PillsController.swift */,
+				86D330FE25412A770085B27B /* UploadPhotosController.swift */,
+				86D3310325412A910085B27B /* NarrativeController.swift */,
+				86D3310B25412ECD0085B27B /* DecedentController.swift */,
 			);
 			path = CreateViewControllers;
 			sourceTree = "<group>";
@@ -292,10 +319,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D330FA25412A580085B27B /* PillsController.swift in Sources */,
 				86E079792525623900D28C11 /* ViewController.swift in Sources */,
+				86D330D9254125670085B27B /* DeathSceneController.swift in Sources */,
+				86D330F525412A3B0085B27B /* CaseHistoryController.swift in Sources */,
+				86D3310425412A910085B27B /* NarrativeController.swift in Sources */,
+				86D3310C25412ECD0085B27B /* DecedentController.swift in Sources */,
 				863931B225343ADB007AC97E /* CreateController.swift in Sources */,
+				86D330FF25412A770085B27B /* UploadPhotosController.swift in Sources */,
+				86D330EB254127EF0085B27B /* IncidentInfoController.swift in Sources */,
+				86D330F02541280E0085B27B /* InvestigationController.swift in Sources */,
 				86E079752525623900D28C11 /* AppDelegate.swift in Sources */,
 				86E079772525623900D28C11 /* SceneDelegate.swift in Sources */,
+				86D330DE2541268B0085B27B /* NextOfKinController.swift in Sources */,
 				863931B725343C33007AC97E /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
