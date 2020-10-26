@@ -3,7 +3,7 @@
 //  iosDSI
 //
 //  Created by Andrew Majda on 10/21/20.
-//
+//  Populated by Parker Buckley on 10/26/2020
 
 import UIKit
 
@@ -120,7 +120,104 @@ class InvestigationController: UIViewController {
     
     
     @IBAction func NextButton(_ sender: UIButton) {
+        var Valid = true
         
-        // button code goes here
+        if ( CaseNum.text! == "" ) { Valid = false }
+        if ( Version.text! == "" ) { Valid = false }
+        if ( Evidence_Collected.text! == "" ) { Valid = false }
+        if ( Collected_By.text! == "" ) { Valid = false }
+        if ( Date.date == tempDate ) { Valid = false }
+        if ( Time.date == tempDate ) { Valid = false }
+        if ( Name_PH.text! == "" ) { Valid = false }
+        if ( Number_PH.text! == "" ) { Valid = false }
+        if ( Medical_History.text! == "" ) { Valid = false }
+        if ( Medications.text! == "" ) { Valid = false }
+        if ( Officer.text! == "" ) { Valid = false }
+        if ( Medical_Examiner.text! == "" ) { Valid = false }
+        if ( Signed_By.text! == "" ) { Valid = false }
+        if ( Alcohol_Field.text! == "" ) { Valid = false }
+        if ( Amphe_Field.text! == "" ) { Valid = false }
+        if ( Barbituat_Field.text! == "" ) { Valid = false }
+        if ( Benzo_Field.text! == "" ) { Valid = false }
+        if ( Cannab_Field.text! == "" ) { Valid = false }
+        if ( Cocaine_Field.text! == "" ) { Valid = false }
+        if ( Fent_Field.text! == "" ) { Valid = false }
+        if ( Methadone_Field.text! == "" ) { Valid = false }
+        if ( Opiates_Field.text! == "" ) { Valid = false }
+        if ( Oxycodone_Field.text! == "" ) { Valid = false }
+        if ( Propo_Field.text! == "" ) { Valid = false }
+        if ( Analgesics_Field.text! == "" ) { Valid = false }
+        if ( Bupren_Field.text! == "" ) { Valid = false }
+        if ( Anti_conv_Field.text! == "" ) { Valid = false }
+        if ( Antdep_field.text! == "" ) { Valid = false }
+        if ( Antipsycho_fields.text! == "" ) { Valid = false }
+        if ( Other_Field.text! == "" ) { Valid = false }
+        if ( Body_Released_To.text! == "" ) { Valid = false }
+        if ( Cost_of_Transport.text! == "" ) { Valid = false }
+        if ( Funeral_Home.text! == "" ) { Valid = false }
+        if ( Phone_Number_1.text! == "" ) { Valid = false }
+        if ( Firearm_Type.text! == "" ) { Valid = false }
+        if ( Weapon_NF.text! == "" ) { Valid = false }
+        if ( Other_Firearm.text! == "" ) { Valid = false }
+        if ( Firearm_SN.text! == "" ) { Valid = false }
+        if ( Caliber.text! == "" ) { Valid = false }
+        if ( Gauge.text! == "" ) { Valid = false }
+        if ( Firearm_Owner.text! == "" ) { Valid = false }
+        if ( Firearm_Storage.text! == "" ) { Valid = false }
+        if ( Gunshot_Residue.text! == "" ) { Valid = false }
+        if ( Dominant_Hand.text! == "" ) { Valid = false }
+        if ( Type_of_Amm.text! == "" ) { Valid = false }
+        if ( Number_Of_Shells.text! == "" ) { Valid = false }
+        
+        if Valid {
+            Storage.Investigation.CaseNum = CaseNum.text!
+            Storage.Investigation.Version = Version.text!
+            Storage.Investigation.Evidence_Collected = Evidence_Collected.text!
+            Storage.Investigation.Collected_By = Collected_By.text!
+            Storage.Investigation.Date = Date.date
+            Storage.Investigation.Time = Time.date
+            Storage.Investigation.Name_PH = Name_PH.text!
+            Storage.Investigation.Number_PH = Number_PH.text!
+            Storage.Investigation.Medical_History = Medical_History.text!
+            Storage.Investigation.Medications = Medications.text!
+            Storage.Investigation.Officer = Officer.text!
+            Storage.Investigation.Medical_Examiner = Medical_Examiner.text!
+            Storage.Investigation.Signed_By = Signed_By.text!
+            Storage.Investigation.Alcohol_Field = Alcohol_Field.text!
+            Storage.Investigation.Amphe_Field = Amphe_Field.text!
+            Storage.Investigation.Barbituat_Field = Barbituat_Field.text!
+            Storage.Investigation.Benzo_Field = Benzo_Field.text!
+            Storage.Investigation.Cannab_Field = Cannab_Field.text!
+            Storage.Investigation.Cocaine_Field = Cocaine_Field.text!
+            Storage.Investigation.Fent_Field = Fent_Field.text!
+            Storage.Investigation.Methadone_Field = Methadone_Field.text!
+            Storage.Investigation.Opiates_Field = Opiates_Field.text!
+            Storage.Investigation.Oxycodone_Field = Oxycodone_Field.text!
+            Storage.Investigation.Propo_Field = Propo_Field.text!
+            Storage.Investigation.Analgesics_Field = Analgesics_Field.text!
+            Storage.Investigation.Bupren_Field = Bupren_Field.text!
+            Storage.Investigation.Anti_conv_Field = Anti_conv_Field.text!
+            Storage.Investigation.Antdep_field = Antdep_field.text!
+            Storage.Investigation.Antipsycho_fields = Antipsycho_fields.text!
+            Storage.Investigation.Other_Field = Other_Field.text!
+            Storage.Investigation.Body_Released_To = Body_Released_To.text!
+            Storage.Investigation.Cost_of_Transport = Cost_of_Transport.text!
+            Storage.Investigation.Funeral_Home = Funeral_Home.text!
+            Storage.Investigation.Phone_Number_1 = Phone_Number_1.text!
+            Storage.Investigation.Firearm_Type = Firearm_Type.text!
+            Storage.Investigation.Weapon_NF = Weapon_NF.text!
+            Storage.Investigation.Other_Firearm = Other_Firearm.text!
+            Storage.Investigation.Firearm_SN = Firearm_SN.text!
+            Storage.Investigation.Caliber = Caliber.text!
+            Storage.Investigation.Gauge = Gauge.text!
+            Storage.Investigation.Firearm_Owner = Firearm_Owner.text!
+            Storage.Investigation.Firearm_Storage = Firearm_Storage.text!
+            Storage.Investigation.Gunshot_Residue = Gunshot_Residue.text!
+            Storage.Investigation.Dominant_Hand = Dominant_Hand.text!
+            Storage.Investigation.Type_of_Amm = Type_of_Amm.text!
+            Storage.Investigation.Number_Of_Shells = Number_Of_Shells.text!
+        }
+        
+        //Transition Goes Here!!
     }
 }

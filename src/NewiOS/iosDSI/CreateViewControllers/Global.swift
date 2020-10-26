@@ -3,9 +3,12 @@
 //  iosDSI
 //
 //  Created by Andrew Majda on 10/12/20.
-//
+//  Populated by Parker Buckley on 10/26/2020
 
 import Foundation
+
+// used to initialize Date values in the Investigation struct
+var tempDate = Date()
 
 struct Storage {
     struct Create {
@@ -31,8 +34,8 @@ struct Storage {
         static var Version = ""
         static var Evidence_Collected = ""
         static var Collected_By = ""
-        static var Date = 0
-        static var Time = 0
+        static var Date = tempDate
+        static var Time = tempDate
         static var Photo = false
         static var Toxicology_Collected = false
         static var Blood = false
@@ -133,8 +136,8 @@ struct Storage {
              Version = ""
              Evidence_Collected = ""
              Collected_By = ""
-             Date = 0
-             Time = 0
+             Date = tempDate
+             Time = tempDate
              Photo = false
              Toxicology_Collected = false
              Blood = false
