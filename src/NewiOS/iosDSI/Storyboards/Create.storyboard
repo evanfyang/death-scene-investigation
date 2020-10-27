@@ -1445,7 +1445,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4r8-Qu-TOV">
-                                                <rect key="frame" x="62.666666666666657" y="94.333333333333485" width="249.99999999999997" height="4768.6666666666661"/>
+                                                <rect key="frame" x="62.666666666666657" y="94.333333333333485" width="249.99999999999997" height="5063.6666666666661"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Case Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tl4-eh-K0s">
                                                         <rect key="frame" x="0.0" y="0.0" width="250" height="20.333333333333332"/>
@@ -1509,7 +1509,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="suA-4l-nf8">
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="suA-4l-nf8" userLabel="Time">
                                                         <rect key="frame" x="0.0" y="507.66666666666663" width="250" height="216"/>
                                                     </datePicker>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFj-ki-kWT">
@@ -1599,13 +1599,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMS-wB-6NR">
                                                         <rect key="frame" x="0.0" y="944.66666666666663" width="250" height="31"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Victim Seen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBd-RW-wBp">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Victim Seen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBd-RW-wBp" userLabel="Victim_Seen">
                                                                 <rect key="frame" x="0.0" y="0.0" width="201" height="31"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-2t-BeG" userLabel="Victim Seen">
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-2t-BeG" userLabel="Victim_Seen">
                                                                 <rect key="frame" x="201.00000000000003" y="0.0" width="51" height="31"/>
                                                             </switch>
                                                         </subviews>
@@ -1721,6 +1721,9 @@
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-Sd-FgD" userLabel="Koda_Notified">
                                                                 <rect key="frame" x="201.00000000000003" y="0.0" width="51" height="31"/>
+                                                                <connections>
+                                                                    <action selector="Koda_Notified:" destination="NPa-mP-eQn" eventType="valueChanged" id="QMb-3Z-NHO"/>
+                                                                </connections>
                                                             </switch>
                                                         </subviews>
                                                     </stackView>
@@ -2623,54 +2626,112 @@
                                                             </switch>
                                                         </subviews>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Firearm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e37-sX-pgQ" userLabel="Firearm Serial Number">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firearm Serial Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e37-sX-pgQ" userLabel="Firearm Serial Number">
                                                         <rect key="frame" x="0.0" y="4537.666666666667" width="250" height="20.33333333333303"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YHf-bT-f62" userLabel="Other_Firearm">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YHf-bT-f62" userLabel="Firearm_SN">
                                                         <rect key="frame" x="0.0" y="4563" width="250" height="28.66666666666697"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Firearm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uG4-oE-Rjg">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caliber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uG4-oE-Rjg" userLabel="Caliber">
                                                         <rect key="frame" x="0.0" y="4596.666666666667" width="250" height="20.33333333333303"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XZ3-Eb-CtH" userLabel="Other_Firearm">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XZ3-Eb-CtH" userLabel="Caliber">
                                                         <rect key="frame" x="0.0" y="4622" width="250" height="28.66666666666697"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Firearm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1D-xK-Ax7">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gauge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1D-xK-Ax7" userLabel="Gauge">
                                                         <rect key="frame" x="0.0" y="4655.666666666667" width="250" height="20.33333333333303"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="feG-G6-tq3" userLabel="Other_Firearm">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="feG-G6-tq3" userLabel="Gauge">
                                                         <rect key="frame" x="0.0" y="4681" width="250" height="28.66666666666697"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Firearm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cak-Ih-0Go">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firearm Owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cak-Ih-0Go">
                                                         <rect key="frame" x="0.0" y="4714.666666666667" width="250" height="20.33333333333303"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xvt-kR-lQA" userLabel="Other_Firearm">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xvt-kR-lQA" userLabel="Firearm_Owner">
                                                         <rect key="frame" x="0.0" y="4740" width="250" height="28.66666666666697"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firearm Storage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRt-sc-p5x">
+                                                        <rect key="frame" x="0.0" y="4773.666666666667" width="250" height="20.33333333333303"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ljh-uR-wil" userLabel="Firearm_Storage">
+                                                        <rect key="frame" x="0.0" y="4799" width="250" height="28.66666666666697"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gunshot Residue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcT-uw-ya1">
+                                                        <rect key="frame" x="0.0" y="4832.666666666667" width="250" height="20.33333333333303"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BTg-gO-FJt" userLabel="Gunshot_Residue">
+                                                        <rect key="frame" x="0.0" y="4858" width="250" height="28.66666666666697"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dominant Hand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axD-g8-VdO">
+                                                        <rect key="frame" x="0.0" y="4891.666666666667" width="250" height="20.33333333333303"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tzg-2I-iIa" userLabel="Dominant_Hand">
+                                                        <rect key="frame" x="0.0" y="4917" width="250" height="28.66666666666697"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Ammunition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tey-KP-1u9">
+                                                        <rect key="frame" x="0.0" y="4950.666666666667" width="250" height="20.33333333333303"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GMu-AD-i2a" userLabel="Type_of_Amm">
+                                                        <rect key="frame" x="0.0" y="4976" width="250" height="28.66666666666697"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Shells" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRr-Gn-BTt">
+                                                        <rect key="frame" x="0.0" y="5009.666666666667" width="250" height="20.33333333333303"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zag-4h-1Of" userLabel="Number_Of_Shells">
+                                                        <rect key="frame" x="0.0" y="5035" width="250" height="28.66666666666697"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="Number_Of_Shells:" destination="NPa-mP-eQn" eventType="editingDidEnd" id="6mP-Vt-gRa"/>
+                                                        </connections>
+                                                    </textField>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gev-2D-Dgs">
-                                                <rect key="frame" x="165" y="4893" width="45" height="39"/>
+                                                <rect key="frame" x="165" y="5188" width="45" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Next"/>
                                                 <connections>
@@ -2713,6 +2774,107 @@
                     </view>
                     <navigationItem key="navigationItem" id="E5m-6D-MQj"/>
                     <size key="freeformSize" width="375" height="6000"/>
+                    <connections>
+                        <outlet property="Abdo_LB" destination="VkU-Lz-2e9" id="bcM-aw-Q2G"/>
+                        <outlet property="Additional_Wounds" destination="lSK-77-M17" id="hfa-E4-AOC"/>
+                        <outlet property="Admitted" destination="VVR-nn-G70" id="hvw-0L-YBd"/>
+                        <outlet property="Alcohol" destination="7S8-AK-I7e" id="UvM-wE-bxt"/>
+                        <outlet property="Alcohol_Field" destination="bcv-yN-qFe" id="rDx-hU-vUW"/>
+                        <outlet property="Alcohol_Use_Sus" destination="ybh-5S-v1y" id="N5U-4g-jMX"/>
+                        <outlet property="Amphe" destination="0GI-C3-EMV" id="ql7-Pb-LEL"/>
+                        <outlet property="Amphe_Field" destination="am4-bv-gPR" id="Jzf-He-hde"/>
+                        <outlet property="Analgesics" destination="R5e-ew-7NG" id="QHl-Ei-q9L"/>
+                        <outlet property="Analgesics_Field" destination="ocd-CN-7A6" id="dA9-Mb-Ffy"/>
+                        <outlet property="Antdep_field" destination="BCc-Ps-0n2" id="VTZ-VT-Amu"/>
+                        <outlet property="Anti_conv_Field" destination="WF0-to-dMk" id="90z-Hc-M5y"/>
+                        <outlet property="Anticonv" destination="NHU-qc-X8c" id="5RZ-ff-Xei"/>
+                        <outlet property="Antidep" destination="AbR-cD-dQA" id="1dZ-Sk-qJ2"/>
+                        <outlet property="Antipsycho" destination="NNe-Y0-ntC" id="2tm-yE-yRD"/>
+                        <outlet property="Antipsycho_fields" destination="RhP-tt-ywp" id="cXx-gP-rdj"/>
+                        <outlet property="Attending_PHN" destination="PFH-LK-8Rf" id="vHx-Mp-jv7"/>
+                        <outlet property="Autopsy" destination="bSM-7E-nFS" id="XO5-Fh-goT"/>
+                        <outlet property="Barbitua" destination="83R-pT-E7U" id="egL-uC-o8w"/>
+                        <outlet property="Barbituat_Field" destination="w8U-hm-CeE" id="6B8-fn-g0i"/>
+                        <outlet property="Benzo" destination="hc9-k3-ujk" id="g6g-gO-7jp"/>
+                        <outlet property="Benzo_Field" destination="hU4-ve-U8i" id="n7n-GR-TD8"/>
+                        <outlet property="Blood" destination="rUR-zY-AzS" id="aqq-Vr-Fp9"/>
+                        <outlet property="Body_Released_Field" destination="GHU-uT-Mx6" id="tsc-Qp-bku"/>
+                        <outlet property="Body_Transported" destination="RvN-YV-oo0" id="cbJ-ER-fYe"/>
+                        <outlet property="Bupren" destination="If1-bg-oUL" id="AaZ-fF-Ivz"/>
+                        <outlet property="Bupren_Field" destination="k0T-54-Xzm" id="uN4-Ch-Y9u"/>
+                        <outlet property="Caliber" destination="XZ3-Eb-CtH" id="0SH-Lb-fBx"/>
+                        <outlet property="Cannab_Field" destination="ORX-wS-p7I" id="zwZ-VJ-XgZ"/>
+                        <outlet property="Cannabinoids" destination="mgU-nc-IJy" id="8nL-bn-NKW"/>
+                        <outlet property="CaseNum" destination="vod-3w-cHx" id="4vJ-2E-h5E"/>
+                        <outlet property="Casings_Recov" destination="Ett-6e-4Ac" id="nJ0-el-qLa"/>
+                        <outlet property="Cocaine" destination="oB7-Hx-MII" id="XoU-yg-GAV"/>
+                        <outlet property="Cocaine_Field" destination="YHD-Dk-eXc" id="1BL-Tx-i82"/>
+                        <outlet property="Collected_By" destination="g5D-x6-238" id="2Xh-aT-Wd3"/>
+                        <outlet property="Cornea_Donate" destination="iNX-ga-44g" id="Z8c-1z-htx"/>
+                        <outlet property="Coroners_Inq" destination="ghy-eg-fmK" id="CCL-oU-2vA"/>
+                        <outlet property="Cost_of_Transport" destination="dSF-gI-sb2" id="Xad-mY-uYH"/>
+                        <outlet property="Cremation" destination="F06-Nt-KFE" id="eS3-q9-Lxl"/>
+                        <outlet property="Cremation_Permit" destination="kk4-xw-5Zf" id="hAH-5E-e4a"/>
+                        <outlet property="Date" destination="hBy-8n-kWo" id="1K2-V0-YJC"/>
+                        <outlet property="Death_Certificate_Signed" destination="pxZ-Po-TCq" id="MMx-P3-vJ9"/>
+                        <outlet property="Diabetes" destination="t0P-Rd-BNz" id="SfS-FJ-rns"/>
+                        <outlet property="Dominant_Hand" destination="tzg-2I-iIa" id="iz7-q9-PLA"/>
+                        <outlet property="Drug_Use_Sus" destination="nmR-EW-4rn" id="FH3-Ey-wgE"/>
+                        <outlet property="Ems_At_Scene" destination="0rG-xm-uSe" id="KHs-cO-tda"/>
+                        <outlet property="Evidence_Collected" destination="8Sj-oE-4UQ" id="ReM-K0-Zdq"/>
+                        <outlet property="Face" destination="z2k-Jf-gjx" id="7Wa-Vd-Acp"/>
+                        <outlet property="Fent_Field" destination="YuA-zc-wdW" id="Yed-dA-JZJ"/>
+                        <outlet property="Firearm_Owner" destination="xvt-kR-lQA" id="hkW-1y-jJW"/>
+                        <outlet property="Firearm_Recov" destination="1Pp-t3-mEO" id="rtM-3q-4Sv"/>
+                        <outlet property="Firearm_SN" destination="YHf-bT-f62" id="Ism-p3-Ly4"/>
+                        <outlet property="Firearm_Storage" destination="Ljh-uR-wil" id="ZMk-ke-ArX"/>
+                        <outlet property="Firearm_Type" destination="CsI-Vg-py7" id="XXb-bA-M1Y"/>
+                        <outlet property="Funeral_Home" destination="XeZ-S8-2qc" id="qaG-fE-NH1"/>
+                        <outlet property="Gauge" destination="feG-G6-tq3" id="yhd-2A-7hO"/>
+                        <outlet property="Gunshot_Residue" destination="BTg-gO-FJt" id="cWE-hC-3NA"/>
+                        <outlet property="Head" destination="rCY-5H-PXL" id="DLG-JA-C0v"/>
+                        <outlet property="KY_Marsh_Notif" destination="0io-tl-HkM" id="36I-Xi-ABJ"/>
+                        <outlet property="Koda_Notified" destination="g7d-Sd-FgD" id="P3c-d9-DQf"/>
+                        <outlet property="Lower_Ex" destination="iht-wq-8Ka" id="ZWi-78-VZh"/>
+                        <outlet property="Medical_Examiner" destination="zgV-fY-o3H" id="slI-5A-2Oh"/>
+                        <outlet property="Medical_History" destination="nLC-Eo-5O2" id="8eL-zd-Mvg"/>
+                        <outlet property="Medical_Record_Req" destination="LNh-4Q-83J" id="83A-67-9in"/>
+                        <outlet property="Medications" destination="CWj-16-IUa" id="3Br-bo-ZpP"/>
+                        <outlet property="Methadone" destination="e2d-ke-18w" id="dI1-Nu-LpI"/>
+                        <outlet property="Methadone_Field" destination="Wbk-tG-agU" id="4wu-dU-Uoo"/>
+                        <outlet property="Name_PH" destination="xiH-Pa-NCc" id="TsO-dX-zzb"/>
+                        <outlet property="Neck" destination="aJa-jv-Lh7" id="UPC-nK-cXi"/>
+                        <outlet property="Number_PH" destination="9Ee-X7-def" id="Xc6-qt-Yd7"/>
+                        <outlet property="OSHA_Req" destination="ojb-oi-0iM" id="plJ-RC-0pL"/>
+                        <outlet property="Officer" destination="D5I-FZ-6Jb" id="GbA-Y6-qUL"/>
+                        <outlet property="Opiates" destination="HWx-0v-JiA" id="tDD-e3-KIK"/>
+                        <outlet property="Opiates_Field" destination="mhh-Rm-qVm" id="4r1-9z-CK8"/>
+                        <outlet property="Organ_Donate" destination="SeY-rc-sVm" id="VSU-b2-onJ"/>
+                        <outlet property="Other" destination="cHy-QU-QyR" id="Bzo-cP-j14"/>
+                        <outlet property="Other_Field" destination="emd-Cc-CdI" id="KjO-p3-OPk"/>
+                        <outlet property="Other_Firearm" destination="pHo-T1-6hG" id="8UY-AD-zEC"/>
+                        <outlet property="Oxycodone" destination="dh0-9w-yTh" id="BMU-U7-LJS"/>
+                        <outlet property="Oxycodone_Field" destination="YLA-0Z-mcI" id="wZr-9y-vak"/>
+                        <outlet property="Phone_Number_1" destination="3FY-Op-xbf" id="TPC-qv-4B1"/>
+                        <outlet property="Photo" destination="hMM-B4-45m" id="zSG-dk-AxY"/>
+                        <outlet property="Police_Dep_Notif" destination="KDE-rP-FaL" id="y3x-hn-wLo"/>
+                        <outlet property="Propo" destination="a3A-DZ-mbF" id="FLm-jv-LUu"/>
+                        <outlet property="Propo_Field" destination="Ru8-On-Cnj" id="dvI-Xz-lE4"/>
+                        <outlet property="Signed_By" destination="Ucs-4a-tsP" id="JPY-KK-TZG"/>
+                        <outlet property="Spine" destination="cVz-Ye-85b" id="yX3-5U-C2S"/>
+                        <outlet property="Thorax" destination="sn0-lF-zcT" id="2Cx-Wd-cup"/>
+                        <outlet property="Time" destination="suA-4l-nf8" id="2xQ-kD-CMh"/>
+                        <outlet property="Tissue_Donate" destination="R2o-MJ-KVE" id="xDZ-SC-cy6"/>
+                        <outlet property="Toxicology_Collected" destination="iky-2R-UIa" id="cfv-gw-h1K"/>
+                        <outlet property="Type_of_Amm" destination="GMu-AD-i2a" id="xjc-8M-ia4"/>
+                        <outlet property="Unknown" destination="ILu-9p-Dwc" id="zXv-3C-2pE"/>
+                        <outlet property="Upper_Ex" destination="2Ny-8r-xSy" id="Wrn-sa-RNQ"/>
+                        <outlet property="Urine" destination="Dco-WP-dda" id="inf-eE-uDa"/>
+                        <outlet property="Version" destination="HV6-ss-bEV" id="kxS-z3-So4"/>
+                        <outlet property="Victim_Seen" destination="h5K-2t-BeG" id="jZb-s4-qEM"/>
+                        <outlet property="Virteous" destination="sn1-Di-eKf" id="4xI-eB-FDd"/>
+                        <outlet property="Weapon_NF" destination="pZl-i8-JfN" id="f80-uZ-UZj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNX-cg-uvx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
