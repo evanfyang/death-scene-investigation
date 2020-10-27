@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>	
+		.centerForm {
+			padding: 80px 0;
+			text-align: center;
+			background-color: #d9d9d9;
+			border: 2px solid #bdbdbd;
+			border-radius: .25rem;
+		}
+		body {
+			text-align:center;
+			font-family: Arial, sans-serif, Times;
+		}	
+		input {
+			margin-top: 10px;	
+		}
+		fieldset{
+			border:none;
+			width:500px;
+			margin:0px auto;
+	
+		}
+		label{
+			display:inline-block;
+			width:200px;
+			margin-right:5px;
+			text-allign:right;
+
+		}
+		.submit {
+			background-color: #28158f;		
+			color: white;
+			border-radius: .25rem;
+			padding: 5px;
+			font-size: 15px;	
+		} 
+		.submit:hover {
+			background-color: white;
+			color: #28158f;
+			border-radius: .25rem;
+			border-color: #cccccc;	
+		}
+		</style>		
+	</head>
+
+<body>
+		<div class="centerForm">
+		<h1>User Access Requests - Administrator Login</h1>
+			<form action="http://www.cs.uky.edu/~bcty222/499project/myLogin.php" method="post">
+				<fieldset>
+					<label for="user">Username/Email:</label><input type="text" name="user"><br>
+					<label for="pass">Password:</label><input type="password" name="pass"><br>
+				</fieldset>
+				<input class="submit" type="submit" name="submit">	
+			</form>
+		</div>
+</body>
+
+
+
+
+
+
+
+</html>
+
