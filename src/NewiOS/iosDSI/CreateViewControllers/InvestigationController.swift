@@ -216,8 +216,183 @@ class InvestigationController: UIViewController {
             Storage.Investigation.Dominant_Hand = Dominant_Hand.text!
             Storage.Investigation.Type_of_Amm = Type_of_Amm.text!
             Storage.Investigation.Number_Of_Shells = Number_Of_Shells.text!
+            
+            Storage.Investigation.Photo = Photo.isOn
+            Storage.Investigation.Toxicology_Collected = Toxicology_Collected.isOn
+            Storage.Investigation.Blood = Blood.isOn
+            Storage.Investigation.Urine = Urine.isOn
+            Storage.Investigation.Virteous = Virteous.isOn
+            Storage.Investigation.Ems_At_Scene = Ems_At_Scene.isOn
+            Storage.Investigation.Victim_Seen = Victim_Seen.isOn
+            Storage.Investigation.Admitted = Admitted.isOn
+            Storage.Investigation.Attending_PHN = Attending_PHN.isOn
+            Storage.Investigation.Diabetes = Diabetes.isOn
+            Storage.Investigation.Medical_Record_Req = Medical_Record_Req.isOn
+            Storage.Investigation.Koda_Notified = Koda_Notified.isOn
+            Storage.Investigation.Organ_Donate = Organ_Donate.isOn
+            Storage.Investigation.Tissue_Donate = Tissue_Donate.isOn
+            Storage.Investigation.Cornea_Donate = Cornea_Donate.isOn
+            Storage.Investigation.Police_Dep_Notif = Police_Dep_Notif.isOn
+            Storage.Investigation.KY_Marsh_Notif = KY_Marsh_Notif.isOn
+            Storage.Investigation.OSHA_Req = OSHA_Req.isOn
+            Storage.Investigation.Coroners_Inq = Coroners_Inq.isOn
+            Storage.Investigation.Autopsy = Autopsy.isOn
+            Storage.Investigation.Death_Certificate_Signed = Death_Certificate_Signed.isOn
+            Storage.Investigation.Alcohol_Use_Sus = Alcohol_Use_Sus.isOn
+            Storage.Investigation.Drug_Use_Sus = Drug_Use_Sus.isOn
+            Storage.Investigation.Alcohol = Alcohol.isOn
+            Storage.Investigation.Amphe = Amphe.isOn
+            Storage.Investigation.Barbitua = Barbitua.isOn
+            Storage.Investigation.Benzo = Benzo.isOn
+            Storage.Investigation.Cannabinoids = Cannabinoids.isOn
+            Storage.Investigation.Cocaine = Cocaine.isOn
+            Storage.Investigation.Methadone = Methadone.isOn
+            Storage.Investigation.Opiates = Opiates.isOn
+            Storage.Investigation.Oxycodone = Oxycodone.isOn
+            Storage.Investigation.Propo = Propo.isOn
+            Storage.Investigation.Analgesics = Analgesics.isOn
+            Storage.Investigation.Bupren = Bupren.isOn
+            Storage.Investigation.Anticonv = Anticonv.isOn
+            Storage.Investigation.Antidep = Antidep.isOn
+            Storage.Investigation.Antipsycho = Antipsycho.isOn
+            Storage.Investigation.Other = Other.isOn
+            Storage.Investigation.Body_Transported = Body_Transported.isOn
+            Storage.Investigation.Cremation = Cremation.isOn
+            Storage.Investigation.Cremation_Permit = Cremation_Permit.isOn
+            Storage.Investigation.Head = Head.isOn
+            Storage.Investigation.Neck = Neck.isOn
+            Storage.Investigation.Face = Face.isOn
+            Storage.Investigation.Thorax = Thorax.isOn
+            Storage.Investigation.Abdo_LB = Abdo_LB.isOn
+            Storage.Investigation.Spine = Spine.isOn
+            Storage.Investigation.Upper_Ex = Upper_Ex.isOn
+            Storage.Investigation.Lower_Ex = Lower_Ex.isOn
+            Storage.Investigation.Unknown = Unknown.isOn
+            Storage.Investigation.Additional_Wounds = Additional_Wounds.isOn
+            Storage.Investigation.Firearm_Recov = Firearm_Recov.isOn
+            Storage.Investigation.Casings_Recov = Casings_Recov.isOn
         }
+    }   // close nextButton function
+    
+    @IBAction func SubmitButton(_ sender: Any) {
         
-        //Transition Goes Here!!
-    }
+        // Investigation code added here
+        let investigationURL = "https://statsqltest.as.uky.edu/edit_investigation.php"
+        let investigationParams: Parameters = [
+            "CaseNum" = Storage.Investigation.CaseNum,   
+            "Version" = Storage.Investigation.Version,
+            "Evidence_Collected" = Storage.Investigation.Evidence_Collected,
+            "Collected_By" = Storage.Investigation.Collected_By,
+            "Date" = Storage.Investigation.Date,            
+            "Time" = Storage.Investigation.Time,            
+            "Name_PH" = Storage.Investigation.Name_PH,
+            "Number_PH" = Storage.Investigation.Number_PH,
+            "Medical_History" = Storage.Investigation.Medical_History,
+            "Medications" = Storage.Investigation.Medications,
+            "Officer" = Storage.Investigation.Officer,
+            "Medical_Examiner" = Storage.Investigation.Medical_Examiner,
+            "Signed_By" = Storage.Investigation.Signed_By,
+            "Alcohol_Field" = Storage.Investigation.Alcohol_Field,
+            "Amphe_Field" = Storage.Investigation.Amphe_Field,
+            "Barbituat_Field" = Storage.Investigation.Barbituat_Field,
+            "Benzo_Field" = Storage.Investigation.Benzo_Field,
+            "Cannab_Field" = Storage.Investigation.Cannab_Field,
+            "Cocaine_Field" = Storage.Investigation.Cocaine_Field,
+            "Fent_Field" = Storage.Investigation.Fent_Field,
+            "Methadone_Field" = Storage.Investigation.Methadone_Field,
+            "Opiates_Field" = Storage.Investigation.Opiates_Field,
+            "Oxycodone_Field" = Storage.Investigation.Oxycodone_Field,
+            "Propo_Field" = Storage.Investigation.Propo_Field,
+            "Analgesics_Field" = Storage.Investigation.Analgesics_Field,
+            "Bupren_Field" = Storage.Investigation.Bupren_Field,
+            "Anti_conv_Field" = Storage.Investigation.Anti_conv_Field,
+            "Antdep_field" = Storage.Investigation.Antdep_field,
+            "Antipsycho_fields" = Storage.Investigation.Antipsycho_fields,
+            "Other_Field" = Storage.Investigation.Other_Field,
+            "Body_Released_To" = Storage.Investigation.Body_Released_To,
+            "Cost_of_Transport" = Storage.Investigation.Cost_of_Transport,
+            "Funeral_Home" = Storage.Investigation.Funeral_Home,
+            "Phone_Number_1" = Storage.Investigation.Phone_Number_1,
+            "Firearm_Type" = Storage.Investigation.Firearm_Type,
+            "Weapon_NF" = Storage.Investigation.Weapon_NF,
+            "Other_Firearm" = Storage.Investigation.Other_Firearm,
+            "Firearm_SN" = Storage.Investigation.Firearm_SN,
+            "Caliber" = Storage.Investigation.Caliber,
+            "Gauge" = Storage.Investigation.Gauge,
+            "Firearm_Owner" = Storage.Investigation.Firearm_Owner,
+            "Firearm_Storage" = Storage.Investigation.Firearm_Storage,
+            "Gunshot_Residue" = Storage.Investigation.Gunshot_Residue,            
+            "Dominant_Hand" = Storage.Investigation.Dominant_Hand,
+            "Type_of_Amm" = Storage.Investigation.Type_of_Amm,            
+            "Number_Of_Shells" = Storage.Investigation.Number_Of_Shells,    
+            "Photo" = Storage.Investigation.Photo,            
+            "Toxicology_Collected" = Storage.Investigation.Toxicology_Collected,            
+            "Blood" = Storage.Investigation.Blood,            
+            "Urine" = Storage.Investigation.Urine,            
+            "Virteous" = Storage.Investigation.Virteous,            
+            "Ems_At_Scene" = Storage.Investigation.Ems_At_Scene,            
+            "Victim_Seen" = Storage.Investigation.Victim_Seen,            
+            "Admitted" = Storage.Investigation.Admitted,            
+            "Attending_PHN" = Storage.Investigation.Attending_PHN,            
+            "Diabetes" = Storage.Investigation.Diabetes,            
+            "Medical_Record_Req" = Storage.Investigation.Medical_Record_Req,            
+            "Koda_Notified" = Storage.Investigation.Koda_Notified,            
+            "Organ_Donate" = Storage.Investigation.Organ_Donate,            
+            "Tissue_Donate" = Storage.Investigation.Tissue_Donate,            
+            "Cornea_Donate" = Storage.Investigation.Cornea_Donate,            
+            "Police_Dep_Notif" = Storage.Investigation.Police_Dep_Notif,            
+            "KY_Marsh_Notif" = Storage.Investigation.KY_Marsh_Notif,            
+            "OSHA_Req" = Storage.Investigation.OSHA_Req,            
+            "Coroners_Inq" = Storage.Investigation.Coroners_Inq,            
+            "Autopsy" = Storage.Investigation.Autopsy,            
+            "Death_Certificate_Signed" = Storage.Investigation.Death_Certificate_Signed,            
+            "Alcohol_Use_Sus" = Storage.Investigation.Alcohol_Use_Sus,            
+            "Drug_Use_Sus" = Storage.Investigation.Drug_Use_Sus,            
+            "Alcohol" = Storage.Investigation.Alcohol,            
+            "Amphe" = Storage.Investigation.Amphe,            
+            "Barbitua" = Storage.Investigation.Barbitua,            
+            "Benzo" = Storage.Investigation.Benzo,            
+            "Cannabinoids" = Storage.Investigation.Cannabinoids,            
+            "Cocaine" = Storage.Investigation.Cocaine,            
+            "Methadone" = Storage.Investigation.Methadone,            
+            "Opiates" = Storage.Investigation.Opiates,            
+            "Oxycodone" = Storage.Investigation.Oxycodone,            
+            "Propo" = Storage.Investigation.Propo,            
+            "Analgesics" = Storage.Investigation.Analgesics,            
+            "Bupren" = Storage.Investigation.Bupren,            
+            "Anticonv" = Storage.Investigation.Anticonv,            
+            "Antidep" = Storage.Investigation.Antidep,            
+            "Antipsycho" = Storage.Investigation.Antipsycho,            
+            "Other" = Storage.Investigation.Other,            
+            "Body_Transported" = Storage.Investigation.Body_Transported,            
+            "Cremation" = Storage.Investigation.Cremation,            
+            "Cremation_Permit" = Storage.Investigation.Cremation_Permit,            
+            "Head" = Storage.Investigation.Head,            
+            "Neck" = Storage.Investigation.Neck,            
+            "Face" = Storage.Investigation.Face,            
+            "Thorax" = Storage.Investigation.Thorax,            
+            "Abdo_LB" = Storage.Investigation.Abdo_LB,            
+            "Spine" = Storage.Investigation.Spine,            
+            "Upper_Ex" = Storage.Investigation.Upper_Ex,            
+            "Lower_Ex" = Storage.Investigation.Lower_Ex,            
+            "Unknown" = Storage.Investigation.Unknown,            
+            "Additional_Wounds" = Storage.Investigation.Additional_Wounds,            
+            "Firearm_Recov" = Storage.Investigation.Firearm_Recov,            
+            "Casings_Recov" = Storage.Investigation.Casings_Recov
+        ]
+
+        Alamofire.request(investigationURL, method: .post, parameters: investigationParams).validate().responseString {
+            response in
+            if let result = response.result.value {
+                let jsonData = result
+                //if there is no error
+                if(jsonData.contains("success")){
+                    print("Investigation Post Success")
+                }
+                else {
+                    print("Investigation Post Failure")
+                }
+            }
+        }   // close the alamofire function
+    }   // close the submit function
 }
