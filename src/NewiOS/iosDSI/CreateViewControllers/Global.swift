@@ -94,28 +94,6 @@ struct Storage {
         static var Due_To_2 = ""
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
     struct DeathSceneInvestigation {
          static var Deputy = ""
@@ -560,4 +538,110 @@ struct Storage {
 
         }
     }
+    
+    struct NextOfKin{
+        static func Clear(){
+            CaseNum = ""
+            Version = ""
+            Notified_by = ""
+            Date_Notified = tempDate
+            Time_Notified = tempDate
+            Name = ""
+            Relationship = ""
+            Phone_Number = ""
+            Address = ""
+            City_1 = ""
+            State = ""
+            Zip_1 = ""
+            
+        }
+        static var CaseNum = ""
+        static var Version = ""
+        static var Notified_by = ""
+        static var Date_Notified = tempDate
+        static var Time_Notified = tempDate
+        static var Name = ""
+        static var Relationship = ""
+        static var Phone_Number = ""
+        static var Address = ""
+        static var City_1 = ""
+        static var State = ""
+        static var Zip_1 = ""
+    }
+
+    struct DescendentInformation{
+        static func Clear(){
+            CaseNum = ""
+            Version = ""
+            First_Name = ""
+            Last_Name = ""
+            Gender = ""
+            Age = ""
+            Birth_Place = ""
+            SSN_Num = ""
+            Address = ""
+            City = ""
+            Country_of_Res = ""
+            Zip = ""
+            Height = ""
+            Weight = ""
+            Eyes = ""
+            Hair = ""
+            Race = ""
+            Ethnicity = ""
+            Marital_Status = ""
+            Surviving_Spouse = ""
+            Mother_MN = ""
+            Father_N = ""
+            Pregnant = false
+            Homeless = false
+            Veteran = false
+            Retired = false
+            Active = false
+            other1 = false
+            other_field = ""
+            Branch = ""
+            Last_Tour = ""
+            Education = ""
+            Employment = ""
+            Industry = ""
+            Current_Occupation = ""
+        }
+        static var CaseNum = ""
+        static var Version = ""
+        static var First_Name = ""
+        static var Last_Name = ""
+        static var Gender = ""
+        static var Age = ""
+        static var Birth_Place = ""
+        static var SSN_Num = ""
+        static var Address = ""
+        static var City = ""
+        static var Country_of_Res = ""
+        static var Zip = ""
+        static var Height = ""
+        static var Weight = ""
+        static var Eyes = ""
+        static var Hair = ""
+        static var Race = ""
+        static var Ethnicity = ""
+        static var Marital_Status = ""
+        static var Surviving_Spouse = ""
+        static var Mother_MN = ""
+        static var Father_N = ""
+        static var Pregnant = false
+        static var Homeless = false
+        static var Veteran = false
+        static var Retired = false
+        static var Active = false
+        static var other1 = false
+        static var other_field = ""
+        static var Branch = ""
+        static var Last_Tour = ""
+        static var Education = ""
+        static var Employment = ""
+        static var Industry = ""
+        static var Current_Occupation = ""
+    }
 }
+
