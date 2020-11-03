@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class NarrativeController: UIViewController {
 
     override func viewDidLoad() {
@@ -21,6 +22,47 @@ class NarrativeController: UIViewController {
     @IBAction func SubmitButton(_ sender: Any) {
         
         // all shit is sent here
+        let incidentInfoUrl = "https://statsql.test.as.uky.edu/edit_incident_info.php"
+        let IncidentInfoParams: Parameters = [
+            "CaseNum" = Storage.IncidentInformation.CaseNum,
+            "Version" = Storage.IncidentInformation.Version,
+            "Death_Date" = Storage.IncidentInformation.Death_Date,
+            "Death_Time" = Storage.IncidentInformation.Death_Time,
+            "Injury_Date" = Storage.IncidentInformation.Injury_Date,
+            "Injury_Time" = Storage.IncidentInformation.Injury_Time,
+            "PlaceDeath" = Storage.IncidentInformation.PlaceDeath,
+            "PlaceInjury" = Storage.IncidentInformation.PlaceInjury,
+            "LS_Date" = Storage.IncidentInformation.LS_Date,
+            "LS_Time" = Storage.IncidentInformation.LS_Time,
+            "LS_Loc" = Storage.IncidentInformation.LS_Loc,
+            "LS_CC" = Storage.IncidentInformation.LS_CC,
+            "DD_Date" = Storage.IncidentInformation.DD_Date,
+            "DD_Time" = Storage.IncidentInformation.DD_Time,
+            "DD_CC" = Storage.IncidentInformation.DD_CC,
+            "DD_Loc" = Storage.IncidentInformation.DD_Loc,
+            "Found_Dead_By" = Storage.IncidentInformation.Found_Dead_By,
+            "FDB_Address" = Storage.IncidentInformation.FDB_Address,
+            "Last_Seen_Alive" = Storage.IncidentInformation.Last_Seen_Alive,
+            "LSA_Address" = Storage.IncidentInformation.LSA_Address,
+            "Witness" = Storage.IncidentInformation.Witness,
+            "Weather" = Storage.IncidentInformation.Weather,
+            "Activity" = Storage.IncidentInformation.Activity,
+            "Position_Body" = Storage.IncidentInformation.Position_Body,
+            "Livor" = Storage.IncidentInformation.Livor,
+            "Rigor" = Storage.IncidentInformation.Rigor,
+            "Consistent_With_Position" = Storage.IncidentInformation.Consistent_With_Position,
+            "Clothed" = Storage.IncidentInformation.Clothed,
+            "Partially_Clothed" = Storage.IncidentInformation.Partially_Clothed,
+            "Unclothed" = Storage.IncidentInformation.Unclothed,
+            "Dis_Mark" = Storage.IncidentInformation.Dis_Mark,
+            "Body_Temp" = Storage.IncidentInformation.Body_Temp,
+            "Body_Decomp" = Storage.IncidentInformation.Body_Decomp,
+            "Immed_Cause" = Storage.IncidentInformation.Immed_Cause,
+            "Due_To" = Storage.IncidentInformation.Due_To,
+            "Due_To_2" = Storage.IncidentInformation.Due_To_2
+            
+        
+        ]
         let CaseHistoryURL = "https://statsqltest.as.uky.edu/edit_case_history.php" // Location of Database
         let CaseHistoryParams: Parameters = [
             "CaseNum" = Storage.CaseHistory.CaseNum,
@@ -136,6 +178,23 @@ class NarrativeController: UIViewController {
             "O_TreatMenHealth" = Storage.CaseHistory.O_TreatMenHealth
             
         ]
+        Alamofire.request(incidentInfoUrl, method: .post,
+                     parameters:
+                     IncidentInfoParams)
+            .validate()
+            .responseString{
+                response in
+                if let result =
+                    response.result.value{
+                    let jsonData = result
+                    if(jsonData.contains("success")){
+                        print("Incident Info Post Success")
+                    }
+                    else{
+                        print("Incident Info Post Failed")
+                    }
+                }
+            }
        Alamofire.request(CaseHistoryURL, method: .post, parameters: CaseHistoryParams).validate().responseString {
             response in
             if let result = response.result.value {
