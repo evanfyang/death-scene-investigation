@@ -2,7 +2,7 @@
 //  DeathSceneController.swift
 //  iosDSI
 //
-//  Created by Andrew Majda on 10/21/20.
+//  Created by DSI Group 2 on 10/21/20.
 //
 
 import UIKit
@@ -16,7 +16,7 @@ class DeathSceneController: UIViewController {
     }
     
 
-    // start coding here
+    // Outlets go here
 
     @IBAction func NextButton(_ sender: UIButton) {
         

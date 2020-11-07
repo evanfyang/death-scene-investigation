@@ -2,7 +2,7 @@
 //  NextOfKinController.swift
 //  iosDSI
 //
-//  Created by Andrew Majda on 10/21/20.
+//  Created by DSI group 2 on 10/21/20.
 //
 
 import UIKit
@@ -21,11 +21,12 @@ class NextOfKinController: UIViewController {
 
     @IBAction func NextButton(_ sender: UIButton) {
         
-        // Button code goes here
+        // validation
         var isValid = true;
         if(CaseNum.text! == "") {isValid = false}
         if(Version.text! == "") {isValid = false}
         
+        // if valid add to the storage
         if(isValid){
             Storage.NextofKin.CaseNum = CaseNum.text!
             Storage.NextofKin.Version = Version.text!

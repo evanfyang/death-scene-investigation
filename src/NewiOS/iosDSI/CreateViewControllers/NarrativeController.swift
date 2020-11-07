@@ -2,7 +2,7 @@
 //  NarrativeController.swift
 //  iosDSI
 //
-//  Created by Andrew Majda on 10/21/20.
+//  Created by ASI Group 2 on 10/21/20.
 //
 
 import UIKit
@@ -21,7 +21,7 @@ class NarrativeController: UIViewController {
 
     @IBAction func SubmitButton(_ sender: Any) {
         
-        // all shit is sent here
+        // send all the incident info
         let incidentInfoUrl = "https://statsql.test.as.uky.edu/edit_incident_info.php"
         let IncidentInfoParams: Parameters = [
             "CaseNum" = Storage.IncidentInformation.CaseNum,
@@ -63,6 +63,8 @@ class NarrativeController: UIViewController {
             
         
         ]
+        
+        // send case history
         let CaseHistoryURL = "https://statsqltest.as.uky.edu/edit_case_history.php" // Location of Database
         let CaseHistoryParams: Parameters = [
             "CaseNum" = Storage.CaseHistory.CaseNum,
@@ -179,6 +181,7 @@ class NarrativeController: UIViewController {
             
         ]
         
+        // send next of kin to the database
         let NextofKinURL = "https://statsqltest.as.uky.edu/edit_next_of_kin.php" // Location of Database
         let NextofKinParams: Parameters = [
             "CaseNum" = Storage.NextofKin.CaseNum,
@@ -195,6 +198,7 @@ class NarrativeController: UIViewController {
             "Zip_1" = Storage.NextofKin.Zip_1,
         ] 
         
+        // send decendent information
         let DecendentInfoURL = "https://statsqltest.as.uky.edu/edit_decendent_info.php" // Location of Database
         let DecendentInfoParams: Parameters = [
             "CaseNum" = Storage.DecendentInfo.CaseNum,
@@ -287,4 +291,6 @@ class NarrativeController: UIViewController {
                 }
             }
     
+}
+    }
 }

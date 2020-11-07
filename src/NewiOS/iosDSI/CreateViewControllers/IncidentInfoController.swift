@@ -2,7 +2,7 @@
 //  IncidentInfoController.swift
 //  iosDSI
 //
-//  Created by Andrew Majda on 10/21/20.
+//  Created by DSI Group 2 on 10/21/20.
 //
 
 import UIKit
@@ -16,7 +16,7 @@ class IncidentInfoController: UIViewController {
     }
     
 
-    // Code goes here
+    // Outlet code
     
     @IBOutlet weak var CaseNum: UITextField!
     @IBOutlet weak var Version: UITextField!
@@ -122,11 +122,12 @@ class IncidentInfoController: UIViewController {
     
     @IBAction func NextButton(_ sender: UIButton) {
         
-        // button code goes here
+        // check for validation
         var isValid = true
         if(CaseNum.text! == "") {isValid = false}
         if(Version.text! == "") {isValid = false}
         
+        // send to storage struct if valid
         if(isValid){
             Storage.IncidentInformation.CaseNum = CaseNum.text!
             Storage.IncidentInformation.Version = Version.text!

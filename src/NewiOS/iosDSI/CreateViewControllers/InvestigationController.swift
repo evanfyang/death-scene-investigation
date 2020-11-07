@@ -2,8 +2,8 @@
 //  InvestigationController.swift
 //  iosDSI
 //
-//  Created by Andrew Majda on 10/21/20.
-//  Populated by Parker Buckley on 10/26/2020
+//  Created by DSI Group 2 on 10/21/20.
+//
 
 import UIKit
 
@@ -16,7 +16,7 @@ class InvestigationController: UIViewController {
     }
     
 
-    // code goes here
+    // outlet declarations
     @IBOutlet weak var CaseNum: UITextField!
     @IBOutlet weak var Version: UITextField!
     @IBOutlet weak var Evidence_Collected: UITextField!
@@ -118,10 +118,11 @@ class InvestigationController: UIViewController {
     @IBOutlet weak var Type_of_Amm: UITextField!
     @IBOutlet weak var Number_Of_Shells: UITextField!
     
-    
+    // the code for the button
     @IBAction func NextButton(_ sender: UIButton) {
         var Valid = true
         
+        // validation
         if ( CaseNum.text! == "" ) { Valid = false }
         if ( Version.text! == "" ) { Valid = false }
         if ( Evidence_Collected.text! == "" ) { Valid = false }
@@ -169,6 +170,7 @@ class InvestigationController: UIViewController {
         if ( Type_of_Amm.text! == "" ) { Valid = false }
         if ( Number_Of_Shells.text! == "" ) { Valid = false }
         
+        // if validation is succsessful send to storage
         if Valid {
             Storage.Investigation.CaseNum = CaseNum.text!
             Storage.Investigation.Version = Version.text!
@@ -276,7 +278,7 @@ class InvestigationController: UIViewController {
     
     @IBAction func SubmitButton(_ sender: Any) {
         
-        // Investigation code added here
+        // copy this over to narrative controller
         let investigationURL = "https://statsqltest.as.uky.edu/edit_investigation.php"
         let investigationParams: Parameters = [
             "CaseNum" = Storage.Investigation.CaseNum,   

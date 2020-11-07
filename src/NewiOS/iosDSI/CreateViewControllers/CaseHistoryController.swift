@@ -2,7 +2,7 @@
 //  CaseHistoryController.swift
 //  iosDSI
 //
-//  Created by Andrew Majda on 10/21/20.
+//  Created by DSI group 2 on 10/21/20.
 //
 
 import UIKit
@@ -15,7 +15,7 @@ class CaseHistoryController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    // code goes here
+    // the outlets connected to the elements
     @IBOutlet weak var N_NursingHome: UISwitch!
     @IBOutlet weak var N_SIDS: UISwitch!
     @IBOutlet weak var N_Smoker: UISwitch!
@@ -126,11 +126,13 @@ class CaseHistoryController: UIViewController {
     @IBOutlet weak var O_TreatMenHealth: UISwitch!
     
 
+    // the code for when a button is pressed
     @IBAction func NextButton(_ sender: UIButton) {
         
-        // code for the button goes here
+        // set up a f,ag for valid commands
         var isValid = true
         
+        // validate the data
         if(!A_MVCrash.isOn && (A_Passenger.isOn || A_Driver.isOn || A_Pedestrian.isOn || A_LapBeltUsed.isOn || A_ShoulderBeltUsed.isOn || A_HelmetWorn.isOn || A_AirbagDeploy.isOn || A_HitRun.isOn || A_NonHighway.isOn || A_VehicleType.text != "")) {isValid = false}
         
         if(S_DMHP_field.text != "" && !S_CMHP.isOn) {isValid = false}
@@ -143,6 +145,7 @@ class CaseHistoryController: UIViewController {
         if(!O_HisIncar.isOn && (O_CurrIncar.isOn || O_RecRel.isOn || O_Prev.isOn)) {isValid = false}
         if(O_DiagMenHealthProb.text != "" && !O_CurrMenHelProb.isOn) {isValid = false}
         
+        // if our valid flag is ok add it to our storage data
         if(isValid){
             Storage.CaseHistory.N_NursingHome = N_NursingHome.isOn
             Storage.CaseHistory.N_SIDS = N_SIDS.isOn

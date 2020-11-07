@@ -2,7 +2,7 @@
 //  CreateController.swift
 //  iosDSI
 //
-//  Created by Andrew Majda on 10/12/20.
+//  Created by DSI group 2 on 10/12/20.
 //
 
 import UIKit
@@ -15,14 +15,16 @@ class CreateController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // set up outlets
     @IBOutlet weak var caseNum: UITextField!
     @IBOutlet weak var county: UITextField!
     
-    // Button!
+    // implement the button
     @IBAction func Create(_ sender: Any) {
         
         var correct = true
         
+        // validation
         if caseNum.text != "" {}
         else {
             correct = false
@@ -38,6 +40,7 @@ class CreateController: UIViewController {
             
             // Transition here
         }
+        // printed for debugging purposes
         else {
             print("wrong")
         }

@@ -2,12 +2,13 @@
 //  Storage.swift
 //  iosDSI
 //
-//  Created by Andrew Majda on 10/12/20.
-//  Populated by Parker Buckley on 10/26/2020
+//  Created by DSI group 2 on 10/12/20.
 
 import Foundation
 
+// the global struct of struct
 struct Storage {
+    // sub struct for storing create
     struct Create {
          static var CaseNumber = ""
          static var County = ""
@@ -17,6 +18,7 @@ struct Storage {
             County = ""
         }
     }
+    // sub struct for storing incident information
     struct IncidentInformation {
         static func Clear(){
             CaseNum = ""
@@ -95,6 +97,7 @@ struct Storage {
         
         
     }
+    // the death scene investigation sub struct
     struct DeathSceneInvestigation {
          static var Deputy = ""
         
@@ -103,6 +106,7 @@ struct Storage {
         }
     }
     
+    // the case history sub struct
     struct CaseHistory {
         static var CaseNum = ""
         static var Version = ""
@@ -331,7 +335,7 @@ struct Storage {
         }
     }
     
-    
+    // the investigation sub struct
     struct Investigation {
         static var CaseNum = ""
         static var Version = ""
@@ -539,6 +543,7 @@ struct Storage {
         }
     }
     
+    // next of kin sub struct
     struct NextOfKin{
         static func Clear(){
             CaseNum = ""
