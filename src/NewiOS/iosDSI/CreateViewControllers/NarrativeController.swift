@@ -178,11 +178,64 @@ class NarrativeController: UIViewController {
             "O_TreatMenHealth" = Storage.CaseHistory.O_TreatMenHealth
             
         ]
-        Alamofire.request(incidentInfoUrl, method: .post,
-                     parameters:
-                     IncidentInfoParams)
-            .validate()
-            .responseString{
+        
+        let NextofKinURL = "https://statsqltest.as.uky.edu/edit_next_of_kin.php" // Location of Database
+        let NextofKinParams: Parameters = [
+            "CaseNum" = Storage.NextofKin.CaseNum,
+            "Version" = Storage.NextofKin.Version,
+            "Notified_by" = Storage.NextofKin.Notified_by,
+            "Date_Notified" = Storage.NextofKin.Date_Notified,
+            "Time_Notified" = Storage.NextofKin.Time_Notified,
+            "Name" = Storage.NextofKin.Name,
+            "Relationship" = Storage.NextofKin.Relationship,
+            "Phone_Number" = Storage.NextofKin.Phone_Number,
+            "Address" = Storage.NextofKin.Address,
+            "City_1" = Storage.NextofKin.City_1,
+            "State" = Storage.NextofKin.State,
+            "Zip_1" = Storage.NextofKin.Zip_1,
+        ] 
+        
+        let DecendentInfoURL = "https://statsqltest.as.uky.edu/edit_decendent_info.php" // Location of Database
+        let DecendentInfoParams: Parameters = [
+            "CaseNum" = Storage.DecendentInfo.CaseNum,
+            "Version" = Storage.DecendentInfo.Version,
+            "First_Name" = Storage.DecendentInfo.First_Name,
+            "Last_Name" = Storage.DecendentInfo.Last_Name,
+            "Gender" = Storage.DecendentInfo.Gender,
+            "Age" = Storage.DecendentInfo.Age,
+            "Birth_Place" = Storage.DecendentInfo.Birth_Place,
+            "SSN_Num" = Storage.DecendentInfo.SSN_Num,
+            "Address" = Storage.DecendentInfo.Address,
+            "City" = Storage.DecendentInfo.City,
+            "Country_of_Res" = Storage.DecendentInfo.Country_of_Res,
+            "State_of_Res" = Storage.DecendentInfo.State_of_Res,
+            "Zip" = Storage.DecendentInfo.Zip,
+            "Height" = Storage.DecendentInfo.Height,
+            "Weight" = Storage.DecendentInfo.Weight,
+            "Eyes" = Storage.DecendentInfo.Eyes,
+            "Hair" = Storage.DecendentInfo.Hair,
+            "Race" = Storage.DecendentInfo.Race,
+            "Ethnicity" = Storage.DecendentInfo.Ethnicity,
+            "Marital_Status" = Storage.DecendentInfo.Marital_Status,
+            "Surviving_Spouse" = Storage.DecendentInfo.Surviving_Spouse,
+            "Mother_MN" = Storage.DecendentInfo.Mother_MN,
+            "Father_N" = Storage.DecendentInfo.Father_N,
+            "Pregnant" = Storage.DecendentInfo.Pregnant,
+            "Homeless" = Storage.DecendentInfo.Homeless,
+            "Veteran" = Storage.DecendentInfo.Veteran,
+            "Retired" = Storage.DecendentInfo.Retired,
+            "Active" = Storage.DecendentInfo.Active,
+            "other1" = Storage.DecendentInfo.other1,
+            "other_field" = Storage.DecendentInfo.other_field,
+            "Branch" = Storage.DecendentInfo.Branch,
+            "Last_Tour" = Storage.DecendentInfo.Last_Tour,
+            "Education" = Storage.DecendentInfo.Education,
+            "Employment" = Storage.DecendentInfo.Employment,
+            "Industry" = Storage.DecendentInfo.Industry,
+            "Current_Occupations" = Storage.DecendentInfo.Current_Occupations,
+        ]
+        
+        Alamofire.request(incidentInfoUrl, method: .post, parameters: IncidentInfoParams).validate().responseString{
                 response in
                 if let result =
                     response.result.value{
@@ -208,5 +261,30 @@ class NarrativeController: UIViewController {
                 }
             }
         }
-    }
+       Alamofire.request(NextofKinURL, method: .post, parameters: NextofKinParams).validate().responseString {
+            response in
+            if let result = response.result.value {
+                let jsonData = result
+                //if there is no error
+                if(jsonData.contains("success")){
+                    print("Next of Kin Post Success")
+                }
+                else {
+                    print("Next of Kin Post Failure")
+                }
+            }
+        }
+       Alamofire.request(DecendentInfoURL, method: .post, parameters: DecendentInfoParams).validate().responseString {
+            response in
+            if let result = response.result.value {
+                let jsonData = result
+                //if there is no error
+                if(jsonData.contains("success")){
+                    print("Decendent Info Post Success")
+                }
+                else {
+                    print("Decendent Info Post Failure")
+                }
+            }
+    
 }
